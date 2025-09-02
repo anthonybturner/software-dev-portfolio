@@ -1,0 +1,12 @@
+<section class="skills">
+  <div class="container">
+    <div class="section-header">
+      <h1>My Skills</h1>
+      <p>A collection of skills I've used in my career</p>
+    </div>
+
+    <div class="skills-grid">
+      <app-skill-card *ngFor="let skill of skills" [skill]="skill"></app-skill-card>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+@use 'config' as *;
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #f3f3f3;
+    background: $accent;
+    text-shadow:
+        0 2px 8px rgba(22, 18, 18, 0.459),
+        /* deep soft shadow for contrast */
+        0 1px 0 #0f0a13,
+        /* crisp dark outline for clarity */
+        0 0.5px 0 #000000;
+    /* subtle white highlight for pop */
+}
+
+h3, .header,section .hero-content
+{
+    @include nav-link-style;
+}
+
+
+li {
+    margin-bottom: 1rem;
+    letter-spacing: 0.03em;
+    font-weight: 500;
+}

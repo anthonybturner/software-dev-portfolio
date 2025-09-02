@@ -1,0 +1,21 @@
+<div class="project-card">
+  <div class="image">
+    <img [src]="project.imageUrl" [alt]="project.title">
+    <div class="overlay">
+      <h3>{{ project.title }}</h3>
+    </div>
+  </div>
+  
+  <div class="content">
+    <p>{{ project.description }}</p>
+    
+    <div class="technologies">
+      <span *ngFor="let tech of project.technologies">{{ tech }}</span>
+    </div>
+    
+    <div class="actions">
+      <a [href]="project.projectUrl" target="_blank" class="demo">Live Demo</a>
+      <a [href]="project.githubUrl" target="_blank" class="github">GitHub</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+// Modern Hero & Grid Design
+$primary: #0b2d6d;
+$accent: #099fb9;
+$bg-glass: rgba(52, 56, 10, 0.055); // Glassmorphism
+$bg: #14162011; // Deep dark background
+$card-bg: #01020a0c;
+$card-text: #ffffff;
+$text: #000000;
+$heading: #c5c5c7;
+$heading2: #00050e;
+$shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+$padding: 12px;
+$margin: 12px auto;
+$border: 3.5px solid rgba(1, 3, 8, 0.021);
+
+@mixin snackbar-base($bg, $text) {
+  background-color: $bg !important;
+  color: $text !important;
+  border-radius: 18px;
+} 
+
+@mixin image-icon-styles {
+  border-radius: 50%;
+  border: 2px solid $border-bg;
+  background: $secondary-color;
+  margin: 0 auto;
+}
+
+@mixin nav-link-style {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #5ba7d3;
+  text-decoration: none;
+}

@@ -1,0 +1,123 @@
+<div class="home">
+
+  <section class="banner-section hero">
+    <div class="hero-content">
+      <h1>Anthony Barrington Johns Jr. Turner</h1>
+      <h2>Full-Stack Software Developer</h2>
+      <p class="location">Kingston, NY &bull; <a href="mailto:anthonybturner@icloud.com">anthonybturner@icloud.com</a>
+        &bull; 518-475-8019</p>
+      <div class="links">
+        <a href="https://linkedin.com/in/anthony-turner-0207b76b" target="_blank">LinkedIn</a>
+        <a href="https://marvelrivalsstats.vercel.app" target="_blank">Marvel Rivals project</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="top-section">
+    <h3>About Me</h3>
+    <p>
+      Full-Stack Software Developer with 10+ years of experience delivering high-performance applications. Skilled in
+      .NET Core/8, ASP.NET (MVC/Web API/Web Forms), Angular (JS–v1–v19, Angular Material), TypeScript, JavaScript,
+      Python/Django, and relational databases (SQL Server, Oracle, MySQL, PostgreSQL). Experienced in asynchronous
+      programming, concurrency, scalable API design, DTO/entity mapping, database transactions, caching strategies, and
+      modern deployment workflows using Git, CI/CD, Docker, Vercel, Render, Railway, and Azure. Known for delivering
+      secure, maintainable solutions in Agile/Scrum teams.
+    </p>
+  </section>
+
+  <section class="middle-section">
+    <h3>Professional Experience</h3>
+    <ul>
+      <li><strong>Applications Developer (AppTech)</strong> – Norwalk, CT (Hybrid) | Apr 2024 – Jun 2025<br>
+        Modernized Angular/.NET Framework apps to Angular 19 and .NET 8. Developed scalable APIs with ASP.NET Core,
+        RxJS, and TypeScript; implemented DTO/entity mapping. Integrated CI/CD pipelines in Azure DevOps for automated
+        testing and deployments.
+      </li>
+      <li><strong>Cloud Software Engineer (Constellation Software Engineering)</strong> – Remote | Sept 2023 – Aug
+        2024<br>
+        Built secure cloud applications for federal Navy projects using Azure, ASP.NET, .NET Core, and Python/Django.
+        Implemented OAuth authentication systems; optimized SQL Server/PostgreSQL queries. Participated in Agile
+        sprints, code reviews, and deployments.
+      </li>
+      <li><strong>.NET Software Developer (Ryan Specialties)</strong> – Rockhill, NY | Jan 2023 – Aug 2023<br>
+        Migrated legacy VB.NET applications to C#/.NET 4, improving maintainability and execution speed. Automated bulk
+        email and Weather API systems, reducing manual processes and errors.
+      </li>
+      <li><strong>.NET Full-Stack Developer (InfoEd Global)</strong> – Albany, NY | Nov 2018 – Nov 2022<br>
+        Built full-stack solutions using C#, VB.NET, ASP.NET, Angular, and JavaScript. Implemented XML/XSD integrations
+        with ASP.NET Web Forms; optimized SQL Server/Oracle databases. Designed API logic to cache third-party data
+        locally, improving performance and reducing redundant calls.
+      </li>
+      <li><strong>WordPress / PHP Developer (Rev Design)</strong> – Patterson, NY | Dec 2017 – Nov 2018<br>
+        Built dynamic WordPress sites with PHP and boilerplate templates; optimized MySQL databases. Designed responsive
+        UI/UX using HTML5, CSS3, Bootstrap, and jQuery.
+      </li>
+      <li><strong>.NET Full-Stack Developer Intern (Precision Care Software)</strong> – New Paltz, NY | Apr 2015 – Apr
+        2016<br>
+        Developed web applications with C#, VB.NET, ASP.NET, AngularJS, and RESTful APIs. Optimized Oracle/SQL queries
+        for efficient SPA data retrieval.
+      </li>
+      <li><strong>iOS/Android Mobile Developer (Digital Catnip)</strong> – Beacon, NY | Jan 2016 – Jun 2016<br>
+        Developed cross-platform fitness apps using Swift (iOS) and Java (Android). Integrated RESTful APIs for data
+        tracking, synchronization, and analysis. Managed mobile databases and designed responsive, user-friendly UI/UX.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+     <div class="featured-skills">
+      <div class="card">
+        <h3>Featured Skills</h3>
+        <div class="featured-skills-list">
+          <div class="featured-skill" *ngFor="let skill of featuredSkills">
+            <div class="skill-labels">
+              <span class="skill-name">{{ skill.name }}</span>
+              <span class="skill-percentage">{{ skill.proficiency }}%</span>
+            </div>
+            <div class="graph-bar">
+              <div class="bar-fill" [style.width.%]="skill.proficiency"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom-section">
+    <div class="skills">
+      <div class="card">
+        <h3>Skills</h3>
+        <ul class="skills-list">
+          <li><strong>Languages & Frameworks:</strong> C#, VB.NET, .NET Core/8, ASP.NET (MVC, Web API, Web Forms),
+            Angular (JS–v1–v19, Angular Material), TypeScript, JavaScript (ES6+), Python/Django, Java, Swift, PHP,
+            HTML5, CSS3, SASS/SCSS, TailwindCSS, Bootstrap, jQuery, Telerik, XML/XML Schemas, Asynchronous Programming,
+            Concurrency</li>
+          <li><strong>Databases & Data:</strong> SQL Server, Oracle, PostgreSQL, MySQL, PL/SQL, T-SQL, Entity Framework,
+            DTO & Entity Mapping, API Integration, Caching Strategies, Database Transactions</li>
+          <li><strong>Tools & Deployment:</strong> Azure DevOps, Git/GitHub/Bitbucket, CI/CD, Docker, REST APIs, RxJS,
+            Jasmine/Karma, Jest, xUnit, Postman, Swagger/OpenAPI, Railway, Render, Vercel, SmartASP.NET</li>
+          <li><strong>Cloud & DevOps:</strong> Microsoft Azure (App Services, Functions, Key Vault, API Management),
+            Azure SQL, App Configuration, Agile & Scrum Environments</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Projects & Achievements</h3>
+        <ul class="skills-list">
+          <li><strong>Angular/.NET Modernization (AppTech):</strong> Migrated legacy Angular/.NET Framework apps to
+            Angular 19/.NET 8; implemented scalable APIs and CI/CD pipelines.</li>
+          <li><strong>Cloud Applications (Constellation):</strong> Built secure Navy cloud systems with Azure services,
+            OAuth authentication, and optimized database queries.</li>
+          <li><strong>Legacy VB.NET Migration (Ryan Specialties):</strong> Converted legacy VB.NET apps to C#/.NET 4,
+            automating processes and improving performance.</li>
+          <li><strong>Full-Stack Enterprise Development (InfoEd):</strong> Developed full-stack solutions with
+            DTO/entity mapping, XML/XSD integrations, and cached third-party API data.</li>
+          <li><strong>WordPress Sites (Rev Design):</strong> Built and customized WordPress websites with PHP/MySQL,
+            responsive UI/UX, and optimized dynamic content.</li>
+          <li><strong>Mobile Fitness Apps (Digital Catnip):</strong> Created cross-platform iOS/Android apps with
+            Swift/Java, integrating APIs and tracking user activity metrics.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>

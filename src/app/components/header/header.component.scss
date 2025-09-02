@@ -1,0 +1,120 @@
+// Modern Hero & Grid Design
+$primary: #0b2d6d;
+$accent: #61e7ff;
+$bg: #14162011; // Deep dark background
+
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(120deg, $primary 0%, $bg 100%);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+  }
+
+  .logo {
+    font-size: 2.8rem;
+
+    span {
+      color: #3498db;
+    }
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    @media (max-width: 768px) {
+      position: fixed;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background: white;
+      flex-direction: column;
+      padding: 2rem;
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+      &.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    a {
+      font-size: 1.8rem;
+      transition: color 0.3s ease;
+      position: relative;
+      &:hover {
+        color: #3498db;
+      }
+
+      &.active {
+        color: #3498db;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: #3498db;
+        }
+      }
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+
+    span {
+      width: 100%;
+      height: 3px;
+      background: #2c3e50;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    &.active {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+    }
+  }
+}

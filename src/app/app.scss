@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  position: relative;
+}
+
+main {
+  padding-top: 70px; // Height of header
+  min-height: calc(100vh - 70px);
+}
