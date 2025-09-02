@@ -6,9 +6,9 @@ $bg-glass: rgba(52, 56, 10, 0.055); // Glassmorphism
 $bg: #14162011; // Deep dark background
 $card-bg: #01020a0c;
 $card-text: #ffffff;
-$text: #000000;
+$text: #e4e2e2;
 $heading: #c5c5c7;
-$heading2: #00050e;
+$heading2: #dadada;
 $shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
 $padding: 12px;
 $margin: 12px auto;
@@ -28,7 +28,6 @@ $shadow-3d: 0 8px 10px 0 rgba(0, 0, 0, 0.25), // main shadow
 
 .home {
     min-height: 100vh;
-    background: linear-gradient(-45deg, $bg 0%, $primary 100%);
 
     section {
         width: 1100px;
@@ -54,11 +53,7 @@ $shadow-3d: 0 8px 10px 0 rgba(0, 0, 0, 0.25), // main shadow
         justify-content: center;
         align-items: center;
         text-align: center;
-
-
-        text-shadow: 1px 1px 2px rgba(217, 218, 219, 0.432);
         letter-spacing: 4px;
-
         .link {
             text-align: left;
             justify-content: left;

@@ -5,7 +5,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #f3f3f3;
-    background: $accent;
+    background: linear-gradient(-45deg, $bg 0%, $primary 100%);
     text-shadow:
         0 2px 8px rgba(22, 18, 18, 0.459),
         /* deep soft shadow for contrast */

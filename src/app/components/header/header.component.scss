@@ -61,15 +61,15 @@ $bg: #14162011; // Deep dark background
 
     a {
       font-size: 1.8rem;
+      text-decoration: none;
       transition: color 0.3s ease;
       position: relative;
+      cursor: pointer;
       &:hover {
         color: #3498db;
       }
-
       &.active {
-        color: #3498db;
-
+        color: #fcfcfc;
         &::after {
           content: '';
           position: absolute;

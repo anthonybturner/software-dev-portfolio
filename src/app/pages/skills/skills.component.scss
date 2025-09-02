@@ -1,3 +1,4 @@
+
 .skills {
   padding: 100px 0 50px;
   min-height: calc(100vh - 70px);
@@ -14,13 +15,13 @@
 
     h1 {
       font-size: 2.5rem;
-      color: #2c3e50;
+      color: #f9fafc;
       margin-bottom: 1rem;
     }
 
     p {
       font-size: 1.1rem;
-      color: #7f8c8d;
+      color: #f0f0f0;
       max-width: 600px;
       margin: 0 auto;
     }
@@ -28,8 +29,8 @@
 
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
   }
 }
 

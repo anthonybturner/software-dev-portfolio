@@ -3,7 +3,7 @@ import { ProjectCardComponent } from "../../components/project-card/project-card
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
   standalone: true,
