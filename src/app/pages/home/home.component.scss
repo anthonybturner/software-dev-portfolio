@@ -54,6 +54,7 @@ $shadow-3d: 0 8px 10px 0 rgba(0, 0, 0, 0.25), // main shadow
         align-items: center;
         text-align: center;
         letter-spacing: 4px;
+
         .link {
             text-align: left;
             justify-content: left;
@@ -111,9 +112,10 @@ $shadow-3d: 0 8px 10px 0 rgba(0, 0, 0, 0.25), // main shadow
         color: $primary;
     }
 
-    .featured-skill{
+    .featured-skill {
         margin-bottom: 1.5rem;
     }
+
     .featured-skills-list {
         margin-top: 1.5rem;
     }
@@ -141,13 +143,11 @@ $shadow-3d: 0 8px 10px 0 rgba(0, 0, 0, 0.25), // main shadow
     }
 
     .bottom-section {
-
         border: none;
         gap: 1.5rem;
 
         strong {
-            font-weight: 600;
-            color: $bg;
+            color: $heading2;
         }
 
         .skills {
@@ -180,7 +180,6 @@ $shadow-3d: 0 8px 10px 0 rgba(0, 0, 0, 0.25), // main shadow
             margin-top: 8px;
         }
     }
-
 
     .card ul {
         margin: 0;

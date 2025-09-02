@@ -1,15 +1,19 @@
+// Modern Hero & Grid Design
+$primary: #d9dde6;
+$bg: #3f4d8811; // Deep dark background
+
 .project-card {
-  background: white;
+  background: linear-gradient(0, $primary 25%, $bg 75%);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  height: 100%;
+  border: 1px solid #ccc;
 
+  margin: 1rem;
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-
     .image {
       img {
         transform: scale(1.05);
