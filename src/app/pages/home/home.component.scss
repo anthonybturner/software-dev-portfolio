@@ -2,14 +2,20 @@
 
 $primary: #0b2d6d;
 $accent: #61e7ff;
+$text: #e4e2e2;
+$text-light: #f3f3f3;
+$text-dark: #222;
+$text-white: #fff;
+$shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+$shadow-strong: 0 2px 12px #0b2d6d, 0 1px 0 #222;
+$shadow-medium: 0 2px 8px #0b2d6d;
+$shadow-soft: 0 1px 6px #0b2d6d;
+$bg: rgba(20, 22, 32, 0.07);
 $bg-glass: rgba(52, 56, 10, 0.055); // Glassmorphism
-$bg: #14162011; // Deep dark background
 $card-bg: #01020a0c;
 $card-text: #ffffff;
-$text: #e4e2e2;
 $heading: #c5c5c7;
 $heading2: #dadada;
-$shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
 $padding: 12px;
 $margin: 12px auto;
 $border: 3.5px solid rgba(1, 3, 8, 0.021);
@@ -48,25 +54,52 @@ $shadow-3d: 0 8px 10px 0 rgba(0, 0, 0, 0.25), // main shadow
     }
 
     .hero-content {
+        text-align: center;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        text-align: center;
-        letter-spacing: 4px;
+        justify-content: center;
+        gap: 0.5rem;
 
-        .link {
-            text-align: left;
-            justify-content: left;
-
+        h1 {
+            color: $text-white;
+            font-weight: 800;
+            text-shadow: $shadow-strong;
+            letter-spacing: 2px;
+            margin-bottom: 0.2rem;
         }
-
+        h2 {
+            color: $accent;
+            font-weight: 700;
+            text-shadow: $shadow-medium;
+            margin-bottom: 0.5rem;
+        }
         .location {
-            color: $text;
+            color: $text-light;
             font-size: 1.1rem;
             margin-bottom: 1rem;
+            text-shadow: $shadow-soft;
+            a {
+                color: $accent;
+                text-decoration: none;
+                font-weight: 600;
+            }
         }
-
+        .links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            a {
+                color: $accent;
+                font-weight: 600;
+                text-decoration: none;
+                text-shadow: $shadow-soft;
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
     }
 
     .avatar {

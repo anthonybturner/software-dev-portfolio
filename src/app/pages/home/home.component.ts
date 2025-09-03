@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectCardComponent } from '../../components/project-card/project-card.component';
 import { SkillCardComponent } from '../../components/skill-card/skill-card.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',

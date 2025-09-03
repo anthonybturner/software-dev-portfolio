@@ -26,10 +26,20 @@ $bg: #14162011; // Deep dark background
   }
 
   .logo {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
+    color: $accent;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: color 0.3s ease;
 
     span {
-      color: #3498db;
+      color: $primary;
+      font-weight: 900;
+    }
+
+    &:hover {
+      color: $primary;
     }
   }
 
@@ -43,7 +53,7 @@ $bg: #14162011; // Deep dark background
       top: 70px;
       left: 0;
       width: 100%;
-      background: white;
+      background: linear-gradient(120deg, $primary 0%, $bg 100%);
       flex-direction: column;
       padding: 2rem;
       transform: translateY(-100%);
@@ -60,25 +70,36 @@ $bg: #14162011; // Deep dark background
     }
 
     a {
-      font-size: 1.8rem;
+      font-size: 1.2rem;
+      color: $accent;
       text-decoration: none;
-      transition: color 0.3s ease;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      transition: color 0.3s, background 0.3s;
       position: relative;
       cursor: pointer;
-      &:hover {
-        color: #3498db;
-      }
+
       &.active {
-        color: #fcfcfc;
+        color: $primary;
+        background: rgba($accent, 0.12);
+
         &::after {
           content: '';
           position: absolute;
-          bottom: -5px;
+          bottom: -4px;
           left: 0;
           width: 100%;
           height: 2px;
-          background: #3498db;
+          background: $accent;
+          border-radius: 2px;
         }
+      }
+
+      &:hover {
+        color: $primary;
+        background: rgba($accent, 0.18);
       }
     }
   }
@@ -98,7 +119,7 @@ $bg: #14162011; // Deep dark background
     span {
       width: 100%;
       height: 3px;
-      background: #2c3e50;
+      background: $accent;
       border-radius: 3px;
       transition: all 0.3s ease;
     }

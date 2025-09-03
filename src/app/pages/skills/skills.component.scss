@@ -1,36 +1,54 @@
+$primary: #0b2d6d;
+$accent: #61e7ff;
+$bg: #14162011;
 
 .skills {
-  padding: 100px 0 50px;
+  background: $bg;
+  padding: 3rem 0 2rem 0;
   min-height: calc(100vh - 70px);
 
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 1.5rem;
   }
 
   .section-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
 
     h1 {
-      font-size: 2.5rem;
-      color: #f9fafc;
-      margin-bottom: 1rem;
+      color: $primary;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
     }
 
     p {
+      color: $accent;
       font-size: 1.1rem;
-      color: #f0f0f0;
-      max-width: 600px;
-      margin: 0 auto;
+      font-weight: 500;
+      margin-bottom: 0;
     }
   }
 
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 1rem;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
   }
 }
 
