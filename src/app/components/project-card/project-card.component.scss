@@ -1,25 +1,22 @@
 // Modern Hero & Grid Design
 $primary: #d9dde6;
 $bg: #3f4d8811; // Deep dark background
+$accent: #61e7ff;
 
 .project-card {
+  display: inline-block;
   background: linear-gradient(0, $primary 25%, $bg 75%);
-  border-radius: 15px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   border: 1px solid #ccc;
-
   margin: 1rem;
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    .image {
-      img {
-        transform: scale(1.05);
-      }
-    }
-  }
+  
+ &:hover {
+            transform: translateY(-4px) scale(1.0);
+            box-shadow: 0 0px 8px $accent;
+            border-color: $accent;
+        }
 
   .image {
     height: 200px;
@@ -40,8 +37,6 @@ $bg: #3f4d8811; // Deep dark background
       right: 0;
       bottom: 0;
       background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-      display: flex;
-      align-items: flex-end;
       padding: 1rem;
     }
   }
@@ -49,22 +44,10 @@ $bg: #3f4d8811; // Deep dark background
   .content {
     padding: 1.5rem;
 
-    h3 {
-      margin: 0 0 1rem 0;
-      color: #2c3e50;
-      font-size: 1.3rem;
-    }
-
-    p {
-      color: #7f8c8d;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
+ 
 
     .technologies {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+
       margin-bottom: 1.5rem;
 
       span {
@@ -78,11 +61,8 @@ $bg: #3f4d8811; // Deep dark background
     }
 
     .actions {
-      display: flex;
-      gap: 1rem;
-
+  
       a {
-        flex: 1;
         text-align: center;
         padding: 0.7rem 1rem;
         border-radius: 8px;

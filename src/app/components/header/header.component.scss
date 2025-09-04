@@ -1,7 +1,12 @@
 // Modern Hero & Grid Design
-$primary: #0b2d6d;
+$primary: #010713;
+$secondary: #568bda;
+$text: #d8d8d8;
+$text-light: #8fe5ff;
+$text-dark: #222;
+$text-white: #fff;
 $accent: #61e7ff;
-$bg: #14162011; // Deep dark background
+$bg: #01010211; // Deep dark background
 
 
 .header {
@@ -45,7 +50,7 @@ $bg: #14162011; // Deep dark background
 
   .nav {
     display: flex;
-    align-items: center;
+    justify-content: flex-end;
     gap: 2rem;
 
     @media (max-width: 768px) {
@@ -53,7 +58,7 @@ $bg: #14162011; // Deep dark background
       top: 70px;
       left: 0;
       width: 100%;
-      background: linear-gradient(120deg, $primary 0%, $bg 100%);
+      background: linear-gradient(45deg, $primary 0%, $bg 100%);
       flex-direction: column;
       padding: 2rem;
       transform: translateY(-100%);
@@ -71,7 +76,7 @@ $bg: #14162011; // Deep dark background
 
     a {
       font-size: 1.2rem;
-      color: $accent;
+      color: $text;
       text-decoration: none;
       font-weight: 600;
       letter-spacing: 0.5px;
@@ -82,7 +87,7 @@ $bg: #14162011; // Deep dark background
       cursor: pointer;
 
       &.active {
-        color: $primary;
+        color: $text;
         background: rgba($accent, 0.12);
 
         &::after {
@@ -98,7 +103,7 @@ $bg: #14162011; // Deep dark background
       }
 
       &:hover {
-        color: $primary;
+        color: $text-light;
         background: rgba($accent, 0.18);
       }
     }

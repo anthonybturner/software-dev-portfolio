@@ -1,7 +1,7 @@
 // Modern Hero & Grid Design
-
 $primary: #0b2d6d;
 $accent: #61e7ff;
+$accent-transparent: #61e7ff70;
 $text: #e4e2e2;
 $text-light: #f3f3f3;
 $text-dark: #222;
@@ -17,9 +17,9 @@ $card-text: #ffffff;
 $heading: #c5c5c7;
 $heading2: #dadada;
 $padding: 12px;
-$margin: 12px auto;
-$border: 3.5px solid rgba(1, 3, 8, 0.021);
-
+$base-margin-top-bottom: 12px;
+$margin: $base-margin-top-bottom auto;
+$border: 1.5px solid $accent-transparent;
 $shadow-3d: 0 8px 10px 0 rgba(0, 0, 0, 0.25), // main shadow
     0 1.5px 6px 0 rgba(0, 184, 217, 0.18), // blue glow
     0 -8px 24px 0 rgba(255, 111, 97, 0.12), // coral top shadow
@@ -33,214 +33,51 @@ $shadow-3d: 0 8px 10px 0 rgba(0, 0, 0, 0.25), // main shadow
 }
 
 .home {
-    min-height: 100vh;
+    width: 90%;
+    margin: 0 auto;
 
     section {
-        width: 1100px;
         margin: $margin;
+        border: $border;
         border-radius: 1.25rem;
         padding: $padding;
         transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
         position: relative;
         overflow: hidden;
-        border: $border;
 
+        //Glow Effect when hovering section
+        &:hover {
+            transform: translateY(-4px) scale(1.0);
+            box-shadow: 0 0px 8px $accent;
+            border-color: $accent;
+        }
     }
 
-    .hero {
-        width: 100%;
-        background: linear-gradient(120deg, $primary 0%, $bg 100%);
-        padding: $padding;
+    .hero-section {
+
+        h1,
+        h2 {
+            margin: $base-margin-top-bottom 0;
+        }
     }
 
-    .hero-content {
-        text-align: center;
+    .columns {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-
-        h1 {
-            color: $text-white;
-            font-weight: 800;
-            text-shadow: $shadow-strong;
-            letter-spacing: 2px;
-            margin-bottom: 0.2rem;
-        }
-        h2 {
-            color: $accent;
-            font-weight: 700;
-            text-shadow: $shadow-medium;
-            margin-bottom: 0.5rem;
-        }
-        .location {
-            color: $text-light;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            text-shadow: $shadow-soft;
-            a {
-                color: $accent;
-                text-decoration: none;
-                font-weight: 600;
-            }
-        }
-        .links {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            a {
-                color: $accent;
-                font-weight: 600;
-                text-decoration: none;
-                text-shadow: $shadow-soft;
-                &:hover {
-                    color: $primary;
-                }
-            }
-        }
-    }
-
-    .avatar {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 1.5rem;
-        box-shadow: 0 4px 24px $primary;
-    }
-
-    .hero h1 {
-        font-size: 2.0rem;
-        font-weight: 800;
-        color: $heading;
-        margin-bottom: 0.5rem;
-        text-shadow: 1px 2px 4px rgba(10, 110, 141, 0.808);
-
-    }
-
-    .hero h2 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: $heading2;
-        margin-bottom: 1rem;
-    }
-
-    .links {
-        display: flex;
-        gap: 1.5rem;
-        justify-content: center;
-        margin-bottom: 1.5rem;
-    }
-
-    .links a {
-        color: $accent;
-        font-weight: 600;
-        text-decoration: none;
-        transition: color 0.2s;
-    }
-
-    .links a:hover {
-        color: $primary;
-    }
-
-    .featured-skill {
-        margin-bottom: 1.5rem;
-    }
-
-    .featured-skills-list {
-        margin-top: 1.5rem;
-    }
-
-    .skill-labels {
-        display: flex;
-        justify-content: space-between;
-        font-weight: 600;
-        margin-bottom: 0.3rem;
     }
 
     .graph-bar {
         background: #222c;
-        border-radius: 8px;
-        height: 18px;
+        border-radius: 12px;
+        height: 12px;
         width: 100%;
         overflow: hidden;
     }
 
     .bar-fill {
         height: 100%;
-        border-radius: 8px;
+        border-radius: 12px;
         background: linear-gradient(90deg, #3498db 60%, #2ecc71 100%);
         transition: width 0.6s cubic-bezier(.4, 0, .2, 1);
-    }
-
-    .bottom-section {
-        border: none;
-        gap: 1.5rem;
-
-        strong {
-            color: $heading2;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-
-            //Cards
-            .card {
-                flex: 1;
-                border-radius: 1.25rem;
-                //box-shadow: $shadow, 0 1.5px 6px 0 rgba(45,108,223,0.12), 0 -8px 24px 0 rgba(255,111,97,0.08);
-                padding: $padding;
-                transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-                position: relative;
-                overflow: hidden;
-                border: $border;
-                background: $card-bg;
-
-                &:hover {
-                    transform: translateY(-4px) scale(1.0);
-                    box-shadow: 0 -6px 8px $accent;
-                    border-color: $accent;
-                }
-            }
-        }
-
-        .projects {
-
-            margin-top: 8px;
-        }
-    }
-
-    .card ul {
-        margin: 0;
-    }
-
-    // Skills List
-    .skills-list {
-        list-style: none;
-        margin: 0;
-    }
-
-    .icon {
-        font-size: 1.2rem;
-    }
-
-    @media (max-width: 900px) {
-        .grid-section {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            padding: 1rem 0;
-        }
-
-        .grid-card {
-            padding: 1.2rem;
-        }
-
-        .hero-content {
-            padding: 0 1rem;
-        }
     }
 }

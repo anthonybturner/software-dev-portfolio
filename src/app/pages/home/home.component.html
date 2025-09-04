@@ -1,21 +1,26 @@
-<div class="home">
+<div class="container home">
 
-  <section class="banner-section hero">
-    <div class="hero-content">
-      <h1 style="color:#fff; font-weight:800; text-shadow:0 2px 12px #0b2d6d,0 1px 0 #222; letter-spacing:2px;">Anthony Barrington Johns Jr. Turner</h1>
-      <h2 style="color:#61e7ff; font-weight:700; text-shadow:0 2px 8px #0b2d6d; margin-bottom:0.5rem;">Full-Stack Software Developer</h2>
-      <p class="location" style="color:#f3f3f3; font-size:1.1rem; margin-bottom:1rem; text-shadow:0 1px 6px #0b2d6d;">
-        Kingston, NY &bull; <a href="mailto:anthonybturner@icloud.com" style="color:#61e7ff; text-decoration:none; font-weight:600;">anthonybturner@icloud.com</a>
+  <section class="hero-section">
+    <div class="columns">
+      <h1>Anthony
+        Barrington Johns Jr. Turner</h1>
+      <h2>Full-Stack
+        Software Developer</h2>
+      <p class="location">
+        Kingston, NY &bull; <a href="mailto:anthonybturner@icloud.com"
+          style="color:#61e7ff; text-decoration:none; font-weight:600;">anthonybturner@icloud.com</a>
         &bull; 518-475-8019
       </p>
       <div class="links" style="display:flex; gap:1.5rem; justify-content:center; margin-bottom:1.5rem;">
-        <a href="https://linkedin.com/in/anthony-turner-0207b76b" target="_blank" style="color:#61e7ff; font-weight:600; text-decoration:none; text-shadow:0 1px 6px #0b2d6d;">LinkedIn</a>
-        <a href="https://marvelrivalsstats.vercel.app" target="_blank" style="color:#61e7ff; font-weight:600; text-decoration:none; text-shadow:0 1px 6px #0b2d6d;">Portfolio</a>
+        <a href="https://linkedin.com/in/anthony-turner-0207b76b" target="_blank"
+          style="color:#61e7ff; font-weight:600; text-decoration:none; text-shadow:0 1px 6px #0b2d6d;">LinkedIn</a>
+        <a href="https://marvelrivalsstats.vercel.app" target="_blank"
+          style="color:#61e7ff; font-weight:600; text-decoration:none; text-shadow:0 1px 6px #0b2d6d;">Portfolio</a>
       </div>
     </div>
   </section>
 
-  <section class="top-section">
+  <section class="about-section">
     <h3>About Me</h3>
     <p>
       Full-Stack Software Developer with 10+ years of experience delivering high-performance applications. Skilled in
@@ -27,7 +32,7 @@
     </p>
   </section>
 
-  <section class="middle-section">
+  <section class="experience-section">
     <h3>Professional Experience</h3>
     <ul>
       <li><strong>Applications Developer (AppTech) Contract</strong> – Norwalk, CT (Hybrid) | Apr 2024 – Jun 2025<br>
@@ -35,7 +40,8 @@
         RxJS, and TypeScript; implemented DTO/entity mapping. Integrated CI/CD pipelines in Azure DevOps for automated
         testing and deployments.
       </li>
-      <li><strong>Cloud Software Engineer (Constellation Software Engineering) Contract</strong> – Remote | Sept 2023 – Aug
+      <li><strong>Cloud Software Engineer (Constellation Software Engineering) Contract</strong> – Remote | Sept 2023 –
+        Aug
         2024<br>
         Built secure cloud applications for federal Navy projects using Azure, ASP.NET, .NET Core, and Python/Django.
         Implemented OAuth authentication systems; optimized SQL Server/PostgreSQL queries. Participated in Agile
@@ -66,60 +72,55 @@
     </ul>
   </section>
 
-  <section>
-     <div class="featured-skills">
-      <div class="card">
-        <h3>Featured Skills</h3>
-        <div class="featured-skills-list">
-          <div class="featured-skill" *ngFor="let skill of featuredSkills">
-            <div class="skill-labels">
-              <span class="skill-name">{{ skill.name }}</span>
-              <span class="skill-percentage">{{ skill.proficiency }}%</span>
-            </div>
-            <div class="graph-bar">
-              <div class="bar-fill" [style.width.%]="skill.proficiency"></div>
-            </div>
-          </div>
+  <section class="featured-skills-section">
+    <h3>Featured Skills</h3>
+    <div class="featured-skills-list">
+      <div class="featured-skill" *ngFor="let skill of featuredSkills">
+        <div class="skill-labels">
+          <span class="skill-name">{{ skill.name }}</span>
+          <span class="skill-percentage">{{ skill.proficiency }}%</span>
+        </div>
+        <div class="graph-bar">
+          <div class="bar-fill" [style.width.%]="skill.proficiency"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="bottom-section">
-    <div class="skills">
-      <div class="card">
-        <h3>Skills</h3>
-        <ul class="skills-list">
-          <li><strong>Languages & Frameworks:</strong> C#, VB.NET, .NET Core/8, ASP.NET (MVC, Web API, Web Forms),
-            Angular (JS–v1–v19, Angular Material), TypeScript, JavaScript (ES6+), Python/Django, Java, Swift, PHP,
-            HTML5, CSS3, SASS/SCSS, TailwindCSS, Bootstrap, jQuery, Telerik, XML/XML Schemas, Asynchronous Programming,
-            Concurrency</li>
-          <li><strong>Databases & Data:</strong> SQL Server, Oracle, PostgreSQL, MySQL, PL/SQL, T-SQL, Entity Framework,
-            DTO & Entity Mapping, API Integration, Caching Strategies, Database Transactions</li>
-          <li><strong>Tools & Deployment:</strong> Azure DevOps, Git/GitHub/Bitbucket, CI/CD, Docker, REST APIs, RxJS,
-            Jasmine/Karma, Jest, xUnit, Postman, Swagger/OpenAPI, Railway, Render, Vercel, SmartASP.NET</li>
-          <li><strong>Cloud & DevOps:</strong> Microsoft Azure (App Services, Functions, Key Vault, API Management),
-            Azure SQL, App Configuration, Agile & Scrum Environments</li>
-        </ul>
-      </div>
+  <section class="skills-section">
+    <h3>Skills & Projects</h3>
+    <h3>Skills</h3>
+    <ul class="skills-list">
+      <li><strong>Languages & Frameworks:</strong> C#, VB.NET, .NET Core/8, ASP.NET (MVC, Web API, Web Forms),
+        Angular (JS–v1–v19, Angular Material), TypeScript, JavaScript (ES6+), Python/Django, Java, Swift, PHP,
+        HTML5, CSS3, SASS/SCSS, TailwindCSS, Bootstrap, jQuery, Telerik, XML/XML Schemas, Asynchronous Programming,
+        Concurrency</li>
+      <li><strong>Databases & Data:</strong> SQL Server, Oracle, PostgreSQL, MySQL, PL/SQL, T-SQL, Entity Framework,
+        DTO & Entity Mapping, API Integration, Caching Strategies, Database Transactions</li>
+      <li><strong>Tools & Deployment:</strong> Azure DevOps, Git/GitHub/Bitbucket, CI/CD, Docker, REST APIs, RxJS,
+        Jasmine/Karma, Jest, xUnit, Postman, Swagger/OpenAPI, Railway, Render, Vercel, SmartASP.NET</li>
+      <li><strong>Cloud & DevOps:</strong> Microsoft Azure (App Services, Functions, Key Vault, API Management),
+        Azure SQL, App Configuration, Agile & Scrum Environments</li>
+    </ul>
+  </section>
 
-      <div class="card">
-        <h3>Projects & Achievements</h3>
-        <ul class="skills-list">
-          <li><strong>Angular/.NET Modernization (AppTech) Contract:</strong> Migrated legacy Angular/.NET Framework apps to
-            Angular 19/.NET 8; implemented scalable APIs and CI/CD pipelines.</li>
-          <li><strong>Cloud Applications (Constellation) Contract:</strong> Built secure Navy cloud systems with Azure services,
-            OAuth authentication, and optimized database queries.</li>
-          <li><strong>Legacy VB.NET Migration (Ryan Specialties) Contract:</strong> Converted legacy VB.NET apps to C#/.NET 4,
-            automating processes and improving performance.</li>
-          <li><strong>Full-Stack Enterprise Development (InfoEd):</strong> Developed full-stack solutions with
-            DTO/entity mapping, XML/XSD integrations, and cached third-party API data.</li>
-          <li><strong>WordPress Sites (Rev Design):</strong> Built and customized WordPress websites with PHP/MySQL,
-            responsive UI/UX, and optimized dynamic content.</li>
-          <li><strong>Mobile Fitness Apps (Digital Catnip) Contract:</strong> Created cross-platform iOS/Android apps with
-            Swift/Java, integrating APIs and tracking user activity metrics.</li>
-        </ul>
-      </div>
-    </div>
+  <section class="achievements-section">
+    <h3>Achievements</h3>
+    <ul class="skills-list">
+      <li><strong>Angular/.NET Modernization (AppTech) Contract:</strong> Migrated legacy Angular/.NET Framework apps to
+        Angular 19/.NET 8; implemented scalable APIs and CI/CD pipelines.</li>
+      <li><strong>Cloud Applications (Constellation) Contract:</strong> Built secure Navy cloud systems with Azure
+        services,
+        OAuth authentication, and optimized database queries.</li>
+      <li><strong>Legacy VB.NET Migration (Ryan Specialties) Contract:</strong> Converted legacy VB.NET apps to C#/.NET
+        4,
+        automating processes and improving performance.</li>
+      <li><strong>Full-Stack Enterprise Development (InfoEd):</strong> Developed full-stack solutions with
+        DTO/entity mapping, XML/XSD integrations, and cached third-party API data.</li>
+      <li><strong>WordPress Sites (Rev Design):</strong> Built and customized WordPress websites with PHP/MySQL,
+        responsive UI/UX, and optimized dynamic content.</li>
+      <li><strong>Mobile Fitness Apps (Digital Catnip) Contract:</strong> Created cross-platform iOS/Android apps with
+        Swift/Java, integrating APIs and tracking user activity metrics.</li>
+    </ul>
   </section>
 </div>

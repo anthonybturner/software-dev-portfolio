@@ -15,8 +15,9 @@ body {
     /* subtle white highlight for pop */
 }
 
-h3, .header,section .hero-content
-{
+h3,
+.header,
+section .hero-content {
     @include nav-link-style;
 }
 
@@ -25,4 +26,14 @@ li {
     margin-bottom: 1rem;
     letter-spacing: 0.03em;
     font-weight: 500;
+}
+
+div.container {
+
+    @media (min-width: 601px) and (max-width: 900px) {}
+
+    @media (min-width: 0) and (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+    }
 }

@@ -1,10 +1,10 @@
-<section class="contact">
-  <div class="container">
+<div class="container contact">
+  <section class="contact-section">
     <div class="section-header">
       <h1>Get In Touch</h1>
       <p>Have a project in mind or want to discuss opportunities? Feel free to reach out!</p>
     </div>
-    
+
     <div class="contact-content">
       <div class="contact-info">
         <div class="info-item">
@@ -14,7 +14,7 @@
             <p>anthonybturner@icloud.com</p>
           </div>
         </div>
-        
+
         <div class="info-item">
           <i class="fas fa-phone"></i>
           <div>
@@ -22,7 +22,7 @@
             <p>+1 (518) 475-8019</p>
           </div>
         </div>
-        
+
         <div class="info-item">
           <i class="fas fa-map-marker-alt"></i>
           <div>
@@ -31,38 +31,42 @@
           </div>
         </div>
       </div>
-      
+
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
         <div class="form-group">
-          <input type="text" formControlName="name" placeholder="Your Name" [class.error]="submitted && contactForm.get('name')?.errors">
+          <input type="text" formControlName="name" placeholder="Your Name"
+            [class.error]="submitted && contactForm.get('name')?.errors">
           <div *ngIf="submitted && contactForm.get('name')?.errors" class="error-message">
             Name is required
           </div>
         </div>
-        
+
         <div class="form-group">
-          <input type="email" formControlName="email" placeholder="Your Email" [class.error]="submitted && contactForm.get('email')?.errors">
+          <input type="email" formControlName="email" placeholder="Your Email"
+            [class.error]="submitted && contactForm.get('email')?.errors">
           <div *ngIf="submitted && contactForm.get('email')?.errors" class="error-message">
             Valid email is required
           </div>
         </div>
-        
+
         <div class="form-group">
-          <input type="text" formControlName="subject" placeholder="Subject" [class.error]="submitted && contactForm.get('subject')?.errors">
+          <input type="text" formControlName="subject" placeholder="Subject"
+            [class.error]="submitted && contactForm.get('subject')?.errors">
           <div *ngIf="submitted && contactForm.get('subject')?.errors" class="error-message">
             Subject is required
           </div>
         </div>
-        
+
         <div class="form-group">
-          <textarea formControlName="message" placeholder="Your Message" rows="5" [class.error]="submitted && contactForm.get('message')?.errors"></textarea>
+          <textarea formControlName="message" placeholder="Your Message" rows="5"
+            [class.error]="submitted && contactForm.get('message')?.errors"></textarea>
           <div *ngIf="submitted && contactForm.get('message')?.errors" class="error-message">
             Message is required
           </div>
         </div>
-        
+
         <button type="submit" class="submit-btn">Send Message</button>
       </form>
     </div>
-  </div>
-</section>
+  </section>
+</div>
