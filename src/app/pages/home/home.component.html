@@ -2,38 +2,71 @@
 
   <section class="hero-section">
     <div class="columns">
-      <h1>Anthony
-        Barrington Johns Jr. Turner</h1>
-      <h2>Full-Stack
-        Software Developer</h2>
-      <p class="location">
-        Kingston, NY &bull; <a href="mailto:anthonybturner@icloud.com"
-          style="color:#61e7ff; text-decoration:none; font-weight:600;">anthonybturner@icloud.com</a>
-        &bull; 518-475-8019
+      <h1>Legacy Builder. Modern Solutions. Real Results.
+        <span>Anthony B Turner</span>
+      </h1>
+      <p>
+        Full-Stack Software Developer with 10+ years of experience delivering high-performance applications. Skilled in
+        .NET Core/8, ASP.NET (MVC/Web API/Web Forms), Angular (JS–v1–v19, Angular Material), TypeScript, JavaScript,
+        Python/Django, and relational databases (SQL Server, Oracle, MySQL, PostgreSQL). Experienced in asynchronous
+        programming, concurrency, scalable API design, DTO/entity mapping, database transactions, caching strategies,
+        and
+        modern deployment workflows using Git, CI/CD, Docker, Vercel, Render, Railway, and Azure. Known for delivering
+        secure, maintainable solutions in Agile/Scrum teams.
       </p>
-      <div class="links" style="display:flex; gap:1.5rem; justify-content:center; margin-bottom:1.5rem;">
-        <a href="https://linkedin.com/in/anthony-turner-0207b76b" target="_blank"
-          style="color:#61e7ff; font-weight:600; text-decoration:none; text-shadow:0 1px 6px #0b2d6d;">LinkedIn</a>
-        <a href="https://marvelrivalsstats.vercel.app" target="_blank"
-          style="color:#61e7ff; font-weight:600; text-decoration:none; text-shadow:0 1px 6px #0b2d6d;">Portfolio</a>
+
+      <div class="links">
+        <a href="https://linkedin.com/in/anthony-turner-0207b76b" target="_blank">LinkedIn</a>
+        <a href="https://marvelrivalsstats.vercel.app" target="_blank">Portfolio</a>
       </div>
     </div>
   </section>
 
-  <section class="about-section">
-    <h3>About Me</h3>
-    <p>
-      Full-Stack Software Developer with 10+ years of experience delivering high-performance applications. Skilled in
-      .NET Core/8, ASP.NET (MVC/Web API/Web Forms), Angular (JS–v1–v19, Angular Material), TypeScript, JavaScript,
-      Python/Django, and relational databases (SQL Server, Oracle, MySQL, PostgreSQL). Experienced in asynchronous
-      programming, concurrency, scalable API design, DTO/entity mapping, database transactions, caching strategies, and
-      modern deployment workflows using Git, CI/CD, Docker, Vercel, Render, Railway, and Azure. Known for delivering
-      secure, maintainable solutions in Agile/Scrum teams.
-    </p>
-  </section>
+  <main>
+    <div class="wrapper">
+      <div class="layout-grid">
+        <div class="col">
+          <div class="card">
+            <h2>Featured Skills</h2>
+            <p>Showcasing my top skills and proficiencies.</p>
+              <div class="featured-skill" *ngFor="let skill of featuredSkills">
+                <div class="skill-labels">
+                  <span class="skill-name">{{ skill.name }}</span>
+                  <span class="skill-percentage">{{ skill.proficiency }}%</span>
+                </div>
+                <div class="graph-bar">
+                  <div class="bar-fill" [style.width.%]="skill.proficiency"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+                <h2>Process &amp; Workflow</h2>
+                <p>Expert in designing and optimizing Agile/Scrum workflows, CI/CD pipelines, and collaborative team processes. Proven ability to identify roadblocks, streamline communication, and deliver high-quality software efficiently.</p>
+                <img src="images/projects/photo-1461749280684-dccba630e2f6.avif" alt="Process &amp; Workflow">
+            </div>
+            <div class="card">
+                <h2>Marvel Rivals Stats</h2>
+                <p>Creator of <a href="https://marvelrivalsstats.vercel.app" target="_blank">Marvel Rivals Stats</a> ,a full-stack web application for tracking player stats, match history, and leaderboards. Built with Angular, TypeScript, and .NET APIs, deployed on Vercel. Features real-time data, advanced filtering, and a modern UI for competitive gamers.</p>
+                <img src="images/projects/image1.png" alt="Marvel Rivals Stats">
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+                <h2>Problem Solving</h2>
+                <p>Migrated and maintained a Django/Python web application with little to no prior experience in the technology stack. Rapidly learned new frameworks, resolved migration and coding issues, and ensured seamless operation and feature delivery for the US Navy's front-end and back-end web application.</p>
+                <img src="images/projects/photo-1519389950473-47ba0277781c.avif" alt="Problem Solving">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+  </main>
 
   <section class="experience-section">
-    <h3>Professional Experience</h3>
+    <h2>Professional Experience</h2>
     <ul>
       <li><strong>Applications Developer (AppTech) Contract</strong> – Norwalk, CT (Hybrid) | Apr 2024 – Jun 2025<br>
         Modernized Angular/.NET Framework apps to Angular 19 and .NET 8. Developed scalable APIs with ASP.NET Core,
@@ -72,24 +105,9 @@
     </ul>
   </section>
 
-  <section class="featured-skills-section">
-    <h3>Featured Skills</h3>
-    <div class="featured-skills-list">
-      <div class="featured-skill" *ngFor="let skill of featuredSkills">
-        <div class="skill-labels">
-          <span class="skill-name">{{ skill.name }}</span>
-          <span class="skill-percentage">{{ skill.proficiency }}%</span>
-        </div>
-        <div class="graph-bar">
-          <div class="bar-fill" [style.width.%]="skill.proficiency"></div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section class="skills-section">
-    <h3>Skills & Projects</h3>
-    <h3>Skills</h3>
+    <h2>Skills</h2>
     <ul class="skills-list">
       <li><strong>Languages & Frameworks:</strong> C#, VB.NET, .NET Core/8, ASP.NET (MVC, Web API, Web Forms),
         Angular (JS–v1–v19, Angular Material), TypeScript, JavaScript (ES6+), Python/Django, Java, Swift, PHP,
@@ -105,7 +123,7 @@
   </section>
 
   <section class="achievements-section">
-    <h3>Achievements</h3>
+    <h2>Achievements</h2>
     <ul class="skills-list">
       <li><strong>Angular/.NET Modernization (AppTech) Contract:</strong> Migrated legacy Angular/.NET Framework apps to
         Angular 19/.NET 8; implemented scalable APIs and CI/CD pipelines.</li>

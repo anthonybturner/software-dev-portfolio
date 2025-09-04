@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProjectCardComponent } from '../../components/project-card/project-card.component';
 import { SkillCardComponent } from '../../components/skill-card/skill-card.component';
 import { RouterModule } from '@angular/router';
+import { SkillsComponent } from "../skills/skills.component";
 
 @Component({
   selector: 'app-home',

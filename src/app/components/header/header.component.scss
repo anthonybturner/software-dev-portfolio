@@ -1,25 +1,12 @@
-// Modern Hero & Grid Design
-$primary: #010713;
-$secondary: #568bda;
-$text: #d8d8d8;
-$text-light: #8fe5ff;
-$text-dark: #222;
-$text-white: #fff;
-$accent: #61e7ff;
-$bg: #01010211; // Deep dark background
-
-
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(120deg, $primary 0%, $bg 100%);
   backdrop-filter: blur(10px);
   z-index: 1000;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-
+  
   .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -31,20 +18,14 @@ $bg: #01010211; // Deep dark background
   }
 
   .logo {
-    font-size: 2.2rem;
-    color: $accent;
+    font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 1px;
     text-decoration: none;
     transition: color 0.3s ease;
 
     span {
-      color: $primary;
       font-weight: 900;
-    }
-
-    &:hover {
-      color: $primary;
     }
   }
 
@@ -58,7 +39,6 @@ $bg: #01010211; // Deep dark background
       top: 70px;
       left: 0;
       width: 100%;
-      background: linear-gradient(45deg, $primary 0%, $bg 100%);
       flex-direction: column;
       padding: 2rem;
       transform: translateY(-100%);
@@ -75,8 +55,7 @@ $bg: #01010211; // Deep dark background
     }
 
     a {
-      font-size: 1.2rem;
-      color: $text;
+      font-size: 1rem;
       text-decoration: none;
       font-weight: 600;
       letter-spacing: 0.5px;
@@ -87,24 +66,15 @@ $bg: #01010211; // Deep dark background
       cursor: pointer;
 
       &.active {
-        color: $text;
-        background: rgba($accent, 0.12);
 
         &::after {
           content: '';
           position: absolute;
-          bottom: -4px;
           left: 0;
           width: 100%;
           height: 2px;
-          background: $accent;
           border-radius: 2px;
         }
-      }
-
-      &:hover {
-        color: $text-light;
-        background: rgba($accent, 0.18);
       }
     }
   }
@@ -124,7 +94,7 @@ $bg: #01010211; // Deep dark background
     span {
       width: 100%;
       height: 3px;
-      background: $accent;
+      //background: $accent;
       border-radius: 3px;
       transition: all 0.3s ease;
     }

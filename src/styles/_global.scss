@@ -4,28 +4,41 @@ body {
     margin: 0 0 20rem 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #f3f3f3;
-    background: linear-gradient(-45deg, $bg 0%, $primary 100%);
-    text-shadow:
-        0 2px 8px rgba(22, 18, 18, 0.459),
-        /* deep soft shadow for contrast */
-        0 1px 0 #0f0a13,
-        /* crisp dark outline for clarity */
-        0 0.5px 0 #000000;
-    /* subtle white highlight for pop */
+    color: $text;
+    background: $primary;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $heading;
 }
 
 h3,
 .header,
 section .hero-content {
-    @include nav-link-style;
+    @include header-style;
 }
 
+.header {
+    background-color: rgba($primary, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: $shadow;
+
+    .logo {
+        color: $accent;
+    }
+}
 
 li {
+    color: $text;
     margin-bottom: 1rem;
     letter-spacing: 0.03em;
-    font-weight: 500;
 }
 
 div.container {
@@ -36,4 +49,82 @@ div.container {
         display: flex;
         flex-direction: column;
     }
+}
+
+section {
+    background: $secondary;
+    border-radius: .5rem;
+    box-shadow: $shadow;
+    margin: $margin;
+    padding: $padding;
+    backdrop-filter: blur(8px);
+
+    .section-header {
+        color: $heading2;
+        border-radius: 14px;
+        padding: $padding;
+
+    }
+
+    &:hover {
+        box-shadow: 0 2px 2px 0 $accent;
+    }
+}
+main .wrapper .layout-grid .col .card:hover {
+        box-shadow: 0 2px 2px 0 $accent;
+    }
+
+.project-card {
+    background: $card-bg;
+    color: $card-text;
+    box-shadow: $shadow;
+    padding: $padding;
+
+    &:hover {
+        transform: translateY(-4px) scale(1.0);
+        box-shadow: 0 2px 2px 2px $secondary;
+    }
+}
+
+.graph-bar {
+    background: $primary;
+}
+
+.bar-fill {
+    background: $accent;
+}
+
+a,
+.btn {
+    color: $accent;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background 0.2s;
+
+    &:hover {
+        color: $primary;
+        background: $accent;
+                padding: 4px;
+    }
+
+    &.active {
+        color: $accent;
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            border-radius: 2px;
+            background: $secondary
+        }
+    }
+}
+
+
+.bar-fill {
+    background: $bar-fill;
+    border-radius: 4px;
+    height: 8px;
 }

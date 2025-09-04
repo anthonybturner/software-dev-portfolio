@@ -1,21 +1,18 @@
-$primary: #f7f6f694;
-$accent: #61e7ff;
-$bg-glass: rgba(52, 56, 10, 0.055); // Glassmorphism
-$bg: #14162011; // Deep dark background
-
+$secondary: #1512c9;
+$shadow: 4px 4px 2px rgba(0, 0, 0, 0.18); // Blue shadow for techy glow
 .skill-card {
-  background: linear-gradient(-45deg, $bg 0%, $primary 100%);
   padding: 1.5rem;
   border-radius: 15px;
   transition: all 0.3s ease;
   text-align: center;
   margin-bottom: 4px;
   border: 1px solid #cccccc83;
+    box-shadow: $shadow;
 
   &:hover {
     transform: translateY(-4px) scale(1.0);
-    box-shadow: 0 -6px 8px $accent;
-    border-color: $accent;
+    box-shadow: 2px 1px 2px $secondary;
+    border-color: $secondary;
 
   }
 
@@ -34,12 +31,10 @@ $bg: #14162011; // Deep dark background
 
   h3 {
     margin: 0 0 0.5rem 0;
-    color: #eeeeee;
     font-size: 1.1rem;
   }
 
   .category {
-    color: #dddddd;
     font-size: 0.9rem;
     margin-bottom: 1rem;
   }
@@ -47,7 +42,6 @@ $bg: #14162011; // Deep dark background
   .proficiency {
     .progress-bar {
       height: 8px;
-      background: #ffffff;
       border-radius: 4px;
       overflow: hidden;
       margin-bottom: 0.5rem;
@@ -62,7 +56,6 @@ $bg: #14162011; // Deep dark background
 
     .percentage {
       font-size: 1.0rem;
-      color: #fffdfd;
       font-weight: 500;
     }
   }

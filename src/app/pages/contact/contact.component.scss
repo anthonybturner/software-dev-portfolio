@@ -1,19 +1,12 @@
 $accent-transparent: #61e7ff70;
-$border: 1.5px solid $accent-transparent;
 $base-margin-top-bottom: 12px;
 $margin: $base-margin-top-bottom auto;
+$border: 1.5px solid $accent-transparent;
 $padding: 12px;
 
 .contact {
   width: 90%;
   margin: 0 auto;
-
-  section {
-    border: $border;
-    margin: $margin;
-    border-radius: 1.25rem;
-    padding: $padding;
-  }
 
   input,
   textarea {
@@ -24,6 +17,7 @@ $padding: 12px;
   .section-header {
     text-align: center;
     margin-bottom: 3rem;
+    align-items: center;
 
     h1 {
       font-size: 2.5rem;
