@@ -26,9 +26,10 @@ section .hero-content {
 }
 
 .header {
-    background-color: rgba($primary, 0.3);
-    backdrop-filter: blur(10px);
+    background-color: rgba($secondary, .5);
+    backdrop-filter: blur(3px);
     box-shadow: $shadow;
+    padding-bottom:1rem;
 
     .logo {
         color: $accent;
@@ -70,9 +71,10 @@ section {
         box-shadow: 0 2px 2px 0 $accent;
     }
 }
+
 main .wrapper .layout-grid .col .card:hover {
-        box-shadow: 0 2px 2px 0 $accent;
-    }
+    box-shadow: 0 2px 2px 0 $accent;
+}
 
 .project-card {
     background: $card-bg;
@@ -97,19 +99,18 @@ main .wrapper .layout-grid .col .card:hover {
 a,
 .btn {
     color: $accent;
+    background: $primary;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 700;
     transition: background 0.2s;
 
     &:hover {
-        color: $primary;
-        background: $accent;
-                padding: 4px;
+        padding: 4px;
+        box-shadow: 0 2px 2px 0 $accent;
     }
 
     &.active {
-        color: $accent;
         &::after {
             content: '';
             position: absolute;
@@ -117,7 +118,7 @@ a,
             width: 100%;
             height: 2px;
             border-radius: 2px;
-            background: $secondary
+            background: $accent;
         }
     }
 }
