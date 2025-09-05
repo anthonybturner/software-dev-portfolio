@@ -1,3 +1,6 @@
+# software-dev-portfolio
+Software Development portfolio created in Angular v20.
+
 # SoftwareDeveloperPortfolio
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
