@@ -42,7 +42,7 @@ export class SkillService {
     // Tools
     { id: 19, name: 'Git', category: 'Tools', proficiency: 90, icon: 'assets/icons/git.svg' },
     { id: 20, name: 'Docker', category: 'Tools', proficiency: 75, icon: 'assets/icons/docker.svg' },
-    { id: 21, name: 'AWS', category: 'Tools', proficiency: 70, icon: 'assets/icons/aws.svg' },
+    { id: 21, name: 'Azure', category: 'Tools', proficiency: 80, icon: 'assets/icons/azure.svg' },
   ];
 
   constructor() { }
