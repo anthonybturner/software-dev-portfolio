@@ -12,7 +12,7 @@ html {
         -moz-osx-font-smoothing: grayscale;
     }
 
-    
+
     img {
         display: block;
         max-width: 100%;
@@ -34,7 +34,7 @@ html {
     div.container {
 
         @media (min-width: 0) and (max-width: 600px) {
-        
+
             display: flex;
             flex-direction: column;
             margin: 0 auto;
@@ -82,6 +82,7 @@ html {
         &:hover {
             @include hover-effect;
         }
+
         &.active {
             &::after {
                 content: '';
