@@ -1,94 +1,98 @@
 @use './abstracts' as *;
 
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: var(--color-bg);
-    color: var(--color-text);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+html {
+    font-size: var(--fs);
 
-img {
-    display: block;
-    max-width: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: var(--color-heading);
-}
-
-li {
-    color: var(--color-text);
-    margin-bottom: 1rem;
-    letter-spacing: 0.03em;
-}
-
-div.container {
-
-    @media (min-width: 0) and (max-width: 600px) {
-        display: flex;
-        flex-direction: column;
+    body {
         margin: 0 auto;
-        padding: 0 1rem;
-    }
-}
-
-section {
-    background: var(--color-bg-secondary);
-    border-radius: .5rem;
-    box-shadow: $shadow;
-    margin: $margin;
-    padding: $padding;
-    backdrop-filter: blur(8px);
-
-    .section-header {
-        color: var(--color-heading2);
-        border-radius: 14px;
-        padding: $padding;
-        border-bottom: 1px solid var(--color-accent);
-        margin-bottom: 1.5rem;
+        font-family: var(--ff);
+        background: var(--primary-clr);
+        color: var(--color-text);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 
-    &:hover {
-        box-shadow: 0 2px 2px 0 var(--color-accent);
+    
+    img {
+        display: block;
+        max-width: 100%;
     }
-}
 
-main .wrapper .layout-grid .col .card:hover {
-    @include hover-effect;
-}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--color-heading);
+    }
 
-a,
-.btn {
-    position: relative;
-    font-size: 1rem;
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    transition: color 0.3s, background 0.3s;
-    color: var(--color-accent);
+    li {
+        color: var(--color-text);
+    }
 
-    &:hover {
+    div.container {
+
+        @media (min-width: 0) and (max-width: 600px) {
+        
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            //padding: 0 1rem;
+        }
+    }
+
+    section {
+        background: var(--secondary-clr);
+        border-radius: var(--br);
+        border: 1px solid var(--accent-hl-clr);
+        margin: var(--spacer);
+        padding: var(--spacer);
+        backdrop-filter: blur(8px);
+
+        .section-header {
+            color: var(--color-heading2);
+            border-radius: 14px;
+            padding: var(--spacer);
+            border-bottom: 1px solid var(--accent-clr);
+            margin-bottom: 1.5rem;
+        }
+
+        &:hover {
+            box-shadow: 0 2px 2px 0 var(--accent-clr);
+        }
+    }
+
+    main .wrapper .layout-grid .col .card:hover {
         @include hover-effect;
     }
 
-    &.active {
-        &::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            border-radius: 2px;
-            background: var(--color-accent);
+    a,
+    .btn {
+        position: relative;
+        font-size: 1rem;
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        transition: color 0.3s, background 0.3s;
+        color: var(--accent-clr);
+
+        &:hover {
+            @include hover-effect;
+        }
+        &.active {
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 2px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                border-radius: 2px;
+                background: var(--accent-clr);
+            }
         }
     }
 }

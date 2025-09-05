@@ -1,12 +1,45 @@
-$padding-top: 70px;
-$padding: 16px;
-$font-size-lg: 1.5rem;
-$margin: 16px auto;
+:root{
+      // Font Family
+  --ff: 'Fira Sans', sans-serif;
+
+  // Font Weights
+  --fw-n: 300; 
+  --fw-m: 600;
+  --fw-b: 800;
+
+  //Font Sizes
+  --fs-1: 6rem; 
+  --fs-2: 5rem;
+  --fs-3: 2rem;
+  --fs-4: 1rem;
+  --fs-5: .8rem;
+  --fs-p: 1rem;
+  --fs: 16px;
+
+  --ls: 0.05em;
+
+  //Image sizes
+  --img-icon: 3rem;
+
+
+  
+  // Spacing
+  --spacer: 1rem;
+  --spacer-md: calc(var(--spacer) * 2);
+  --spacer-lg: calc(var(--spacer) * 3);
+  --spacer-xlg: calc(var(--spacer) * 4);
+
+  // Shadows
+  --shadow: 2px 1px 1px var(--accent-clr);
+  --shadow-md: 0 4px 8px var(--accent-clr);
+  --shadow-lg: 0 8px 16px var(--accent-clr);
+  --shadow-card: 2px 2px 2px var(--accent-clr);
+
+  // Border Radius
+  --br: .6rem;
+  --br-sm: .3rem;
+
+
+}
+
 $base-margin-top-bottom: 12px;
-$shadow: 4px 4px 4px rgba(0, 0, 0, 0.18);
-$shadow-soft: 0 1px 6px #0b2d6d;
-$shadow-3d: 0 8px 10px 0 rgba(0, 0, 0, 0.25), // main shadow
-    0 1.5px 6px 0 rgba(0, 184, 217, 0.18), // blue glow
-    0 -8px 24px 0 rgba(255, 111, 97, 0.12), // coral top shadow
-    8px 0 24px 0 rgba(0, 0, 0, 0.18), // right edge
-    -8px 0 24px 0 rgba(0, 0, 0, 0.18); // left edge

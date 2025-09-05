@@ -1,12 +1,15 @@
 :root {
-  --color-bg: hsl(0, 0%, 95%); // Main background color
-  --color-bg-secondary: hsl(0, 0%, 100%); // Secondary background color (cards, panels)
-  --color-header-bg: hsl(0, 0%, 100%); // Header background color
+
+  // Colors
+  --primary-clr: hsl(0, 0%, 96%); 
+  --secondary-clr:hsl(0, 0%, 98%); 
+  --accent-clr: hsl(207, 95%, 26%);
+  --accent-hl-clr: hsla(207, 95%, 30%, 0.23);
+
   --color-text: hsl(0, 0%, 0%); // Main text color
-  --color-accent: hsl(219, 100%, 47%); // Primary accent color (buttons, highlights)
-  --color-highlight: hsl(219, 100%, 67%); // Highlight color (hover, active states)
-  --color-heading: hsl(219, 100%, 27%); // Heading text color
+  --color-heading: hsl(220, 100%, 1%); // Heading text color
   --color-heading2: hsl(16, 100%, 27%); // Secondary heading accent color
 }
+
 // Progress bar gradient
-$bar-fill: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent) 40%, var(--color-bg) 100%); 
+$bar-fill: linear-gradient(90deg, var(--accent-clr) 0%, var(--accent-clr) 40%, var(--color-bg) 100%);

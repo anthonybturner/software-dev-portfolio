@@ -1,14 +1,13 @@
 @use './abstracts' as *;
 
 .skill-card {
-  background: var(--color-bg-secondary);
+  background: var(--secondary-clr);
   padding: 1.5rem;
   border-radius: 15px;
   transition: all 0.3s ease;
   text-align: center;
   margin-bottom: 4px;
   border: 1px solid #cccccc83;
-  box-shadow: $shadow;
 
   &:hover {
     @include hover-effect;
@@ -28,13 +27,13 @@
   }
 
   &__category {
-    font-size: .9rem;
+  font-size: 0.875rem;
     margin-bottom: 1rem;
   }
 
   h3 {
     margin: 0 0 0.5rem 0;
-    font-size: 1.1rem;
+  font-size: 1rem;
   }
 
 
@@ -48,13 +47,13 @@
     }
     &__progress {
       height: 100%;
-      background: linear-gradient(90deg, #a0a0a0, #1762a8);
-      border-radius: 8px;
+      background: linear-gradient(90deg, var(--secondary-clr), var(--accent-clr));
+      border-radius: var(--br);
       transition: width 1s ease-in-out;
     }
     &__percentage {
-      font-size: 1.0rem;
-      font-weight: 500;
+      font-size: var(--fs);
+      font-weight: var(--fw-b)
     }
   }
 }

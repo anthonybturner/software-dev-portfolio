@@ -7,7 +7,7 @@
   backdrop-filter: blur(10px);
   z-index: 1000;
   transition: all 0.3s ease;
-  box-shadow: $shadow-soft;
+  box-shadow: var(--shadow-soft);
 
   .container {
     max-width: 1200px;
@@ -19,13 +19,13 @@
   .content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+   // gap: 2rem;
   }
 
   .brand {
     h3 {
       margin-bottom: 1rem;
-      font-size: 1.5rem;
+      font-size: var(--fs-p);
     }
 
     p {
@@ -34,35 +34,22 @@
   }
 
   .links {
-    h4 {
-      margin-bottom: 1rem;
-    }
 
     ul {
       display: flex;
       list-style: none;
-      padding: 0;
-      gap: 1rem;
-
-      li {
-        margin-bottom: 0.5rem;
-
-        a {
-          transition: color 0.3s ease;
-          cursor: pointer;
-        }
-      }
+      padding: 0;  
     }
   }
 
   .social {
     h4 {
-      margin-bottom: 1rem;
+      margin-bottom: 1.1rem;
     }
 
     .social-links {
       display: flex;
-      gap: 1rem;
+      gap: var(--spacer);
       a {        
         &:hover {
           transition: all 0.4s ease;

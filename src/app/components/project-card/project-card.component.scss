@@ -2,13 +2,13 @@
 
 .project-card {
   display: inline-block;
-  border-radius: 12px;
+  border-radius: var(--br);
+  border: 1px solid var(--accent-hl-clr);
   overflow: hidden;
   transition: all 0.3s ease;
-  background: var(--color-bg-secondary);
+  background: var(--secondary-clr);
   color: var(--color-text);
-  box-shadow: $shadow;
-  padding: $padding;
+  padding: var(--spacer);
 
   &:hover {
     @include hover-effect;
@@ -33,22 +33,22 @@
       right: 0;
       bottom: 0;
       background: linear-gradient(transparent, rgba(#0f0d7c, 0.7));
-      padding: 1rem;
+      padding: var(--spacer);
     }
   }
 
   .content {
-    padding: 1.5rem;
+   padding: var(--spacer);
 
     .technologies {
-      margin-bottom: 1.5rem;
+      margin-bottom: var(--spacer);
 
       span {
         background: #f8f9fa;
         color: #3498db;
         padding: 0.3rem 0.8rem;
-        border-radius: 20px;
-        font-size: 0.8rem;
+        border-radius: var(--br);
+        font-size: var(--fs-5);
         font-weight: 500;
       }
     }
@@ -56,27 +56,28 @@
     .actions {
       a {
         text-align: center;
-        padding: 0.7rem 1rem;
-        border-radius: 8px;
+        padding: var(--spacer);
+        margin: var(--spacer);
+        border-radius: var(--br);
         text-decoration: none;
         font-weight: 500;
         transition: all 0.3s ease;
 
         &.demo {
-          background: #3498db;
-          color: white;
+          background: var(--accent-clr);
+          color: var(--secondary-clr);
 
-          &:hover {
-            background: #2980b9;
+          &:hover,  &.github  {
+            background: var(--accent-hl-clr);
           }
         }
 
         &.github {
-          background: #ecf0f1;
-          color: #2c3e50;
+          background:var(--accent-clr);
+          color: var(--secondary-clr);
 
           &:hover {
-            background: #bdc3c7;
+            background:var(--accent-hl-clr);
           }
         }
       }

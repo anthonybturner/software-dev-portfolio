@@ -6,22 +6,20 @@
   justify-content: space-between; // logo left, nav right
 
   background-color: rgba(var(--color-header-bg), .5);
-  backdrop-filter: blur(3px);
-  box-shadow: $shadow;
-  padding-bottom: 1rem;
+  backdrop-filter: blur(4px);
+  box-shadow: var(--shadow);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  backdrop-filter: blur(10px);
   z-index: 1000;
   transition: all 0.3s ease;
 
   &__logo {
-    color: var(--color-accent);
-    font-size: $font-size-lg;
+    color: var(--accent-clr);
+    font-size: var(--fs-3);
     font-weight: 700;
-    letter-spacing: 4px;
+    letter-spacing: var(--ls);
     text-decoration: none;
     transition: color 0.3s ease;
 
@@ -32,46 +30,44 @@
 
   .nav {
     display: flex;
-    gap: 1rem;
-      
+    gap: var(--spacer);    
+    
     @media (max-width: 768px) {
       position: fixed;
-      background: var(--color-bg-secondary);
-      color: var(--color-accent);
-      top: 58px;
+      background: var( --secondary-clr);
+      color: var(--accent-clr);
+      top: var(--spacer-lg);
       left: 0;
       width: 100%;
       flex-direction: column;
-      padding: 1rem;
+      padding: var(--spacer);
       transform: translateY(-100%);
       opacity: 0;
       visibility: hidden;
       transition: all 0.3s ease;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
 
       &.a{
-        border: 1px solid var(--color-border);
+        border: 2px solid var(--color-border);
       }
-
-
-
       &.active {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
+        margin-bottom: 1rem;
       }
     }
-
   }
 
   .menu-toggle {
     display: none;
-    color: var(--color-accent);
-    background: var(--color-bg-secondary);
+    color: var(--accent-clr);
+    background: var(  --secondary-clr);
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
-    height: 21px;
+    width: 40px;
+    height: 24px;
+    margin-right: var(--spacer);
     cursor: pointer;
 
     @media (max-width: 768px) {
@@ -80,9 +76,9 @@
 
     span {
       width: 100%;
-      height: 3px;
-      background: var(--color-accent);
-      border-radius: 3px;
+      height: .3rem;
+      background: var(--accent-clr);
+      border-radius: var(--br);
       transition: all 0.3s ease;
     }
 

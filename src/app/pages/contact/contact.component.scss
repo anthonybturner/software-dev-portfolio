@@ -49,9 +49,9 @@
       margin-bottom: 2rem;
 
       i {
-        font-size: 1.5rem;
-        color: #3498db;
-        margin-top: 0.5rem;
+        font-size: var(--fs-3);
+        color: var(--accent-clr);
+        margin-top: var(--spacer);
       }
 
       h3 {
@@ -71,42 +71,42 @@
       input,
       textarea {
 
-        padding: 1rem;
-        border: 2px solid #ecf0f1;
-        border-radius: 8px;
-        font-size: 1rem;
-        transition: border-color 0.3s ease;
+  padding: var(--spacer);
+  border: 2px solid var(--secondary-clr);
+  border-radius: var(--br);
+  font-size: var(--fs-p);
+  transition: border-color 0.3s ease;
 
         &:focus {
           outline: none;
-          border-color: #3498db;
+          border-color: var(--accent-clr);
         }
 
         &.error {
-          border-color: #e74c3c;
+          border-color: #e74c3c; // Consider adding a custom property for error color
         }
       }
 
       .error-message {
-        color: #e74c3c;
-        font-size: 0.9rem;
-        margin-top: 0.5rem;
+  color: #e74c3c; // Consider adding a custom property for error color
+  font-size: 0.875rem;
+  margin-top: var(--spacer);
       }
     }
 
     .submit-btn {
-      background: #3498db;
-      color: white;
-      border: none;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
+  background: var(--accent-clr);
+  color: var(--secondary-clr);
+  border: none;
+  padding: var(--spacer) calc(var(--spacer) * 2);
+  border-radius: var(--br);
+  font-size: var(--fs-p);
+  font-weight: var(--fw-b);
+  cursor: pointer;
+  transition: all 0.3s ease;
 
       &:hover {
-        background: #2980b9;
+  background: #2980b9; // Consider adding a custom property for hover accent
         transform: translateY(-2px);
       }
     }

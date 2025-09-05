@@ -4,7 +4,7 @@
     main {
         .layout-grid {
             display: flex;
-            gap: 2rem;
+            gap: var(--spacer);
 
             &>* {
                 flex: 1;
@@ -12,7 +12,7 @@
 
             .col {
                 display: grid;
-                gap: 2rem;
+                gap: var(--spacer);
                 align-content: center;
             }
 
@@ -24,14 +24,14 @@
         .card {
             display: flex;
             flex-direction: column;
-            padding: 2rem;
-            border-top: 2px solid rgb(0, 255, 115);
-            border-radius: 1px 1px 0 0;
+            padding: var(--spacer);
+            border-top: 2px solid var(--accent-clr);
+            border-radius: var(--br-sm) var(--br-sm) 0 0;
             background-color: #fff;
 
             img {
-                width: 80px;
-                height: 80px;
+                width: var(--img-icon);
+                height: var(--img-icon);
             }
 
             .skill-percentage {
@@ -50,10 +50,8 @@
 
         .links {
             display: flex;
-            gap: 1.5rem;
-
             a {
-                font-weight: 600;
+                font-weight: var(--fw-m);
                 text-decoration: none;
             }
         }
@@ -66,17 +64,16 @@
     }
 
     .graph-bar {
-        background: var(--color-bg);
-        border-radius: 12px;
+        background: var(--primary-clr);
+        border-radius: var(--br);
         height: 12px;
-        width: 100%;
         overflow: hidden;
     }
 
     .bar-fill {
-        background: var(--color-accent);
+        background: var(--accent-clr);
         height: 100%;
-        border-radius: 12px;
+        border-radius: var(--br);
         transition: width 0.6s cubic-bezier(.4, 0, .2, 1);
     }
 } 
