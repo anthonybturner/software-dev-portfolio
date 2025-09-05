@@ -70,11 +70,11 @@ html {
     a,
     .btn {
         position: relative;
-        font-size: 1rem;
+        font-size: var(--fs-4);
         text-decoration: none;
-        font-weight: 600;
+        font-weight: var(--fw-n);
         letter-spacing: 0.5px;
-        padding: 0.2rem 0.5rem;
+        padding: var(--spacer) var(--spacer-sm) var(--spacer-sm) 0;
         border-radius: 4px;
         transition: color 0.3s, background 0.3s;
         color: var(--accent-clr);

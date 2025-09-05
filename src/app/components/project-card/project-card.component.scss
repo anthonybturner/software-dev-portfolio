@@ -8,7 +8,7 @@
   transition: all 0.3s ease;
   background: var(--secondary-clr);
   color: var(--color-text);
-  padding: var(--spacer);
+  padding: var(--spacer) 0;
 
   &:hover {
     @include hover-effect;
@@ -57,7 +57,7 @@
       a {
         text-align: center;
         padding: var(--spacer);
-        margin: var(--spacer);
+        margin: 10px;
         border-radius: var(--br);
         text-decoration: none;
         font-weight: 500;

@@ -13,5 +13,6 @@
 
 @mixin hover-effect {
   transform: translateY(-4px) scale(1.0);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-inset);
+  padding: var(--spacer-sm);
 }

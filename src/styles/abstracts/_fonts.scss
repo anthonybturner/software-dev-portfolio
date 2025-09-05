@@ -25,6 +25,7 @@
   
   // Spacing
   --spacer: 1rem;
+  --spacer-sm: .5rem;
   --spacer-md: calc(var(--spacer) * 2);
   --spacer-lg: calc(var(--spacer) * 3);
   --spacer-xlg: calc(var(--spacer) * 4);
@@ -34,6 +35,8 @@
   --shadow-md: 0 4px 8px var(--accent-clr);
   --shadow-lg: 0 8px 16px var(--accent-clr);
   --shadow-card: 2px 2px 2px var(--accent-clr);
+  --shadow-inset: inset 1px 1px 1px 1px var(--accent-clr);
+
 
   // Border Radius
   --br: .6rem;

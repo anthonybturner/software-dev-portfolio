@@ -34,17 +34,21 @@
   }
 
   .links {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 
     ul {
       display: flex;
       list-style: none;
-      padding: 0;  
+      margin: 0;
+      padding: 0;
     }
   }
 
   .social {
     h4 {
-      margin-bottom: 1.1rem;
+      margin-bottom: var(--spacer);
     }
 
     .social-links {
