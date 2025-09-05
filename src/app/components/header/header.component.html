@@ -1,6 +1,5 @@
-<header class="container header">
-  <div>
-    <a routerLink="/" class="logo">Portfolio <span>.</span></a>
+<header class="header">
+    <a routerLink="/" class="header__logo">Portfolio <span>.</span></a>
     
     <div class="menu-toggle" [class.active]="isMenuOpen" (click)="toggleMenu()">
       <span></span>
@@ -14,5 +13,4 @@
       <a routerLink="/skills" routerLinkActive="active" (click)="closeMenu()">Skills</a>
       <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a>
     </nav>
-  </div>
 </header>

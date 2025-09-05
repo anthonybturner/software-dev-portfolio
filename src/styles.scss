@@ -1,5 +1,2 @@
-@use 'styles/config' as *;
-@use 'styles/global' as *;
-main {
-  padding-top: 70px; // match header height
-}
+@use 'global' as *;
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.css';

@@ -1,14 +1,17 @@
-$secondary: #1512c9;
+@use './abstracts' as *;
+
 .project-card {
   display: inline-block;
   border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s ease;
-  
- &:hover {
-    transform: translateY(-4px) scale(1.0);
-    box-shadow: 0 2px 2px $secondary;
-    border-color: $secondary  ;
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+  box-shadow: $shadow;
+  padding: $padding;
+
+  &:hover {
+    @include hover-effect;
   }
 
   .image {
@@ -36,8 +39,10 @@ $secondary: #1512c9;
 
   .content {
     padding: 1.5rem;
+
     .technologies {
       margin-bottom: 1.5rem;
+
       span {
         background: #f8f9fa;
         color: #3498db;

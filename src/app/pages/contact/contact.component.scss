@@ -1,8 +1,4 @@
-$accent-transparent: #61e7ff70;
-$base-margin-top-bottom: 12px;
-$margin: $base-margin-top-bottom auto;
-$border: 1.5px solid $accent-transparent;
-$padding: 12px;
+@use './abstracts' as *;
 
 .contact {
   width: 90%;

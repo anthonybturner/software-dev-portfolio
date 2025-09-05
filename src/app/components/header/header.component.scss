@@ -1,25 +1,27 @@
+@use './abstracts' as *;
+
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; // logo left, nav right
+
+  background-color: rgba(var(--color-header-bg), .5);
+  backdrop-filter: blur(3px);
+  box-shadow: $shadow;
+  padding-bottom: 1rem;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  backdrop-filter: blur(10px);
   z-index: 1000;
   transition: all 0.3s ease;
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
-  }
 
-  .logo {
-    font-size: 1.5rem;
+  &__logo {
+    color: var(--color-accent);
+    font-size: $font-size-lg;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 4px;
     text-decoration: none;
     transition: color 0.3s ease;
 
@@ -30,21 +32,28 @@
 
   .nav {
     display: flex;
-    justify-content: flex-end;
-    gap: 2rem;
-
+    gap: 1rem;
+      
     @media (max-width: 768px) {
       position: fixed;
-      top: 70px;
+      background: var(--color-bg-secondary);
+      color: var(--color-accent);
+      top: 58px;
       left: 0;
       width: 100%;
       flex-direction: column;
-      padding: 2rem;
+      padding: 1rem;
       transform: translateY(-100%);
       opacity: 0;
       visibility: hidden;
       transition: all 0.3s ease;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+      &.a{
+        border: 1px solid var(--color-border);
+      }
+
+
 
       &.active {
         transform: translateY(0);
@@ -53,33 +62,12 @@
       }
     }
 
-    a {
-      font-size: 1rem;
-      text-decoration: none;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      transition: color 0.3s, background 0.3s;
-      position: relative;
-      cursor: pointer;
-
-      &.active {
-
-        &::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          width: 100%;
-          height: 2px;
-          border-radius: 2px;
-        }
-      }
-    }
   }
 
   .menu-toggle {
     display: none;
+    color: var(--color-accent);
+    background: var(--color-bg-secondary);
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
@@ -93,7 +81,7 @@
     span {
       width: 100%;
       height: 3px;
-      //background: $accent;
+      background: var(--color-accent);
       border-radius: 3px;
       transition: all 0.3s ease;
     }

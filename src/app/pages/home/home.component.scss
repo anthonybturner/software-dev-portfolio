@@ -1,17 +1,5 @@
 // Modern Hero & Grid Design
-
-$shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-$shadow-soft: 0 1px 6px #0b2d6d;
-$base-margin-top-bottom: 12px;
-$shadow-3d: 0 8px 10px 0 rgba(0, 0, 0, 0.25), // main shadow
-    0 1.5px 6px 0 rgba(0, 184, 217, 0.18), // blue glow
-    0 -8px 24px 0 rgba(255, 111, 97, 0.12), // coral top shadow
-    8px 0 24px 0 rgba(0, 0, 0, 0.18), // right edge
-    -8px 0 24px 0 rgba(0, 0, 0, 0.18); // left edge
-
 .home {
-    width: 90%;
-    margin: 0 auto;
 
     main {
         .layout-grid {
@@ -27,6 +15,7 @@ $shadow-3d: 0 8px 10px 0 rgba(0, 0, 0, 0.25), // main shadow
                 gap: 2rem;
                 align-content: center;
             }
+
             @media screen and (max-width: 600px) {
                 flex-direction: column;
             }
@@ -34,7 +23,7 @@ $shadow-3d: 0 8px 10px 0 rgba(0, 0, 0, 0.25), // main shadow
 
         .card {
             display: flex;
-            flex-direction: column;            
+            flex-direction: column;
             padding: 2rem;
             border-top: 2px solid rgb(0, 255, 115);
             border-radius: 1px 1px 0 0;
@@ -44,9 +33,10 @@ $shadow-3d: 0 8px 10px 0 rgba(0, 0, 0, 0.25), // main shadow
                 width: 80px;
                 height: 80px;
             }
+
             .skill-percentage {
-             display: flex;
-             align-items: flex-end;
+                display: flex;
+                align-items: flex-end;
             }
         }
 
@@ -76,6 +66,7 @@ $shadow-3d: 0 8px 10px 0 rgba(0, 0, 0, 0.25), // main shadow
     }
 
     .graph-bar {
+        background: var(--color-bg);
         border-radius: 12px;
         height: 12px;
         width: 100%;
@@ -83,8 +74,9 @@ $shadow-3d: 0 8px 10px 0 rgba(0, 0, 0, 0.25), // main shadow
     }
 
     .bar-fill {
+        background: var(--color-accent);
         height: 100%;
         border-radius: 12px;
         transition: width 0.6s cubic-bezier(.4, 0, .2, 1);
     }
-}
+} 

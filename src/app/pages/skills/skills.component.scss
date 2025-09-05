@@ -1,16 +1,13 @@
-.skills {
+@use './abstracts' as *;
+
+.skills-section {
   width: 90%;
   margin: 0 auto;
 
-  section {
-    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-    position: relative;
-    overflow: hidden;
-  }
-  .grid {
+  &__grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
+    gap: 2rem;
 
     @media (min-width: 500px) and (max-width: 768px) {
       grid-template-columns: repeat(2, 1fr);

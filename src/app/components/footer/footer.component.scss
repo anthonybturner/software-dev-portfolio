@@ -1,3 +1,4 @@
+@use './abstracts' as *;
 .footer {
   position: fixed;
   bottom: 0;
@@ -6,6 +7,7 @@
   backdrop-filter: blur(10px);
   z-index: 1000;
   transition: all 0.3s ease;
+  box-shadow: $shadow-soft;
 
   .container {
     max-width: 1200px;
@@ -61,20 +63,11 @@
     .social-links {
       display: flex;
       gap: 1rem;
-
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        text-decoration: none;
-        transition: all 0.3s ease;
-
+      a {        
         &:hover {
+          transition: all 0.4s ease;
           background: #3498db;
-          transform: translateY(-2px);
+          transform: translateY(-12px);
         }
       }
     }

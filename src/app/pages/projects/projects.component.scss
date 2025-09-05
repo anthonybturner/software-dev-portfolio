@@ -1,11 +1,10 @@
-.projects {
-    width: 90%;
-    margin: 0 auto;
+@use './abstracts' as *;
 
-    .grid {
+.projects {
+    &__grid {
         display: grid;
         gap: 2rem;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         @media (min-width: 650px) and (max-width: 768px) {
             grid-template-columns: repeat(2, 1fr);
         }
