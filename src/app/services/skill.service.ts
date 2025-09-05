@@ -20,26 +20,29 @@ export class SkillService {
     { id: 3, name: 'TypeScript', category: 'Frontend', proficiency: 85, icon: 'assets/icons/typescript.svg' },
     { id: 4, name: 'JavaScript', category: 'Frontend', proficiency: 95, icon: 'assets/icons/javascript.svg' },
     { id: 5, name: 'HTML5', category: 'Frontend', proficiency: 95, icon: 'assets/icons/html5.svg' },
-    { id: 6, name: 'CSS3/SCSS', category: 'Frontend', proficiency: 90, icon: 'assets/icons/css3.svg' },
+    { id: 6, name: 'CSS/CSS3', category: 'Frontend', proficiency: 90, icon: 'assets/icons/css3.svg' },
     { id: 7, name: 'RxJS', category: 'Frontend', proficiency: 80, icon: 'assets/icons/rxjs.svg' },
+    { id: 8, name: 'SASS', category: 'Frontend', proficiency: 90, icon: 'assets/icons/sass.svg' },
+    { id: 9, name: 'SCSS', category: 'Frontend', proficiency: 90, icon: 'assets/icons/scss.svg' },
+    { id: 10, name: 'CSS3', category: 'Frontend', proficiency: 90, icon: 'assets/icons/css3.svg' },
     
     
     // Backend
-    { id: 7, name: '.Net Core', category: 'Backend', proficiency: 95, icon: 'assets/icons/dot-net-core.svg' },
-    { id: 8, name: 'Express.js', category: 'Backend', proficiency: 80, icon: 'assets/icons/express.svg' },
-    { id: 9, name: 'Python', category: 'Backend', proficiency: 75, icon: 'assets/icons/python.svg' },
-    { id: 10, name: 'Java', category: 'Backend', proficiency: 70, icon: 'assets/icons/java.svg' },
-    { id: 11, name: 'Node.js', category: 'Backend', proficiency: 85, icon: 'assets/icons/nodejs.svg' },
+    { id: 11, name: '.Net Core', category: 'Backend', proficiency: 95, icon: 'assets/icons/dot-net-core.svg' },
+    { id: 12, name: 'Express.js', category: 'Backend', proficiency: 80, icon: 'assets/icons/express.svg' },
+    { id: 13, name: 'Python', category: 'Backend', proficiency: 75, icon: 'assets/icons/python.svg' },
+    { id: 14, name: 'Java', category: 'Backend', proficiency: 70, icon: 'assets/icons/java.svg' },
+    { id: 15, name: 'Node.js', category: 'Backend', proficiency: 85, icon: 'assets/icons/nodejs.svg' },
 
     // Database
-    { id: 12, name: 'MongoDB', category: 'Database', proficiency: 80, icon: 'assets/icons/mongodb.svg' },
-    { id: 13, name: 'PostgreSQL', category: 'Database', proficiency: 75, icon: 'assets/icons/postgresql.svg' },
-    { id: 14, name: 'MySQL', category: 'Database', proficiency: 70, icon: 'assets/icons/mysql.svg' },
+    { id: 16, name: 'MongoDB', category: 'Database', proficiency: 80, icon: 'assets/icons/mongodb.svg' },
+    { id: 17, name: 'PostgreSQL', category: 'Database', proficiency: 75, icon: 'assets/icons/postgresql.svg' },
+    { id: 18, name: 'MySQL', category: 'Database', proficiency: 70, icon: 'assets/icons/mysql.svg' },
     
     // Tools
-    { id: 15, name: 'Git', category: 'Tools', proficiency: 90, icon: 'assets/icons/git.svg' },
-    { id: 16, name: 'Docker', category: 'Tools', proficiency: 75, icon: 'assets/icons/docker.svg' },
-    { id: 17, name: 'AWS', category: 'Tools', proficiency: 70, icon: 'assets/icons/aws.svg' }
+    { id: 19, name: 'Git', category: 'Tools', proficiency: 90, icon: 'assets/icons/git.svg' },
+    { id: 20, name: 'Docker', category: 'Tools', proficiency: 75, icon: 'assets/icons/docker.svg' },
+    { id: 21, name: 'AWS', category: 'Tools', proficiency: 70, icon: 'assets/icons/aws.svg' },
   ];
 
   constructor() { }

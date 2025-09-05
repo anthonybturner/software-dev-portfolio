@@ -1,7 +1,7 @@
 @use './abstracts' as *;
 
 .project-card {
-  display: inline-block;
+  display: block;
   border-radius: var(--br);
   border: 1px solid var(--accent-hl-clr);
   overflow: hidden;
@@ -15,7 +15,7 @@
   }
 
   .image {
-    height: 200px;
+
     overflow: hidden;
     position: relative;
 
@@ -32,7 +32,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(transparent, rgba(#0f0d7c, 0.7));
+      background: linear-gradient(transparent, rgba(var(--accent-clr), 0.7));
       padding: var(--spacer);
     }
   }
@@ -41,12 +41,13 @@
    padding: var(--spacer);
 
     .technologies {
-      margin-bottom: var(--spacer);
+      margin-bottom: var(--spacer-md);
 
       span {
-        background: #f8f9fa;
-        color: #3498db;
-        padding: 0.3rem 0.8rem;
+        background: var(--accent-clr);
+        color: var(--color-secondary-text);
+        margin-right: var(--spacer);
+        padding: var(--spacer-sm);
         border-radius: var(--br);
         font-size: var(--fs-5);
         font-weight: 500;
@@ -56,12 +57,12 @@
     .actions {
       a {
         text-align: center;
-        padding: var(--spacer);
-        margin: 10px;
+        padding: var(--spacer-sm);
         border-radius: var(--br);
         text-decoration: none;
         font-weight: 500;
         transition: all 0.3s ease;
+        margin-right: var(--spacer);
 
         &.demo {
           background: var(--accent-clr);
