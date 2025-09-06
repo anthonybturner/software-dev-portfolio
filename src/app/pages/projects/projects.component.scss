@@ -7,9 +7,16 @@
         grid-template-columns: repeat(1, minmax(500px, 1fr));
         @media (min-width: 650px) and (max-width: 768px) {
             grid-template-columns: repeat(2, 1fr);
+            
         }
         @media (min-width: 0px) and (max-width: 649px) {
             grid-template-columns: 1fr;
         }
     }
+     @media (min-width: 0px) and (max-width: 649px) {
+            &__section{
+                 margin: 0;
+                padding: 0;
+            }
+        }
 }

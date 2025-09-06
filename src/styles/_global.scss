@@ -12,10 +12,33 @@ html {
         -moz-osx-font-smoothing: grayscale;
     }
 
+    p {
+        font-size: var(--fs-p);
+    }
 
     img {
         display: block;
         max-width: 100%;
+    }
+
+    h1 {
+        font-size: var(--fs-1);
+    }
+
+    h2 {
+        font-size: var(--fs-2);
+    }
+
+    h3 {
+        font-size: var(--fs-3);
+    }
+
+    h4 {
+        font-size: var(--fs-4);
+    }
+
+    h5 {
+        font-size: var(--fs-5);
     }
 
     h1,

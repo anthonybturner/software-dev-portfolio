@@ -4,41 +4,62 @@
   display: block;
   border-radius: var(--br);
   border: 1px solid var(--accent-hl-clr);
-  overflow: hidden;
   transition: all 0.3s ease;
   background: var(--secondary-clr);
   color: var(--color-text);
-  padding: var(--spacer) 0;
+  padding: 0;
 
   &:hover {
     @include hover-effect;
   }
 
-  .image {
+  h3 {
+    background: linear-gradient(180deg, transparent 25%, rgba(5, 91, 141, 0.904) 100%);
+    padding: 0;
 
-    overflow: hidden;
-    position: relative;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(transparent, rgba(var(--accent-clr), 0.7));
-      padding: var(--spacer);
-    }
+    font-size: var(--fs-3);
+    color: #fff;
+    margin: 0;
+    font-weight: var(--fw-b);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: var(--br-sm);
+    pointer-events: auto;
   }
 
+  .images {
+    display: flex;
+    gap: var(--spacer);
+  }
+
+  img {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-height: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: var(--spacer);
+  }
+
+  // ...existing code...
+  // Add the new project-banner class
+  .project-banner {
+    width: 100%;
+    max-height: 220px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: var(--spacer);
+  }
+
+  // ...existing code...
+
   .content {
-   padding: var(--spacer);
+    padding: var(--spacer);
 
     .technologies {
       margin-bottom: var(--spacer-md);
@@ -68,20 +89,29 @@
           background: var(--accent-clr);
           color: var(--secondary-clr);
 
-          &:hover,  &.github  {
+          &:hover,
+          &.github {
             background: var(--accent-hl-clr);
           }
         }
 
         &.github {
-          background:var(--accent-clr);
+          background: var(--accent-clr);
           color: var(--secondary-clr);
 
           &:hover {
-            background:var(--accent-hl-clr);
+            background: var(--accent-hl-clr);
           }
         }
       }
+    }
+  }
+
+  @media (min-width: 0px) and (max-width: 649px) {
+
+    margin: 0 auto;
+   .images {
+      flex-direction: column;
     }
   }
 }

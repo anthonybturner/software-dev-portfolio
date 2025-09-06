@@ -6,11 +6,12 @@
     </div>
 
     <div class="contact-content">
+      <h2>Contact Information</h2>
       <div class="contact-info">
         <div class="info-item">
           <i class="fas fa-envelope"></i>
           <div>
-            <span><strong>Email</strong></span>
+            <h3>Email</h3>
             <p>anthonybturner@icloud.com</p>
           </div>
         </div>
@@ -18,7 +19,7 @@
         <div class="info-item">
           <i class="fas fa-phone"></i>
           <div>
-            <span><strong>Phone</strong></span>
+            <h3>Phone</h3>
             <p>+1 (518) 475-8019</p>
           </div>
         </div>
@@ -26,12 +27,13 @@
         <div class="info-item">
           <i class="fas fa-map-marker-alt"></i>
           <div>
-            <span><strong>Location</strong></span>
+            <h3>Location</h3>
             <p>Kingston, NY</p>
           </div>
         </div>
       </div>
 
+      <h2>Send a Message</h2>
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
         <div class="form-group">
           <input type="text" formControlName="name" placeholder="Your Name"
