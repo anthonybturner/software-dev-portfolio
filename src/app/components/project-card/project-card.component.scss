@@ -3,7 +3,7 @@
 .project-card {
   display: block;
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   border-radius: var(--br);
   border: 1px solid var(--accent-hl-clr);
   transition: all 0.3s ease;
@@ -81,8 +81,6 @@
   }
 
   @media (min-width: 0px) and (max-width: 649px) {
-
-    margin: 0 auto;
 
     .images {
       flex-direction: column;

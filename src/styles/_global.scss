@@ -3,6 +3,7 @@
 html {
     font-size: var(--fs);
     overflow-x: hidden;
+
     body {
         margin: 0 auto;
         font-family: var(--ff);
@@ -69,7 +70,6 @@ html {
         background: var(--secondary-clr);
         border-radius: var(--br);
         border: 1px solid var(--accent-hl-clr);
-        margin: var(--spacer);
         padding: var(--spacer);
         backdrop-filter: blur(8px);
 
@@ -84,6 +84,7 @@ html {
         &:hover {
             box-shadow: 0 2px 2px 0 var(--accent-clr);
         }
+
     }
 
     main .wrapper .layout-grid .col .card:hover {
