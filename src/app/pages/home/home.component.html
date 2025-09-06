@@ -13,56 +13,70 @@
         and
         modern deployment workflows using Git, CI/CD, Docker, Vercel, Render, Railway, and Azure. Known for delivering
         secure, maintainable solutions in Agile/Scrum teams.
+        <br><br>
+        <strong>
+          This portfolio web application was built entirely by me, leveraging Angular 20 for a robust SPA architecture,
+          TypeScript for type safety and maintainability, and SCSS for modular, scalable styling. I utilized modern CSS
+          custom properties for dynamic theming and responsive design, and implemented a component-driven structure for
+          reusability and performance. The application integrates automated CI/CD workflows and is deployed using Vercel
+          for seamless updates and global scalability. Key skills applied include advanced Angular routing, RxJS for
+          reactive programming, API integration, accessibility best practices, and cloud deployment strategies.
+          Throughout development, I paid close attention to typography and the organization of custom properties for
+          maintainable, consistent design.
+        </strong>
       </p>
+    </div>
+  </section>
 
-      <div class="links">
-        <a href="https://linkedin.com/in/anthony-turner-0207b76b" target="_blank">LinkedIn</a>
+  <section class="featured-skills">
+    <div class="wrapper">
+      <h2>Showcase</h2>
+      <div class="layout-grid">
+        <div class="col">
+          <div class="card">
+            <h3>Featured Skills</h3>
+            <p>Showcasing my top skills and proficiencies.</p>
+            <div class="featured-skill" *ngFor="let skill of featuredSkills">
+              <div class="skill-labels">
+                <span class="skill-name">{{ skill.name }}</span>
+                <span class="skill-percentage">{{ skill.proficiency }}%</span>
+              </div>
+              <div class="graph-bar">
+                <div class="bar-fill" [style.width.%]="skill.proficiency"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h3>Process &amp; Workflow</h3>
+            <p>Expert in designing and optimizing Agile/Scrum workflows, CI/CD pipelines, and collaborative team
+              processes. Proven ability to identify roadblocks, streamline communication, and deliver high-quality
+              software efficiently.</p>
+            <img src="images/projects/photo-1461749280684-dccba630e2f6.avif" alt="Process &amp; Workflow">
+          </div>
+          <div class="card">
+            <h3>Marvel Rivals Stats</h3>
+            <p>Creator of <a href="https://marvelrivalsstats.vercel.app" target="_blank">Marvel Rivals Stats</a> ,a
+              full-stack web application for tracking player stats, match history, and leaderboards. Built with Angular,
+              TypeScript, and .NET APIs, deployed on Vercel. Features real-time data, advanced filtering, and a modern
+              UI for competitive gamers.</p>
+            <img src="images/projects/image1.png" alt="Marvel Rivals Stats">
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h3>Problem Solving</h3>
+            <p>Migrated and maintained a Django/Python web application with little to no prior experience in the
+              technology stack. Rapidly learned new frameworks, resolved migration and coding issues, and ensured
+              seamless operation and feature delivery for the US Navy's front-end and back-end web application.</p>
+            <img src="images/projects/photo-1519389950473-47ba0277781c.avif" alt="Problem Solving">
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section>
-  <main>
-    <div class="wrapper">
-      <div class="layout-grid">
-        <div class="col">
-          <div class="card">
-            <h2>Featured Skills</h2>
-            <p>Showcasing my top skills and proficiencies.</p>
-              <div class="featured-skill" *ngFor="let skill of featuredSkills">
-                <div class="skill-labels">
-                  <span class="skill-name">{{ skill.name }}</span>
-                  <span class="skill-percentage">{{ skill.proficiency }}%</span>
-                </div>
-                <div class="graph-bar">
-                  <div class="bar-fill" [style.width.%]="skill.proficiency"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-                <h2>Process &amp; Workflow</h2>
-                <p>Expert in designing and optimizing Agile/Scrum workflows, CI/CD pipelines, and collaborative team processes. Proven ability to identify roadblocks, streamline communication, and deliver high-quality software efficiently.</p>
-                <img src="images/projects/photo-1461749280684-dccba630e2f6.avif" alt="Process &amp; Workflow">
-            </div>
-            <div class="card">
-                <h2>Marvel Rivals Stats</h2>
-                <p>Creator of <a href="https://marvelrivalsstats.vercel.app" target="_blank">Marvel Rivals Stats</a> ,a full-stack web application for tracking player stats, match history, and leaderboards. Built with Angular, TypeScript, and .NET APIs, deployed on Vercel. Features real-time data, advanced filtering, and a modern UI for competitive gamers.</p>
-                <img src="images/projects/image1.png" alt="Marvel Rivals Stats">
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-                <h2>Problem Solving</h2>
-                <p>Migrated and maintained a Django/Python web application with little to no prior experience in the technology stack. Rapidly learned new frameworks, resolved migration and coding issues, and ensured seamless operation and feature delivery for the US Navy's front-end and back-end web application.</p>
-                <img src="images/projects/photo-1519389950473-47ba0277781c.avif" alt="Problem Solving">
-            </div>
-          </div>
-        </div>
-      </div>
-  </main>
-</section>
   <section class="experience-section">
     <h2>Professional Experience</h2>
     <ul>
