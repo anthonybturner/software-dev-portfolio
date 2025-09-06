@@ -5,6 +5,10 @@
         position: relative;
         overflow: hidden;
 
+        h1{
+            text-align: center;
+        }
+
         .layout-grid {
             display: flex;
             gap: var(--spacer);
@@ -18,7 +22,7 @@
                 gap: var(--spacer);
                 align-content: center;
             }
-
+           
             @media screen and (max-width: 600px) {
                 flex-direction: column;
             }
@@ -30,7 +34,7 @@
             padding: var(--spacer);
             border-top: 2px solid var(--accent-clr);
             border-radius: var(--br-sm) var(--br-sm) 0 0;
-            background-color: #fff;
+            background-color: var(--primary-clr);
 
             img {
                 width: var(--img-icon);

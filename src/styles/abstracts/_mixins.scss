@@ -12,7 +12,16 @@
 }
 
 @mixin hover-effect {
-  transform: translateY(-4px) scale(1.0);
+
+
+  transform: translate(20px, 1px) scale(1.1);
+
+  /* X, Y */
+  @media screen and (max-width: 600px) {
+      transform: translate(0px, 0px) scale(.9);
+  }
+
+  transition: all 0.3s ease;
   box-shadow: var(--shadow-inset);
   padding: var(--spacer-sm);
 }

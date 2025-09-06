@@ -71,6 +71,7 @@ html {
         border-radius: var(--br);
         border: 1px solid var(--accent-hl-clr);
         padding: var(--spacer);
+        margin: var(--spacer);
         backdrop-filter: blur(8px);
 
         .section-header {
@@ -102,11 +103,6 @@ html {
         border-radius: 4px;
         transition: color 0.3s, background 0.3s;
         color: var(--accent-clr);
-
-        &:hover {
-            @include hover-effect;
-        }
-
         &.active {
             &::after {
                 content: '';
