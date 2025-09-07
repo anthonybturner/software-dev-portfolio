@@ -3,7 +3,6 @@
 .contact {
   width: 90%;
   margin: 0 auto;
-
   input,
   textarea {
     width: 90%;
@@ -111,4 +110,9 @@
       }
     }
   }
+
+   section:hover {
+        //  box-shadow: 0 2px 2px 0 var(--accent-clr);
+        background: rgba(255, 253, 253, .3) !important;
+    }
 }

@@ -1,46 +1,27 @@
 @use './abstracts' as *;
 
-.project-card {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  border-radius: var(--br);
-  border: 1px solid var(--accent-hl-clr);
-  transition: all 0.3s ease;
-  background: var(--secondary-clr);
-  color: var(--color-text);
-  padding: 0;
-
-  &:hover {
-    @include hover-effect-sm;
-  }
-
-  h3 {
-    text-align: center;
-  }
-
-  .images {
-    display: flex;
-    gap: var(--spacer);
-  }
-
-  img {
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-  }
-
+.card {
+  @include card-layout;
   .content {
     padding: var(--spacer);
-
     .technologies {
       margin-bottom: var(--spacer-md);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
 
+      @media (min-width: 650px) and (max-width: 768px) {
+        flex-direction: column;
+      }
+
+      @media (min-width: 0px) and (max-width: 649px) {
+        flex-direction: column;
+      }
       span {
-        background: var(--accent-clr);
-        color: var(--color-secondary-text);
-        //margin-right: var(--spacer);
+        background: var(--secondary-clr);
+        color: var(--secondary-text-clr);
+        margin-right: 12px;
         padding: var(--spacer-sm);
         border-radius: var(--br);
         font-size: var(--fs-5);
@@ -81,7 +62,6 @@
   }
 
   @media (min-width: 0px) and (max-width: 649px) {
-
     .images {
       flex-direction: column;
     }

@@ -7,8 +7,9 @@ html {
     body {
         margin: 0 auto;
         font-family: var(--ff);
-        background: var(--primary-clr);
-        color: var(--color-text);
+        // background: var(--primary-clr);
+        background: linear-gradient(250deg, var(--secondary-clr) 0%, var(--primary-clr) 60%);
+        color: var(--primary-text-clr);
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
@@ -19,6 +20,7 @@ html {
 
     img {
         display: block;
+        width: 100%;
         max-width: 100%;
     }
 
@@ -48,11 +50,11 @@ html {
     h4,
     h5,
     h6 {
-        color: var(--color-heading);
+        color: var(--primary-text-clr);
     }
 
     li {
-        color: var(--color-text);
+        color: var(--primary-text-clr);
     }
 
     div.container {
@@ -67,7 +69,7 @@ html {
     }
 
     section {
-        background: var(--secondary-clr);
+        background: var(--primary-clr);
         border-radius: var(--br);
         border: 1px solid var(--accent-hl-clr);
         padding: var(--spacer);
@@ -75,22 +77,36 @@ html {
         backdrop-filter: blur(8px);
 
         .section-header {
-            color: var(--color-heading2);
+            color: var(--primary-text-clr);
             border-radius: 14px;
             padding: var(--spacer);
             border-bottom: 1px solid var(--accent-clr);
             margin-bottom: 1.5rem;
         }
+        .card {
+            .images {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                gap: 2rem;
+            }
+        }
+        .grid {
+            width: 100%;
+            background: #ffffff00;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacer-lg);
 
-        &:hover {
-          //  box-shadow: 0 2px 2px 0 var(--accent-clr);
-                        background: rgba(255, 253, 253, .3) !important;
+            @media (min-width: 650px) and (max-width: 768px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media (min-width: 0px) and (max-width: 649px) {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
         }
 
-    }
-
-    main .wrapper .layout-grid .col .card:hover {
-        @include hover-effect;
     }
 
     a,
@@ -104,6 +120,7 @@ html {
         border-radius: 4px;
         transition: color 0.3s, background 0.3s;
         color: var(--accent-clr);
+
         &.active {
             &::after {
                 content: '';

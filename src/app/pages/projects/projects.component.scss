@@ -1,20 +1,22 @@
 @use './abstracts' as *;
 
-.projects {
-    &__grid {
-        display: grid;
-        gap: 2rem;
-        grid-template-columns: repeat(1, minmax(500px, 1fr));
-        @media (min-width: 650px) and (max-width: 768px) {
-            grid-template-columns: repeat(2, 1fr);
-            
-        }
-        @media (min-width: 0px) and (max-width: 649px) {
-            grid-template-columns: 1fr;
-            max-width: 100%;
+
+section {
+    .card {
+        .images {
+            img {
+                width: 40% !important;
+                min-height: 400px;
+                max-height: 400px;
+            }
+
         }
     }
-     @media (min-width: 0px) and (max-width: 649px) {
-        
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+
+        @media (min-width: 0px) and (max-width: 649px) {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         }
+    }
 }

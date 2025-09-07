@@ -1,14 +1,14 @@
-<div class="skill-card">
-  <div class="skill-card__icon">
+<div class="card">
+  <div class="card__icon">
     <i [ngClass]="skill.icon"></i>
   </div>
   <h3>{{ skill.name }}</h3>
-  <div class="skill-card__category">{{ skill.category }}</div>
+  <div class="card__category">{{ skill.category }}</div>
   
-  <div class="skill-card__proficiency">
-    <div class="skill-card__proficiency__progress-bar">
-      <div class="skill-card__proficiency__progress" [style.width.%]="skill.proficiency"></div>
+  <div class="card__proficiency">
+    <div class="card__proficiency__progress-bar">
+      <div class="card__proficiency__progress" [style.width.%]="skill.proficiency"></div>
     </div>
-    <div class="skill-card__proficiency__percentage">{{ skill.proficiency }}%</div>
+    <div class="card__proficiency__percentage">{{ skill.proficiency }}%</div>
   </div>
 </div>

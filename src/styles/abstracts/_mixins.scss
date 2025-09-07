@@ -25,11 +25,23 @@
       transform: translate(0px, 0px) scale(.9);
   }
 }
+@mixin card-layout{
+  box-shadow: color-mix(in srgb, var(--primary-clr) 10%, transparent);
+  padding: var(--spacer);
+  border-radius: var(--br);
+  transition: all 0.3s ease;
+  text-align: center;
+  margin-bottom: var(--spacer);
+  border: 1px solid var(--accent-hl-clr);
 
+  &:hover {
+    @include hover-effect-sm;
+  }
+}
 
 @mixin hover-effect-sm {
   //@include hover-effect-base();
-  transform: translate(0px, 1rem) scale(1.05);
+  transform: translate(0px, 1rem) scale(1.0);
   /* X, Y */
   @media screen and (max-width: 600px) {
       transform: translate(0px, 0px) scale(.9);

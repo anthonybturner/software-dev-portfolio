@@ -1,8 +1,15 @@
-<div class="project-card">
+<div class="card">
   <h3>{{ project.title }}</h3>
-  <div class="images" >
-    <img *ngFor="let image of project.images" [src]="image" [alt]="project.title">
+  <div class="images">
+    <div class="image-container" *ngFor="let thumbnail of project.thumbnails; let i = index">
+      <img 
+        [src]="thumbnail" 
+        [alt]="project.title"
+        class="thumbnail">
+     
+    </div>
   </div>
+
   <div class="content">
     <p>{{ project.description }}</p>
     <div class="technologies">

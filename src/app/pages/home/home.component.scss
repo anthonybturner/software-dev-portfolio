@@ -7,7 +7,7 @@
 
         &.hero-section {
             position: relative;
-            
+
             // Blurred background layer with RGBA transparency
             &::before {
                 content: '';
@@ -16,7 +16,7 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background-image: url("/images/projects/image1.png");
+                background-image: url("/images/projects/marvel-rivals-hero.jpg");
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -24,29 +24,28 @@
                 z-index: 1;
                 background-color: rgba(0, 0, 0, 0.3);
                 background-blend-mode: overlay;
-            }
-            
-            // Clear center image
+            }            // Clear center image
             &::after {
                 content: '';
                 position: absolute;
-                top: 25%;
-                left: 25%;
-                right: 25%;
-                bottom: 25%;
-                background-image: url("/images/projects/image1.png");
+                top: 10%;
+                left: 5%; // wider
+                right: 5%; // wider
+                bottom: 10%;
+                background-image: url("/images/projects/marvel-rivals-hero.jpg");
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
                 border-radius: 16px;
-                opacity: 0.6;
+                opacity: 0.2;
                 z-index: 2;
+                margin: 1rem;
             }
-            
+
             .columns {
                 position: relative;
                 z-index: 3;
-                padding: 2rem;
+                padding: 3rem;
                 color: #fff;
                 background: rgba(255, 255, 255, 0);
                 border: 1px solid rgba(255, 255, 255, 0.2);
@@ -55,8 +54,8 @@
             }
         }
 
-  
-        h1{
+
+        h1 {
             color: #ffffffbb;
             text-align: center;
         }
@@ -74,7 +73,7 @@
                 gap: var(--spacer);
                 align-content: center;
             }
-           
+
             @media screen and (max-width: 600px) {
                 flex-direction: column;
             }
@@ -113,4 +112,9 @@
             transition: width 0.6s cubic-bezier(.4, 0, .2, 1);
         }
     }
+   
+section:hover {
+        //  box-shadow: 0 2px 2px 0 var(--accent-clr);
+        background: rgba(255, 253, 253, .3) !important
+}
 }

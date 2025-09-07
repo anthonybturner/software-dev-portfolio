@@ -1,17 +1,7 @@
 @use './abstracts' as *;
 
-.skill-card {
-  background: var(--secondary-clr);
-  padding: var(--spacer);
-  border-radius: var(--br);
-  transition: all 0.3s ease;
-  text-align: center;
-  margin-bottom: var(--spacer);
-  border: 1px solid var(--accent-hl-clr);
-
-  &:hover {
-    @include hover-effect;
-  }
+.card {
+  @include card-layout;
 
   &__icon {
     width: var(--img-icon);
@@ -30,11 +20,6 @@
     font-size: var(--fs);
     margin-bottom: var(--spacer);
   }
-
-  h3 {
-    margin: 0 0 0.5rem 0;
-  }
-
 
   &__proficiency {
     
