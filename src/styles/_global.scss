@@ -53,6 +53,28 @@ html {
         color: var(--primary-text-clr);
     }
 
+    @media (min-width: 0px) and (max-width: 649px) {
+        h1 {
+            font-size: var(--fs-3);
+        }
+
+        h2 {
+            font-size: var(--fs-4);
+        }
+
+        h3 {
+            font-size: var(--fs-5);
+        }
+
+        h4 {
+            font-size: var(--fs-6);
+        }
+
+        h5 {
+            font-size: var(--fs-6);
+        }
+    }
+
     li {
         color: var(--primary-text-clr);
     }
@@ -135,27 +157,11 @@ html {
                 background: var(--accent-clr);
             }
         }
+
+        
     }
-
-    @media (min-width: 0px) and (max-width: 649px) {
-        h1 {
-            font-size: var(--fs-3);
+    a:hover {
+            background-color: var(--primary-clr);
         }
 
-        h2 {
-            font-size: var(--fs-4);
-        }
-
-        h3 {
-            font-size: var(--fs-5);
-        }
-
-        h4 {
-            font-size: var(--fs-6);
-        }
-
-        h5 {
-            font-size: var(--fs-6);
-        }
-    }
 }

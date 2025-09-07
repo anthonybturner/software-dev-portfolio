@@ -39,7 +39,7 @@
       position: fixed;
       background: var( --secondary-clr);
       color: var(--accent-clr);
-      top: var(--spacer-lg);
+      top: 60px;
       left: 0;
       width: 100%;
       flex-direction: column;
@@ -53,6 +53,7 @@
       &.a{
         border: 2px solid var(--color-border);
       }
+  
       &.active {
         transform: translateY(0);
         opacity: 1;
@@ -60,6 +61,7 @@
         margin-bottom: 1rem;
       }
     }
+     
   }
 
   .menu-toggle {
