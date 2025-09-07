@@ -4,6 +4,7 @@ import { ProjectCardComponent } from '../../components/project-card/project-card
 import { SkillCardComponent } from '../../components/skill-card/skill-card.component';
 import { RouterModule } from '@angular/router';
 import { SkillsComponent } from "../skills/skills.component";
+import { SkillService, Skill } from '../../services/skill.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ import { SkillsComponent } from "../skills/skills.component";
 })
 export class HomeComponent implements OnInit {
 
-    featuredSkills = [
+  featuredSkills = [
     { id: 1, name: 'Angular', level: 'Intermediate', category: 'Frontend', proficiency: 90, icon: 'angular-icon' },
     { id: 2, name: 'TypeScript', level: 'Intermediate', category: 'Frontend', proficiency: 95, icon: 'typescript-icon' },
     { id: 3, name: 'HTML/CSS', level: 'Advanced', category: 'Frontend', proficiency: 100, icon: 'htmlcss-icon' },
@@ -25,9 +26,33 @@ export class HomeComponent implements OnInit {
     { id: 7, name: '.Net Core Frontend', level: 'Intermediate', category: 'Frontend', proficiency: 90, icon: 'dot-net-core-icon/' },
   ];
 
+  // New categorized skills for graphs
+  frontendSkills: Skill[] = [];
+  backendSkills: Skill[] = [];
+  devopsSkills: Skill[] = [];
+
   featuredProjects: any[] = []; // Add your project objects here or fetch from a service
 
-  constructor() {}
+  constructor(private skillService: SkillService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadSkillsByCategory();
+  }
+
+  private loadSkillsByCategory(): void {
+    // Load frontend skills
+    this.skillService.getSkillsByCategory('Frontend').subscribe((skills: Skill[]) => {
+      this.frontendSkills = skills.slice(0, 6); // Show top 6 skills
+    });
+
+    // Load backend skills
+    this.skillService.getSkillsByCategory('Backend').subscribe((skills: Skill[]) => {
+      this.backendSkills = skills.slice(0, 6); // Show top 6 skills
+    });
+
+    // Load devops/tools skills
+    this.skillService.getSkillsByCategory('DevOps').subscribe((skills: Skill[]) => {
+      this.devopsSkills = skills.slice(0, 6); // Show top 6 skills
+    });
+  }
 }

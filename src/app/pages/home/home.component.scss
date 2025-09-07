@@ -102,13 +102,84 @@
             border-radius: var(--br);
             height: 12px;
             overflow: hidden;
+            margin-top: 0.5rem;
         }
 
         .bar-fill {
-            background: var(--accent-clr);
             height: 100%;
             border-radius: var(--br);
             transition: width 0.6s cubic-bezier(.4, 0, .2, 1);
+            
+            // Different colors for different skill categories
+            &.frontend-bar {
+                background: linear-gradient(90deg, #61dafb, #21d4fd);
+            }
+            
+            &.backend-bar {
+                background: linear-gradient(90deg, #f39c12, #f1c40f);
+            }
+            
+            &.devops-bar {
+                background: linear-gradient(90deg, #9b59b6, #8e44ad);
+            }
+            
+            // Default fallback
+            &:not(.frontend-bar):not(.backend-bar):not(.devops-bar) {
+                background: var(--accent-clr);
+            }
+        }
+
+        .featured-skill {
+            margin-bottom: 1rem;
+            
+            .skill-labels {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 0.25rem;
+                
+                .skill-name {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    font-weight: 500;
+                    color: var(--text-clr);
+                    
+                    i {
+                        color: var(--accent-clr);
+                        width: 1.2rem;
+                        text-align: center;
+                    }
+                }
+                
+                .skill-percentage {
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    color: var(--accent-clr);
+                }
+            }
+        }
+
+        // Enhanced card styling for skill categories
+        .card {
+            h3 {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin-bottom: 0.75rem;
+                color: var(--accent-clr);
+                
+                i {
+                    font-size: 1.1rem;
+                }
+            }
+            
+            p {
+                margin-bottom: 1.5rem;
+                color: var(--text-clr);
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
         }
     }
    
