@@ -83,6 +83,7 @@ html {
             border-bottom: 1px solid var(--accent-clr);
             margin-bottom: 1.5rem;
         }
+
         .card {
             .images {
                 display: flex;
@@ -91,6 +92,7 @@ html {
                 gap: 2rem;
             }
         }
+
         .grid {
             width: 100%;
             background: #ffffff00;
@@ -132,6 +134,28 @@ html {
                 border-radius: 2px;
                 background: var(--accent-clr);
             }
+        }
+    }
+
+    @media (min-width: 0px) and (max-width: 649px) {
+        h1 {
+            font-size: var(--fs-3);
+        }
+
+        h2 {
+            font-size: var(--fs-4);
+        }
+
+        h3 {
+            font-size: var(--fs-5);
+        }
+
+        h4 {
+            font-size: var(--fs-6);
+        }
+
+        h5 {
+            font-size: var(--fs-6);
         }
     }
 }
