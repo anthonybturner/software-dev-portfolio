@@ -12,7 +12,7 @@
   padding: 0;
 
   &:hover {
-    @include hover-effect;
+    @include hover-effect-sm;
   }
 
   h3 {

@@ -11,17 +11,27 @@
   margin: 0 auto;
 }
 
+@mixin hover-effect-base{
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-inset);
+  padding: var(--spacer-sm);
+}
 @mixin hover-effect {
 
-
+  @include hover-effect-base();
   transform: translate(20px, 1px) scale(1.1);
-
   /* X, Y */
   @media screen and (max-width: 600px) {
       transform: translate(0px, 0px) scale(.9);
   }
+}
 
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-inset);
-  padding: var(--spacer-sm);
+
+@mixin hover-effect-sm {
+  //@include hover-effect-base();
+  transform: translate(0px, 1rem) scale(1.05);
+  /* X, Y */
+  @media screen and (max-width: 600px) {
+      transform: translate(0px, 0px) scale(.9);
+  }
 }

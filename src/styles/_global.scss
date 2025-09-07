@@ -83,7 +83,8 @@ html {
         }
 
         &:hover {
-            box-shadow: 0 2px 2px 0 var(--accent-clr);
+          //  box-shadow: 0 2px 2px 0 var(--accent-clr);
+                        background: rgba(255, 253, 253, .3) !important;
         }
 
     }

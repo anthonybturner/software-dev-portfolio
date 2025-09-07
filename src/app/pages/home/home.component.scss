@@ -5,7 +5,59 @@
         position: relative;
         overflow: hidden;
 
+        &.hero-section {
+            position: relative;
+            
+            // Blurred background layer with RGBA transparency
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-image: url("/images/projects/image1.png");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                filter: blur(.5rem);
+                z-index: 1;
+                background-color: rgba(0, 0, 0, 0.3);
+                background-blend-mode: overlay;
+            }
+            
+            // Clear center image
+            &::after {
+                content: '';
+                position: absolute;
+                top: 25%;
+                left: 25%;
+                right: 25%;
+                bottom: 25%;
+                background-image: url("/images/projects/image1.png");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                border-radius: 16px;
+                opacity: 0.6;
+                z-index: 2;
+            }
+            
+            .columns {
+                position: relative;
+                z-index: 3;
+                padding: 2rem;
+                color: #fff;
+                background: rgba(255, 255, 255, 0);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 16px;
+                margin: 2rem;
+            }
+        }
+
+  
         h1{
+            color: #ffffffbb;
             text-align: center;
         }
 
