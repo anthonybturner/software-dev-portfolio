@@ -186,9 +186,7 @@
     // Experience Section Card Styles
     .experience-section {
         .wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+          display: block;
         }
 
         .experience-cards {
@@ -198,7 +196,7 @@
         }
 
         .experience-card {
-            background-color: var(--primary-clr);
+            background-color: var(--primary-alt-clr);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
@@ -308,6 +306,7 @@
         @media (max-width: 768px) {
             .wrapper {
                 padding: 1rem;
+                
             }
 
             h2 {
