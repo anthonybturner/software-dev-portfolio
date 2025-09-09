@@ -1,36 +1,52 @@
 @use './abstracts' as *;
 
 .contact {
+  // Box Model
   width: 90%;
   margin: 0 auto;
+
+  // Form Elements
   input,
   textarea {
+    // Box Model
     width: 90%;
     margin: 0 auto;
   }
 
+  // Section Components
   .section-header {
+    // Layout
     text-align: center;
-    margin-bottom: 3rem;
     align-items: center;
+    
+    // Box Model
+    margin-bottom: 3rem;
 
     h1 {
-      font-size: 2.5rem;
+      // Box Model
       margin-bottom: 1rem;
+      
+      // Typography
+      font-size: 2.5rem;
     }
 
     p {
-      font-size: 1.1rem;
+      // Box Model
       max-width: 600px;
       margin: 0 auto;
+      
+      // Typography
+      font-size: 1.1rem;
     }
   }
 
   .contact-content {
+    // Layout
     display: grid;
     grid-template-columns: 1fr 3fr;
     gap: 3rem;
 
+    // Media Queries
     @media (min-width: 500px) and (max-width: 1199px) {
       grid-template-columns: 1fr 3fr;
     }
@@ -40,79 +56,115 @@
     }
   }
 
+  // Contact Info Section
   .contact-info {
     .info-item {
+      // Layout
       display: flex;
       align-items: flex-start;
       gap: 1rem;
+      
+      // Box Model
       margin-bottom: 2rem;
 
       i {
+        // Box Model
+        margin-top: var(--spacer);
+        
+        // Typography
         font-size: var(--fs-3);
         color: var(--accent-clr);
-        margin-top: var(--spacer);
       }
 
       h3 {
+        // Box Model
         margin: 0 0 0.5rem 0;
       }
 
       p {
+        // Box Model
         margin: 0;
       }
     }
   }
 
+  // Contact Form Section
   .contact-form {
     .form-group {
+      // Box Model
       margin-bottom: 1.5rem;
 
       input,
       textarea {
+        // Box Model
+        padding: var(--spacer);
+        border: 2px solid var(--secondary-clr);
+        border-radius: var(--br);
+        
+        // Typography
+        font-size: var(--fs-p);
+        
+        // Transitions & Animations
+        transition: border-color 0.3s ease;
 
-  padding: var(--spacer);
-  border: 2px solid var(--secondary-clr);
-  border-radius: var(--br);
-  font-size: var(--fs-p);
-  transition: border-color 0.3s ease;
-
+        // Pseudo-elements & States
         &:focus {
-          outline: none;
+          // Box Model
           border-color: var(--accent-clr);
+          outline: none;
         }
 
         &.error {
-          border-color: #e74c3c; // Consider adding a custom property for error color
+          // Box Model
+          border-color: var(--error-clr);
         }
       }
 
       .error-message {
-  color: #e74c3c; // Consider adding a custom property for error color
-  font-size: 0.875rem;
-  margin-top: var(--spacer);
+        // Box Model
+        margin-top: var(--spacer);
+        
+        // Typography
+        color: var(--error-clr);
+        font-size: 0.875rem;
       }
     }
 
     .submit-btn {
-  background: var(--accent-clr);
-  color: var(--secondary-clr);
-  border: none;
-  padding: var(--spacer) calc(var(--spacer) * 2);
-  border-radius: var(--br);
-  font-size: var(--fs-p);
-  font-weight: var(--fw-b);
-  cursor: pointer;
-  transition: all 0.3s ease;
+      // Box Model
+      padding: var(--spacer) calc(var(--spacer) * 2);
+      border: none;
+      border-radius: var(--br);
+      
+      // Background & Visual
+      background: var(--accent-clr);
+      
+      // Typography
+      color: var(--secondary-clr);
+      font-size: var(--fs-p);
+      font-weight: var(--fw-b);
+      
+      // Interaction
+      cursor: pointer;
+      
+      // Transitions & Animations
+      transition: all 0.3s ease;
 
+      // Pseudo-elements & States
       &:hover {
-  background: #2980b9; // Consider adding a custom property for hover accent
+        // Background & Visual
+        background: var(--accent-hover-clr);
+        
+        // Transforms & Transitions
         transform: translateY(-2px);
       }
     }
   }
 
-   section:hover {
-        //  box-shadow: 0 2px 2px 0 var(--accent-clr);
-        background: rgba(255, 253, 253, .3) !important;
-    }
+  // Hover States
+  section:hover {
+    // Background & Visual
+    background: rgba(255, 253, 253, .3) !important;
+    // box-shadow: 0 2px 2px 0 var(--accent-clr); // TODO: Review if needed
+  }
 }

@@ -1,16 +1,111 @@
 @use './abstracts' as *;
 
 .card {
+  // Mixins
   @include card-layout;
+
+  // Images Gallery
+  .images {
+    // Layout
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    
+    // Box Model
+    margin-bottom: var(--spacer);
+
+    .image-container {
+      // Layout
+      position: relative;
+      display: block;
+      overflow: hidden;
+      
+      // Box Model
+      border-radius: var(--br);
+      
+      // Typography
+      text-decoration: none;
+      
+      // Transitions & Animations
+      transition: all 0.3s ease;
+
+      // Pseudo-elements & States
+      &:hover {
+        // Transforms & Transitions
+        transform: translateY(-2px);
+        
+        // Background & Visual
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+        .thumbnail {
+          // Transforms & Transitions
+          transform: scale(1.05);
+        }
+
+        .image-overlay {
+          // Visual
+          opacity: 1;
+        }
+      }
+
+      .thumbnail {
+        // Layout
+        display: block;
+        
+        // Box Model
+        width: 100%;
+        height: 150px;
+        
+        // Visual
+        object-fit: cover;
+        
+        // Transitions & Animations
+        transition: transform 0.3s ease;
+      }
+
+      .image-overlay {
+        // Layout
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        // Background & Visual
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        
+        // Transitions & Animations
+        transition: opacity 0.3s ease;
+
+        i {
+          // Typography
+          font-size: 1.5rem;
+          color: white;
+        }
+      }
+    }
+  }
+
+  // Nested Components
   .content {
+    // Box Model
     padding: var(--spacer);
+
     .technologies {
-      margin-bottom: var(--spacer-md);
+      // Layout
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
+      
+      // Box Model
+      margin-bottom: var(--spacer-md);
 
+      // Media Queries
       @media (min-width: 650px) and (max-width: 768px) {
         flex-direction: column;
       }
@@ -18,12 +113,18 @@
       @media (min-width: 0px) and (max-width: 649px) {
         flex-direction: column;
       }
+
       span {
-        background: var(--secondary-clr);
-        color: var(--secondary-text-clr);
+        // Box Model
         margin-right: 12px;
         padding: var(--spacer-sm);
         border-radius: var(--br);
+        
+        // Background & Visual
+        background: var(--secondary-clr);
+        
+        // Typography
+        color: var(--secondary-text-clr);
         font-size: var(--fs-5);
         font-weight: 500;
       }
@@ -31,18 +132,30 @@
 
     .actions {
       a {
+        // Layout
         text-align: center;
+        
+        // Box Model
+        margin-right: var(--spacer);
         padding: var(--spacer-sm);
         border-radius: var(--br);
+        
+        // Typography
         text-decoration: none;
         font-weight: 500;
+        
+        // Transitions & Animations
         transition: all 0.3s ease;
-        margin-right: var(--spacer);
 
+        // BEM Modifiers
         &.demo {
+          // Background & Visual
           background: var(--accent-clr);
+          
+          // Typography
           color: var(--secondary-clr);
 
+          // Pseudo-elements & States
           &:hover,
           &.github {
             background: var(--accent-hl-clr);
@@ -50,9 +163,13 @@
         }
 
         &.github {
+          // Background & Visual
           background: var(--accent-clr);
+          
+          // Typography
           color: var(--secondary-clr);
 
+          // Pseudo-elements & States
           &:hover {
             background: var(--accent-hl-clr);
           }
@@ -61,6 +178,7 @@
     }
   }
 
+  // Media Queries
   @media (min-width: 0px) and (max-width: 649px) {
     .images {
       flex-direction: column;

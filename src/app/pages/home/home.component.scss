@@ -1,337 +1,464 @@
 // Modern Hero & Grid Design
 .home {
-    section {
-        transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  // Nested Components
+  section {
+    // Layout Properties
+    position: relative;
+    overflow: hidden;
+    
+    // Transitions & Animations
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+
+    // BEM Modifiers
+    &.hero-section {
+      // Layout
+      position: relative;
+
+      // Pseudo-elements
+      &::before {
+        // Layout
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        
+        // Box Model
+        content: '';
+        
+        // Background & Visual
+        background-image: url("/images/projects/marvel-rivals-hero.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: rgba(0, 0, 0, 0.3);
+        background-blend-mode: overlay;
+        filter: blur(.5rem);
+      }
+
+      &::after {
+        // Layout
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        right: 5%;
+        bottom: 10%;
+        z-index: 2;
+        
+        // Box Model
+        content: '';
+        margin: 1rem;
+        border-radius: 16px;
+        
+        // Background & Visual
+        background-image: url("/images/projects/marvel-rivals-hero.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.2;
+      }
+
+      .columns {
+        // Layout
         position: relative;
-        overflow: hidden;
+        z-index: 3;
+        
+        // Box Model
+        padding: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        
+        // Background & Visual
+        background: rgba(255, 255, 255, 0);
+        
+        // Typography
+        color: #fff;
+      }
+    }
 
-        &.hero-section {
-            position: relative;
+    // Typography Elements
+    h1 {
+      // Layout
+      text-align: center;
+      
+      // Typography
+      color: #ffffffbb;
+    }
 
-            // Blurred background layer with RGBA transparency
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background-image: url("/images/projects/marvel-rivals-hero.jpg");
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                filter: blur(.5rem);
-                z-index: 1;
-                background-color: rgba(0, 0, 0, 0.3);
-                background-blend-mode: overlay;
-            }            // Clear center image
-            &::after {
-                content: '';
-                position: absolute;
-                top: 10%;
-                left: 5%; // wider
-                right: 5%; // wider
-                bottom: 10%;
-                background-image: url("/images/projects/marvel-rivals-hero.jpg");
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                border-radius: 16px;
-                opacity: 0.2;
-                z-index: 2;
-                margin: 1rem;
-            }
+    // Layout Components
+    .layout-grid {
+      // Layout
+      display: flex;
+      gap: var(--spacer);
 
-            .columns {
-                position: relative;
-                z-index: 3;
-                padding: 1rem;
-                color: #fff;
-                background: rgba(255, 255, 255, 0);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                border-radius: 16px;
-            }
+      // Direct Children
+      & > * {
+        flex: 1;
+      }
+
+      .col {
+        // Layout
+        display: grid;
+        gap: var(--spacer);
+        align-content: center;
+      }
+
+      // Media Queries
+      @media screen and (max-width: 600px) {
+        flex-direction: column;
+      }
+    }
+
+    // Card Components
+    .card {
+      // Layout
+      display: flex;
+      flex-direction: column;
+      
+      // Box Model
+      padding: var(--spacer);
+      border-top: 2px solid var(--accent-clr);
+      border-radius: var(--br-sm) var(--br-sm) 0 0;
+      
+      // Background & Visual
+      background-color: var(--primary-clr);
+
+      img {
+        // Box Model
+        width: var(--img-icon);
+        height: var(--img-icon);
+      }
+
+      .skill-percentage {
+        // Layout
+        display: flex;
+        align-items: flex-end;
+      }
+
+      h3 {
+        // Layout
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        
+        // Box Model
+        margin-bottom: 0.75rem;
+        
+        // Typography
+        color: var(--accent-clr);
+        
+        i {
+          // Typography
+          font-size: 1.1rem;
         }
+      }
+      
+      p {
+        // Box Model
+        margin-bottom: 1.5rem;
+        
+        // Typography
+        color: var(--text-clr);
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+    }
 
+    // Graph Components
+    .graph-bar {
+      // Box Model
+      height: 12px;
+      margin-top: 0.5rem;
+      border-radius: var(--br);
+      overflow: hidden;
+      
+      // Background & Visual
+      background: var(--primary-clr);
+    }
 
-        h1 {
-            color: #ffffffbb;
+    .bar-fill {
+      // Box Model
+      height: 100%;
+      border-radius: var(--br);
+      
+      // Transitions & Animations
+      transition: width 0.6s cubic-bezier(.4, 0, .2, 1);
+      
+      // BEM Modifiers - Skill Categories
+      &.frontend-bar {
+        background: linear-gradient(90deg, #61dafb, #21d4fd);
+      }
+      
+      &.backend-bar {
+        background: linear-gradient(90deg, #f39c12, #f1c40f);
+      }
+      
+      &.devops-bar {
+        background: linear-gradient(90deg, #9b59b6, #8e44ad);
+      }
+      
+      // Default Fallback
+      &:not(.frontend-bar):not(.backend-bar):not(.devops-bar) {
+        background: var(--accent-clr);
+      }
+    }
+
+    // Featured Skill Components
+    .featured-skill {
+      // Box Model
+      margin-bottom: 1rem;
+      
+      .skill-labels {
+        // Layout
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        // Box Model
+        margin-bottom: 0.25rem;
+        
+        .skill-name {
+          // Layout
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          
+          // Typography
+          font-weight: 500;
+          color: var(--text-clr);
+          
+          i {
+            // Box Model
+            width: 1.2rem;
+            
+            // Layout
             text-align: center;
-        }
-
-        .layout-grid {
-            display: flex;
-            gap: var(--spacer);
-
-            &>* {
-                flex: 1;
-            }
-
-            .col {
-                display: grid;
-                gap: var(--spacer);
-                align-content: center;
-            }
-
-            @media screen and (max-width: 600px) {
-                flex-direction: column;
-            }
-        }
-
-        .card {
-            display: flex;
-            flex-direction: column;
-            padding: var(--spacer);
-            border-top: 2px solid var(--accent-clr);
-            border-radius: var(--br-sm) var(--br-sm) 0 0;
-            background-color: var(--primary-clr);
-
-            img {
-                width: var(--img-icon);
-                height: var(--img-icon);
-            }
-
-            .skill-percentage {
-                display: flex;
-                align-items: flex-end;
-            }
-        }
-
-        .graph-bar {
-            background: var(--primary-clr);
-            border-radius: var(--br);
-            height: 12px;
-            overflow: hidden;
-            margin-top: 0.5rem;
-        }
-
-        .bar-fill {
-            height: 100%;
-            border-radius: var(--br);
-            transition: width 0.6s cubic-bezier(.4, 0, .2, 1);
             
-            // Different colors for different skill categories
-            &.frontend-bar {
-                background: linear-gradient(90deg, #61dafb, #21d4fd);
-            }
-            
-            &.backend-bar {
-                background: linear-gradient(90deg, #f39c12, #f1c40f);
-            }
-            
-            &.devops-bar {
-                background: linear-gradient(90deg, #9b59b6, #8e44ad);
-            }
-            
-            // Default fallback
-            &:not(.frontend-bar):not(.backend-bar):not(.devops-bar) {
-                background: var(--accent-clr);
-            }
+            // Typography
+            color: var(--accent-clr);
+          }
         }
-
-        .featured-skill {
-            margin-bottom: 1rem;
-            
-            .skill-labels {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 0.25rem;
-                
-                .skill-name {
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                    font-weight: 500;
-                    color: var(--text-clr);
-                    
-                    i {
-                        color: var(--accent-clr);
-                        width: 1.2rem;
-                        text-align: center;
-                    }
-                }
-                
-                .skill-percentage {
-                    font-weight: 600;
-                    font-size: 0.9rem;
-                    color: var(--accent-clr);
-                }
-            }
+        
+        .skill-percentage {
+          // Typography
+          font-weight: 600;
+          font-size: 0.9rem;
+          color: var(--accent-clr);
         }
-
-        // Enhanced card styling for skill categories
-        .card {
-            h3 {
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-                margin-bottom: 0.75rem;
-                color: var(--accent-clr);
-                
-                i {
-                    font-size: 1.1rem;
-                }
-            }
-            
-            p {
-                margin-bottom: 1.5rem;
-                color: var(--text-clr);
-                font-size: 0.9rem;
-                line-height: 1.4;
-            }
-        }
+      }
     }
+
+    // Hover States
+    &:hover {
+      // Background & Visual
+      background: rgba(255, 253, 253, .3) !important;
+      // box-shadow: 0 2px 2px 0 var(--accent-clr); // TODO: Review if needed
+    }
+  }
    
-    // Experience Section Card Styles
-    .experience-section {
-        .wrapper {
-          display: block;
-        }
-
-        .experience-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .experience-card {
-            background-color: var(--primary-alt-clr);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 0;
-            margin-left: 0;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-
-            &:hover {
-                border-color: rgba(255, 255, 255, 0.2);
-                transform: translateY(-4px);
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            }
-
-            .card-header {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-                padding: 2rem 2rem 0 2rem;
-
-                @media (min-width: 768px) {
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: flex-start;
-                }
-
-                .title-section {
-                    h3 {
-                        font-size: 1.5rem;
-                        font-weight: 700;
-                        margin-bottom: 0.5rem;
-                    }
-
-                    h4 {
-                        font-size: 1.25rem;
-                        font-weight: 600;
-                        margin: 0;
-                    }
-                }
-
-                .meta-section {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.5rem;
-                    text-align: left;
-
-                    @media (min-width: 768px) {
-                        text-align: right;
-                    }
-
-                    .date-info,
-                    .location-info {
-                        display: flex;
-                        align-items: center;
-                        gap: 0.5rem;
-                        font-size: 0.9rem;
-
-                        @media (min-width: 768px) {
-                            justify-content: flex-end;
-                        }
-
-                        i {
-                            width: 1rem;
-                            text-align: center;
-                            color: var(--accent-blue);
-                        }
-                    }
-                }
-            }
-
-            .card-content {
-                padding: 0 2rem 2rem 2rem;
-
-                p {
-                    line-height: 1.6;
-                }
-
-                .tech-tags {
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 0.5rem;
-
-                    .tech-tag {
-                        display: inline-flex;
-                        align-items: center;
-                        padding: 0.4rem 0.8rem;
-                        background: var(--secondary-clr);
-                        color: var(--secondary-text-clr);
-                        
-                        border-radius: var(--br);
-                        font-size: var(--fs-6);
-                        font-weight: 600;
-                        transition: all 0.2s ease;
-
-                        &:hover {
-                            background: rgba(72, 202, 228, 0.2);
-                            border-color: rgba(72, 202, 228, 0.4);
-                            color: var(--accent-blue);
-                            transform: translateY(-1px);
-                        }
-                    }
-                }
-            }
-        }
-
-        // Responsive adjustments
-        @media (max-width: 768px) {
-            .wrapper {
-                padding: 1rem;
-                
-            }
-
-            h2 {
-                font-size: 2rem;
-                margin-bottom: 2rem;
-            }
-
-            .experience-cards {
-                gap: 1.5rem;
-            }
-
-            .experience-card {
-                .card-header {
-                    padding: 1.5rem 1.5rem 0 1.5rem;
-                }
-
-                .card-content {
-                    padding: 0 1.5rem 1.5rem 1.5rem;
-                }
-            }
-        }
+  // Experience Section Styles
+  .experience-section {
+    .wrapper {
+      // Layout
+      display: block;
     }
 
-section:hover {
-        //  box-shadow: 0 2px 2px 0 var(--accent-clr);
-        background: rgba(255, 253, 253, .3) !important
-}
+    .experience-cards {
+      // Layout
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .experience-card {
+      // Layout
+      overflow: hidden;
+      
+      // Box Model
+      padding: 0;
+      margin-left: 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      
+      // Background & Visual
+      background-color: var(--primary-alt-clr);
+      backdrop-filter: blur(15px);
+      
+      // Transitions & Animations
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+      // Hover States
+      &:hover {
+        // Box Model
+        border-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        
+        // Transforms & Transitions
+        transform: translateY(-4px);
+      }
+
+      .card-header {
+        // Layout
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        
+        // Box Model
+        padding: 2rem 2rem 0 2rem;
+
+        // Media Queries
+        @media (min-width: 768px) {
+          // Layout
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-start;
+        }
+
+        .title-section {
+          h3 {
+            // Box Model
+            margin-bottom: 0.5rem;
+            
+            // Typography
+            font-size: 1.5rem;
+            font-weight: 700;
+          }
+
+          h4 {
+            // Box Model
+            margin: 0;
+            
+            // Typography
+            font-size: 1.25rem;
+            font-weight: 600;
+          }
+        }
+
+        .meta-section {
+          // Layout
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          text-align: left;
+
+          // Media Queries
+          @media (min-width: 768px) {
+            text-align: right;
+          }
+
+          .date-info,
+          .location-info {
+            // Layout
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            
+            // Typography
+            font-size: 0.9rem;
+
+            // Media Queries
+            @media (min-width: 768px) {
+              justify-content: flex-end;
+            }
+
+            i {
+              // Box Model
+              width: 1rem;
+              
+              // Layout
+              text-align: center;
+              
+              // Typography
+              color: var(--accent-blue);
+            }
+          }
+        }
+      }
+
+      .card-content {
+        // Box Model
+        padding: 0 2rem 2rem 2rem;
+
+        p {
+          // Typography
+          line-height: 1.6;
+        }
+
+        .tech-tags {
+          // Layout
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+
+          .tech-tag {
+            // Layout
+            display: inline-flex;
+            align-items: center;
+            
+            // Box Model
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--br);
+            
+            // Background & Visual
+            background: var(--secondary-clr);
+            
+            // Typography
+            color: var(--secondary-text-clr);
+            font-size: var(--fs-6);
+            font-weight: 600;
+            
+            // Transitions & Animations
+            transition: all 0.2s ease;
+
+            // Hover States
+            &:hover {
+              // Background & Visual
+              background: rgba(72, 202, 228, 0.2);
+              border-color: rgba(72, 202, 228, 0.4);
+              
+              // Typography
+              color: var(--accent-blue);
+              
+              // Transforms & Transitions
+              transform: translateY(-1px);
+            }
+          }
+        }
+      }
+    }
+
+    // Media Queries
+    @media (max-width: 768px) {
+      .wrapper {
+        // Box Model
+        padding: 1rem;
+      }
+
+      h2 {
+        // Box Model
+        margin-bottom: 2rem;
+        
+        // Typography
+        font-size: 2rem;
+      }
+
+      .experience-cards {
+        // Layout
+        gap: 1.5rem;
+      }
+
+      .experience-card {
+        .card-header {
+          // Box Model
+          padding: 1.5rem 1.5rem 0 1.5rem;
+        }
+
+        .card-content {
+          // Box Model
+          padding: 0 1.5rem 1.5rem 1.5rem;
+        }
+      }
+    }
+  }
 }

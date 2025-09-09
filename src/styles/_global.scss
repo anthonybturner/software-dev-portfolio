@@ -1,245 +1,332 @@
 @use './abstracts' as *;
 
 html {
-    font-size: var(--fs);
-    overflow-x: hidden;
+  // Typography
+  font-size: var(--fs);
+  
+  // Typography Elements
+  p {
+    // Typography
+    font-size: var(--fs-p);
+  }
 
-    body {
-        margin: 0 auto;
-        font-family: var(--ff);
-        // background: var(--primary-clr);
-        background: linear-gradient(250deg, var(--secondary-clr) 0%, var(--primary-clr) 60%);
-        color: var(--primary-text-clr);
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
+  // Layout
+  overflow-x: hidden;
 
-    p {
-        font-size: var(--fs-p);
-    }
+  h1 {
+    // Typography
+    font-size: var(--fs-1);
+  }
 
-    img {
-        display: block;
-        width: 100%;
-        max-width: 100%;
-    }
+  h2 {
+    // Typography
+    font-size: var(--fs-2);
+  }
 
+  h3 {
+    // Typography
+    font-size: var(--fs-3);
+  }
+
+  h4 {
+    // Typography
+    font-size: var(--fs-4);
+  }
+
+  h5 {
+    // Typography
+    font-size: var(--fs-5);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    // Typography
+    color: var(--primary-text-clr);
+  }
+
+  li {
+    // Typography
+    color: var(--primary-text-clr);
+  }
+
+  // Media Queries - Mobile Typography
+  @media (min-width: 0px) and (max-width: 649px) {
     h1 {
-        font-size: var(--fs-1);
+      // Typography
+      font-size: var(--fs-3);
     }
 
     h2 {
-        font-size: var(--fs-2);
+      // Typography
+      font-size: var(--fs-4);
     }
 
     h3 {
-        font-size: var(--fs-3);
+      // Typography
+      font-size: var(--fs-5);
     }
 
     h4 {
-        font-size: var(--fs-4);
+      // Typography
+      font-size: var(--fs-6);
     }
 
     h5 {
-        font-size: var(--fs-5);
+      // Typography
+      font-size: var(--fs-6);
+    }
+  }
+  
+  // Nested Elements
+  body {
+    // Box Model
+    margin: 0 auto;
+    
+    // Background & Visual
+    background: linear-gradient(250deg, var(--secondary-clr) 0%, var(--primary-clr) 60%);
+    // background: var(--primary-clr); // Alternative solid background
+    
+    // Typography
+    font-family: var(--ff);
+    color: var(--primary-text-clr);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  img {
+    // Layout
+    display: block;
+    
+    // Box Model
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  // Container Components
+  div.container {
+    // Media Queries
+    @media (min-width: 0) and (max-width: 600px) {
+      // Layout
+      display: flex;
+      flex-direction: column;
+      
+      // Box Model
+      margin: 0 auto;
+      // padding: 0 1rem; // TODO: Review if padding needed
+    }
+  }
+
+  // Section Components
+  section {
+    // Box Model
+    padding: var(--spacer);
+    margin: var(--spacer);
+    border: 1px solid var(--accent-hl-clr);
+    border-radius: var(--br);
+    
+    // Background & Visual
+    background: var(--primary-clr);
+    backdrop-filter: blur(8px);
+
+    // Section Header
+    .section-header {
+      // Box Model
+      padding: var(--spacer);
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--accent-clr);
+      border-radius: 14px;
+      
+      // Typography
+      color: var(--primary-text-clr);
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: var(--primary-text-clr);
-    }
+    // Wrapper Layout System
+    .wrapper {
+      // Layout
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
 
-    @media (min-width: 0px) and (max-width: 649px) {
-        h1 {
-            font-size: var(--fs-3);
+      .content {
+        // Layout
+        flex: 1;
+        min-width: 0; // Prevents flex item from overflowing
+        
+        ul, p {
+          // Box Model
+          margin: 0;
+          padding: 0;
         }
-
-        h2 {
-            font-size: var(--fs-4);
+        
+        ul.skills-list {
+          // Typography
+          list-style: none;
+          
+          li {
+            // Box Model
+            margin-bottom: 1rem;
+            
+            // Typography
+            line-height: 1.6;
+          }
         }
+      }
 
-        h3 {
-            font-size: var(--fs-5);
-        }
-
-        h4 {
-            font-size: var(--fs-6);
-        }
-
-        h5 {
-            font-size: var(--fs-6);
-        }
-    }
-
-    li {
-        color: var(--primary-text-clr);
-    }
-
-    div.container {
-
-        @media (min-width: 0) and (max-width: 600px) {
-
-            display: flex;
-            flex-direction: column;
-            margin: 0 auto;
-            //padding: 0 1rem;
-        }
-    }
-
-    section {
-        background: var(--primary-clr);
+      img {
+        // Layout
+        flex: 0 0 auto;
+        
+        // Box Model
+        width: 300px;
+        max-width: 300px;
+        height: auto;
+        border: var(--border) solid var(--accent-clr);
         border-radius: var(--br);
-        border: 1px solid var(--accent-hl-clr);
-        padding: var(--spacer);
-        margin: var(--spacer);
-        backdrop-filter: blur(8px);
+        
+        // Visual
+        object-fit: cover;
+      }
 
-        .section-header {
-            color: var(--primary-text-clr);
-            border-radius: 14px;
-            padding: var(--spacer);
-            border-bottom: 1px solid var(--accent-clr);
-            margin-bottom: 1.5rem;
+      // Media Queries - Tablet
+      @media (min-width: 650px) and (max-width: 1024px) {
+        // Layout
+        gap: 1.5rem;
+        
+        img {
+          // Box Model
+          width: 250px;
+          max-width: 250px;
         }
+      }
 
-        .wrapper {
-            display: flex;
-            gap: 2rem;
-            align-items: flex-start;
+      // Media Queries - Mobile
+      @media (min-width: 0px) and (max-width: 649px) {
+        // Layout
+        flex-direction: column-reverse;
+        gap: 1rem;
 
-            .content {
-                flex: 1;
-                min-width: 0; // Prevents flex item from overflowing
-                
-                ul, p {
-                    margin: 0;
-                    padding: 0;
-                }
-                
-                ul.skills-list {
-                    list-style: none;
-                    
-                    li {
-                        margin-bottom: 1rem;
-                        line-height: 1.6;
-                    }
-                }
-            }
-
-            img {
-                flex: 0 0 auto;
-                width: 300px;
-                max-width: 300px;
-                height: auto;
-                border: var(--border) solid var(--accent-clr);
-                border-radius: var(--br);
-                object-fit: cover;
-            }
-
-            // Tablet breakpoint
-            @media (min-width: 650px) and (max-width: 1024px) {
-                gap: 1.5rem;
-                
-                img {
-                    width: 250px;
-                    max-width: 250px;
-                }
-            }
-
-            // Mobile breakpoint
-            @media (min-width: 0px) and (max-width: 649px) {
-                flex-direction: column-reverse;
-                gap: 1rem;
-
-                img {
-                    flex: none;
-                    width: 100%;
-                    max-width: 100%;
-                    height: auto;
-                    max-height: 300px;
-                    object-fit: cover;
-                }
-                
-                .content {
-                    ul.skills-list li {
-                        margin-bottom: 0.75rem;
-                        font-size: 0.9rem;
-                    }
-                }
-            }
-
-            // Large desktop optimization
-            @media (min-width: 1400px) {
-                gap: 3rem;
-                
-                img {
-                    width: 350px;
-                    max-width: 350px;
-                }
-            }
+        img {
+          // Layout
+          flex: none;
+          
+          // Box Model
+          width: 100%;
+          max-width: 100%;
+          height: auto;
+          max-height: 300px;
+          
+          // Visual
+          object-fit: cover;
         }
-
-        .card {
-            .images {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                gap: 2rem;
-            }
+        
+        .content {
+          ul.skills-list li {
+            // Box Model
+            margin-bottom: 0.75rem;
+            
+            // Typography
+            font-size: 0.9rem;
+          }
         }
+      }
 
-        .grid {
-            width: 100%;
-            background: #ffffff00;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: var(--spacer-lg);
-
-            @media (min-width: 650px) and (max-width: 768px) {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            @media (min-width: 0px) and (max-width: 649px) {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
+      // Media Queries - Large Desktop
+      @media (min-width: 1400px) {
+        // Layout
+        gap: 3rem;
+        
+        img {
+          // Box Model
+          width: 350px;
+          max-width: 350px;
         }
-
+      }
     }
 
-    a,
-    .btn {
-        position: relative;
-        font-size: var(--fs-4);
-        text-decoration: none;
-        font-weight: var(--fw-n);
-        letter-spacing: 0.5px;
-        padding: var(--spacer) var(--spacer-sm) var(--spacer-sm) 0;
-        border-radius: 4px;
-        transition: color 0.3s, background 0.3s;
-        color: var(--accent-clr);
-
-        &.active {
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: 2px;
-                left: 0;
-                width: 100%;
-                height: 2px;
-                border-radius: 2px;
-                background: var(--accent-clr);
-            }
-        }
-
-
+    // Card Components
+    .card {
+      .images {
+        // Layout
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+      }
     }
 
-    a:hover {
-        background-color: var(--primary-clr);
-    }
+    // Grid Layout System
+    .grid {
+      // Layout
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--spacer-lg);
+      
+      // Box Model
+      width: 100%;
+      
+      // Background & Visual
+      background: #ffffff00;
 
+      // Media Queries
+      @media (min-width: 650px) and (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (min-width: 0px) and (max-width: 649px) {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+    }
+  }
+
+  // Link and Button Components
+  a,
+  .btn {
+    // Layout
+    position: relative;
+    
+    // Box Model
+    padding: var(--spacer) var(--spacer-sm) var(--spacer-sm) 0;
+    border-radius: 4px;
+    
+    // Typography
+    font-size: var(--fs-4);
+    font-weight: var(--fw-n);
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    color: var(--accent-clr);
+    
+    // Transitions & Animations
+    transition: color 0.3s, background 0.3s;
+
+    // BEM Modifiers
+    &.active {
+      // Pseudo-elements
+      &::after {
+        // Layout
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        
+        // Box Model
+        content: '';
+        width: 100%;
+        height: 2px;
+        border-radius: 2px;
+        
+        // Background & Visual
+        background: var(--accent-clr);
+      }
+    }
+  }
+
+  // Hover States
+  a:hover {
+    // Typography
+    color: var(--primary-clr);
+  }
 }

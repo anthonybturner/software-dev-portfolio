@@ -1,22 +1,26 @@
 @use './abstracts' as *;
 
-
 section {
-    .card {
-        .images {
-            img {
-                width: 40% !important;
-                min-height: 400px;
-                max-height: 400px;
-            }
+  // Grid Layout
+  .grid {
+    // Layout
+    grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
 
-        }
+    // Media Queries
+    @media (min-width: 0px) and (max-width: 649px) {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
-    .grid {
-        grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+  }
 
-        @media (min-width: 0px) and (max-width: 649px) {
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        }
+  // Card Components
+  .card {
+    .images {
+      img {
+        // Box Model
+        width: 40% !important;
+        min-height: 400px;
+        max-height: 400px;
+      }
     }
+  }
 }

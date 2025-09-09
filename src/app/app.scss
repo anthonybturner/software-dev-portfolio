@@ -1,10 +1,14 @@
 :host {
+  // Layout Properties
   display: block;
-  min-height: 100vh;
   position: relative;
+  
+  // Box Model
+  min-height: 100vh;
 }
 
 main {
+  // Box Model
   min-height: calc(100vh - 70px);
   margin: calc(70px + var(--spacer)) 0 10rem 0;
 }

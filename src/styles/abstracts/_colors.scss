@@ -8,10 +8,16 @@
   --accent-clr: hsl(36, 96%, 51%);
   --accent-hl-clr: hsla(207, 95%, 30%, 0.23);
 
+  // Text Colors
   --primary-text-clr: hsl(0, 0%, 0%); // Main text color
   --secondary-text-clr: hsl(0, 20%, 93%); // Main text color
   --primary-heading-clr: hsl(220, 100%, 1%); // Heading text color
   --secondary-heading-clr: hsl(197, 100%, 27%); // Secondary heading accent color
+
+  // Semantic Colors
+  --error-clr: hsl(0, 68%, 56%); // Error state color (#e74c3c)
+  --accent-hover-clr: hsl(204, 64%, 44%); // Accent hover state (#2980b9)
+  --accent-blue: hsl(197, 71%, 52%); // Blue accent for tech tags and icons
 }
 
 // Progress bar gradient

@@ -1,92 +1,136 @@
 @use './abstracts' as *;
 
 .header {
+  // Layout Properties
   display: flex;
   align-items: center;
-  justify-content: space-between; // logo left, nav right
-
-  background-color: color-mix(in srgb, var(--secondary-clr) 40%, transparent);
-  backdrop-filter: blur(4px);
-  box-shadow: var(--shadow);
+  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
+  
+  // Background & Visual
+  background-color: color-mix(in srgb, var(--secondary-clr) 40%, transparent);
+  backdrop-filter: blur(4px);
+  box-shadow: var(--shadow);
+  
+  // Transitions & Animations
   transition: all 0.3s ease;
 
+  // BEM Elements
   &__logo {
+    // Box Model
+    margin-left: var(--spacer);
+    
+    // Typography
     color: var(--accent-clr);
-    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.7);
     font-size: var(--fs-3);
     font-weight: var(--fw-b);
     letter-spacing: var(--ls);
     text-decoration: none;
+    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.7);
+    
+    // Transitions
     transition: color 0.3s ease;
-    margin-left: var(--spacer);
 
     span {
       font-weight: var(--fw-n);
     }
   }
 
+  // Nested Components
   .nav {
+    // Layout
     display: flex;
-    gap: var(--spacer);   
+    gap: var(--spacer);
+    
+    // Box Model
     margin-right: var(--spacer);
     
+    // Media Queries
     @media (max-width: 768px) {
+      // Layout
       position: fixed;
-      background: var( --secondary-clr);
-      color: var(--accent-clr);
       top: 60px;
       left: 0;
       width: 100%;
       flex-direction: column;
+      
+      // Box Model
       padding: var(--spacer);
+      
+      // Background & Visual
+      background: var(--secondary-clr);
+      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+      
+      // Typography
+      color: var(--accent-clr);
+      
+      // Transforms & Transitions
       transform: translateY(-100%);
       opacity: 0;
       visibility: hidden;
       transition: all 0.3s ease;
-      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
 
-      &.a{
-        border: 2px solid var(--color-border);
-      }
-  
+      // Modifier States
       &.active {
+        // Box Model
+        margin-bottom: 1rem;
+        
+        // Transforms & Transitions
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
-        margin-bottom: 1rem;
       }
     }
-     
+
+    // Temporary selector - needs review
+    &.a {
+      border: 2px solid var(--color-border);
+    }
   }
 
   .menu-toggle {
+    // Layout
     display: none;
-    color: var(--accent-clr);
-    background: var(  --secondary-clr);
     flex-direction: column;
     justify-content: space-between;
+    
+    // Box Model
     width: 40px;
     height: 24px;
     margin-right: var(--spacer);
+    
+    // Background & Visual
+    background: var(--secondary-clr);
+    
+    // Typography
+    color: var(--accent-clr);
+    
+    // Interaction
     cursor: pointer;
 
+    // Media Queries
     @media (max-width: 768px) {
       display: flex;
     }
 
     span {
+      // Box Model
       width: 100%;
       height: .3rem;
+      
+      // Background & Visual
       background: var(--accent-clr);
       border-radius: var(--br);
+      
+      // Transitions
       transition: all 0.3s ease;
     }
 
+    // Modifier States
     &.active {
       span:nth-child(1) {
         transform: rotate(45deg) translate(6px, 6px);

@@ -1,43 +1,62 @@
 @use './abstracts' as *;
 
 .card {
+  // Mixins
   @include card-layout;
 
+  // BEM Elements
   &__icon {
+    // Layout
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    // Box Model
     width: var(--img-icon);
     height: var(--img-icon);
     margin: var(--spacer) auto;
     padding: var(--spacer);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent-clr);
     border-radius: var(--br);
+    
+    // Typography
+    color: var(--accent-clr);
     font-size: var(--fs-2);
   }
 
   &__category {
-    font-size: var(--fs);
+    // Box Model
     margin-bottom: var(--spacer);
+    
+    // Typography
+    font-size: var(--fs);
   }
 
   &__proficiency {
-    
+    // Nested Elements
     &__progress-bar {
+      // Box Model
       height: 8px;
+      margin-bottom: 0.5rem;
       border-radius: 4px;
       overflow: hidden;
-      margin-bottom: 0.5rem;
     }
+
     &__progress {
+      // Box Model
       height: 100%;
-      background: linear-gradient(90deg, var(--secondary-clr), var(--accent-clr));
       border-radius: var(--br);
+      
+      // Background & Visual
+      background: linear-gradient(90deg, var(--secondary-clr), var(--accent-clr));
+      
+      // Transitions & Animations
       transition: width 1s ease-in-out;
     }
+
     &__percentage {
+      // Typography
       font-size: var(--fs);
-      font-weight: var(--fw-b)
+      font-weight: var(--fw-b);
     }
   }
 }

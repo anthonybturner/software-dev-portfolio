@@ -1,72 +1,106 @@
 @use './abstracts' as *;
+
 .footer {
+  // Layout Properties
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  backdrop-filter: blur(10px);
   z-index: 1000;
-  transition: all 0.3s ease;
+  
+  // Background & Visual
+  background-color: color-mix(in srgb, var(--secondary-clr) 40%, transparent);
+  backdrop-filter: blur(10px);
   box-shadow: var(--shadow-soft);
+  
+  // Transitions & Animations
+  transition: all 0.3s ease;
 
+  // Nested Components
   .container {
+    // Layout
+    margin: 0 auto;
+    
+    // Box Model
     max-width: 1200px;
     height: 148px;
-    margin: 0 auto;
     padding: 0 20px;
   }
 
   .content {
+    // Layout
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-   // gap: 2rem;
+    // gap: 2rem; // TODO: Review if gap needed
   }
 
   .brand {
     h3 {
+      // Box Model
       margin-bottom: 1rem;
+      
+      // Typography
       font-size: var(--fs-p);
     }
 
     p {
+      // Visual
       opacity: 0.9;
     }
   }
 
   .links {
-    display:flex;
+    // Layout
+    display: flex;
     flex-direction: column;
     justify-content: center;
 
     ul {
+      // Layout
       display: flex;
-      list-style: none;
+      
+      // Box Model
       margin: 0;
       padding: 0;
+      
+      // Typography
+      list-style: none;
     }
   }
 
   .social {
     h4 {
+      // Box Model
       margin-bottom: var(--spacer);
     }
 
     .social-links {
+      // Layout
       display: flex;
       gap: var(--spacer);
-      a {        
+
+      a {
+        // Pseudo-elements & States
         &:hover {
-          transition: all 0.4s ease;
+          // Background & Visual
           background: #3498db;
+          
+          // Transforms & Transitions
           transform: translateY(-12px);
+          transition: all 0.4s ease;
         }
       }
     }
   }
 
   .bottom {
-    border-top: 1px solid rgba(64, 25, 172, 0.74);
+    // Layout
     text-align: center;
+    
+    // Box Model
+    border-top: 1px solid rgba(64, 25, 172, 0.74);
+    
+    // Visual
     opacity: 0.8;
   }
 }

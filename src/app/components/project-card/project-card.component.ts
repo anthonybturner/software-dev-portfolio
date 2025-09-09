@@ -1,6 +1,8 @@
 import { Component, Input, AfterViewInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { Project } from '../../services/project.service';
 import { CommonModule } from '@angular/common';
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
+import PhotoSwipe from 'photoswipe';
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
@@ -16,23 +18,47 @@ export class ProjectCardComponent implements AfterViewInit, OnDestroy {
   @ViewChild('swiperContainer', { static: false }) swiperContainer!: ElementRef;
 
   private swiper!: Swiper;
-  modalActive = false;
-  currentModalImage = '';
-  currentModalIndex = 0;
+  private lightbox!: PhotoSwipeLightbox;
 
   ngAfterViewInit(): void {
-    
+    // PhotoSwipe will be initialized on demand when images are clicked
+    console.log('Component ready, PhotoSwipe will initialize when images are clicked');
   }
 
   ngOnDestroy(): void {
     if (this.swiper) {
       this.swiper.destroy(true, true);
     }
-    // Restore body overflow
-    document.body.style.overflow = 'auto';
+    if (this.lightbox) {
+      this.lightbox.destroy();
+    }
   }
 
-  private initSwiper(): void {
+  openPhotoSwipe(event: Event, index: number): void {
+    event.preventDefault();
+    
+    // Create image data array for PhotoSwipe
+    const images = this.project.images.map(image => ({
+      src: image,
+      width: 1200,
+      height: 800,
+      alt: this.project.title
+    }));
+
+    // Open PhotoSwipe programmatically
+    const lightbox = new PhotoSwipeLightbox({
+      dataSource: images,
+      pswpModule: PhotoSwipe,
+      padding: { top: 40, bottom: 40, left: 100, right: 100 },
+      bgOpacity: 0.9,
+    });
+
+    lightbox.init();
+    lightbox.loadAndOpen(index);
+  }
+  
+  
+    private initSwiper(): void {
     // Configure Swiper modules
     Swiper.use([Navigation, Pagination, Autoplay]);
 
@@ -70,31 +96,5 @@ export class ProjectCardComponent implements AfterViewInit, OnDestroy {
         },
       },
     });
-  }
-
-  openImageModal(image: string, index: number): void {
-    this.currentModalImage = image;
-    this.currentModalIndex = index;
-    this.modalActive = true;
-    document.body.style.overflow = 'hidden';
-  }
-
-  closeModal(): void {
-    this.modalActive = false;
-    document.body.style.overflow = 'auto';
-  }
-
-  nextModalImage(): void {
-    if (this.currentModalIndex < this.project.images.length - 1) {
-      this.currentModalIndex++;
-      this.currentModalImage = this.project.images[this.currentModalIndex];
-    }
-  }
-
-  previousModalImage(): void {
-    if (this.currentModalIndex > 0) {
-      this.currentModalIndex--;
-      this.currentModalImage = this.project.images[this.currentModalIndex];
-    }
   }
 }
