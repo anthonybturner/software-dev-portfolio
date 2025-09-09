@@ -165,6 +165,10 @@
       }
     }
 
+    .card:hover{
+    background-color: var(--section-hover-clr);
+    }
+
     // Graph Components
     .graph-bar {
       // Box Model
@@ -252,7 +256,7 @@
     // Hover States
     &:hover {
       // Background & Visual
-      background: rgba(255, 253, 253, .3) !important;
+      background: var(--section-hover-clr) !important;
       // box-shadow: 0 2px 2px 0 var(--accent-clr); // TODO: Review if needed
     }
   }

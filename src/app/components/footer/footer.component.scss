@@ -82,11 +82,8 @@
       a {
         // Pseudo-elements & States
         &:hover {
-          // Background & Visual
-          background: #3498db;
-          
           // Transforms & Transitions
-          transform: translateY(-12px);
+          transform: translateY(calc(var(--spacer-sm) * -1));
           transition: all 0.4s ease;
         }
       }
