@@ -2,6 +2,8 @@
 
 .header {
   // Layout Properties
+  @include frosted-glass-bg(var(--accent-clr));
+  background-color: color-mix(in srgb, var(--secondary-clr) 40%, transparent);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,7 +14,6 @@
   z-index: 1000;
   
   // Background & Visual
-  background-color: color-mix(in srgb, var(--secondary-clr) 40%, transparent);
   backdrop-filter: blur(4px);
   box-shadow: var(--shadow);
   
@@ -25,12 +26,11 @@
     margin-left: var(--spacer);
     
     // Typography
-    color: var(--accent-clr);
+    color:  color-mix(in srgb, var(--accent-clr), 80%, rgb(145, 94, 1));
     font-size: var(--fs-3);
     font-weight: var(--fw-b);
     letter-spacing: var(--ls);
     text-decoration: none;
-    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.7);
     
     // Transitions
     transition: color 0.3s ease;

@@ -7,7 +7,7 @@
   --secondary-clr:hsl(207, 95%, 26%);
   
   //Sections
-  --section-hover-clr: hsla(0, 100%, 100%, 0.3);
+  --section-hover-clr: hsla(0, 100%, 100%, 0.4);
 
   //--accent-clr: hsl(39, 100%, 50%);
   --accent-clr: hsl(36, 96%, 51%);
@@ -24,6 +24,3 @@
   --accent-hover-clr: hsl(204, 64%, 44%); // Accent hover state (#2980b9)
   --accent-blue: hsl(197, 71%, 52%); // Blue accent for tech tags and icons
 }
-
-// Progress bar gradient
-$bar-fill: linear-gradient(90deg, var(--accent-clr) 0%, var(--accent-clr) 40%, var(--color-bg) 100%);

@@ -25,6 +25,16 @@
       transform: translate(0px, 0px) scale(.9);
   }
 }
+
+@mixin frosted-glass-bg($bg) {
+  background: $bg;
+  color: var(--secondary-text-clr);
+  border: 1px solid var(--accent-transparent-clr);
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.12);
+  backdrop-filter: blur(8px);
+}
+
 @mixin card-layout{
   box-shadow: color-mix(in srgb, var(--primary-clr) 10%, transparent);
   padding: var(--spacer);
