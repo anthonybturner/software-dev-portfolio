@@ -58,7 +58,7 @@
     @media (max-width: 768px) {
       // Layout
       position: fixed;
-      top: 60px;
+      top: 58px;
       left: 0;
       width: 100%;
       flex-direction: column;
@@ -67,7 +67,7 @@
       padding: var(--spacer);
       
       // Background & Visual
-      background: var(--secondary-clr);
+      background: color-mix(in srgb, var(--secondary-clr) 80%, transparent);
       box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
       
       // Typography
