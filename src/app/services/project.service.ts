@@ -44,10 +44,10 @@ export class ProjectService {
       title: 'Angular/.NET Modernization',
       description: 'Migrated legacy Angular/.NET Framework apps to Angular 19 and .NET 8. Implemented scalable APIs and CI/CD pipelines.',
       technologies: ['Angular', '.NET 8', 'Azure DevOps', 'CI/CD'],
-      images: ['./images/projects/navy-project-main.jpg'],
-      thumbnails: ['./images/projects/navy-project-main-thumb.jpg'],
-      projectUrl: 'https://marvelrivalsapi.com/rivals/ranked/gold.png',
-      githubUrl: 'https://github.com/anthonybturner'
+      images:  ['./images/projects/empty-main-thumb.svg'],
+      thumbnails: ['./images/projects/empty-main-thumb.svg'],
+      projectUrl: 'https://www.apptechllc.com',
+      githubUrl: ''
     },
     {
       id: 2,
@@ -56,38 +56,38 @@ export class ProjectService {
       technologies: ['Azure', 'ASP.NET', 'OAuth', 'SQL Server'],
       images: ['./images/projects/navy-project-main.jpg'],
       thumbnails: ['./images/projects/navy-project-main-thumb.jpg'],
-      projectUrl: 'https://yourportfolio.com/projects/cloud-navy-apps',
-      githubUrl: 'https://github.com/anthonybturner'
+      projectUrl: 'https://www.jag.navy.mil',
+      githubUrl: ''
     },
     {
       id: 3,
       title: 'Legacy VB.NET Migration',
       description: 'Converted legacy VB.NET apps to C#/.NET 4, automating processes and improving performance.',
       technologies: ['VB.NET', 'C#', '.NET 4', 'Automation'],
-      images: ['./images/projects/navy-project-main.jpg'],
-      thumbnails: ['./images/projects/navy-project-main-thumb.jpg'],
-      projectUrl: 'https://yourportfolio.com/projects/vbnet-migration',
-      githubUrl: 'https://github.com/anthonybturner'
+      images:  ['./images/projects/empty-main-thumb.svg'],
+      thumbnails:  ['./images/projects/empty-main-thumb.svg'],
+      projectUrl: '',
+      githubUrl: ''
     },
     {
       id: 4,
       title: 'WordPress Sites',
       description: 'Built and customized WordPress websites with PHP/MySQL, responsive UI/UX, and optimized dynamic content.',
       technologies: ['WordPress', 'PHP', 'MySQL', 'Bootstrap'],
-      images: ['./images/projects/navy-project-main.jpg'],
-      thumbnails: ['./images/projects/navy-project-main-thumb.jpg'],
-      projectUrl: 'https://yourportfolio.com/projects/wordpress-sites',
-      githubUrl: 'https://github.com/anthonybturner'
+      images:  ['./images/projects/empty-main-thumb.svg'],
+      thumbnails: ['./images/projects/empty-main-thumb.svg'],
+      projectUrl: '',
+      githubUrl: ''
     },
     {
       id: 5,
       title: 'Mobile Fitness Apps',
       description: 'Created cross-platform iOS/Android apps with Swift/Java, integrating APIs and tracking user activity metrics.',
       technologies: ['Swift', 'Java', 'REST APIs', 'Mobile'],
-      images: ['./images/projects/navy-project-main.jpg'],
-      thumbnails: ['./images/projects/navy-project-main-thumb.jpg'],
-      projectUrl: 'https://yourportfolio.com/projects/mobile-fitness-apps',
-      githubUrl: 'https://github.com/anthonybturner'
+      images:  ['./images/projects/empty-main-thumb.svg'],
+      thumbnails:  ['./images/projects/empty-main-thumb.svg'],
+      projectUrl: '',
+      githubUrl: ''
     }
   ];
 

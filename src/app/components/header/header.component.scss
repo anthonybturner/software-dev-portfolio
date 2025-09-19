@@ -38,7 +38,12 @@
     span {
       font-weight: var(--fw-n);
     }
+
+    
   }
+  &__logo:hover{
+      color: orange;
+    }
 
   // Nested Components
   .nav {

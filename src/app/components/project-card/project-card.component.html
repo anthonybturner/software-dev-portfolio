@@ -28,9 +28,13 @@
     <div class="technologies">
       <span *ngFor="let tech of project.technologies">{{ tech }}</span>
     </div>
+    @if(project.projectUrl){
     <div class="actions">
       <a [href]="project.projectUrl" target="_blank" class="demo">Live Demo</a>
-      <a [href]="project.githubUrl" target="_blank" class="github">GitHub</a>
+      @if(project.githubUrl){
+        <a [href]="project.githubUrl" target="_blank" class="github">GitHub</a>
+      }
     </div>
+  }
   </div>
 </div>

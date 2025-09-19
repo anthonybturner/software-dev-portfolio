@@ -3,6 +3,8 @@
 html {
   // Typography
   font-size: var(--fs);
+  background: url('/images/projects/marvel-rivals-hero.jpg') top/contain fixed;
+  
   
   // Typography Elements
   p {
@@ -52,44 +54,10 @@ html {
     // Typography
     color: var(--primary-text-clr);
   }
-
-  // Media Queries - Mobile Typography
-  @media (min-width: 0px) and (max-width: 649px) {
-    h1 {
-      // Typography
-      font-size: var(--fs-3);
-    }
-
-    h2 {
-      // Typography
-      font-size: var(--fs-4);
-    }
-
-    h3 {
-      // Typography
-      font-size: var(--fs-5);
-    }
-
-    h4 {
-      // Typography
-      font-size: var(--fs-6);
-    }
-
-    h5 {
-      // Typography
-      font-size: var(--fs-6);
-    }
-  }
   
   // Nested Elements
   body {
-    // Box Model
-    margin: 0 auto;
-    
-    // Background & Visual
-    background: linear-gradient(250deg, var(--secondary-clr) 0%, var(--primary-clr) 60%);
-    // background: var(--primary-clr); // Alternative solid background
-    
+  
     // Typography
     font-family: var(--ff);
     color: var(--primary-text-clr);
@@ -193,7 +161,7 @@ html {
       }
 
       // Media Queries - Tablet
-      @media (min-width: 650px) and (max-width: 1024px) {
+      @media (min-width: 601px) and (max-width: 1024px) {
         // Layout
         gap: 1.5rem;
         
@@ -205,7 +173,7 @@ html {
       }
 
       // Media Queries - Mobile
-      @media (min-width: 0px) and (max-width: 649px) {
+      @media (min-width: 0px) and (max-width: 600px) {
         // Layout
         flex-direction: column-reverse;
         gap: 1rem;
@@ -274,19 +242,20 @@ html {
       background: #ffffff00;
 
       // Media Queries
-      @media (min-width: 650px) and (max-width: 768px) {
+      @media (min-width: 601px) and (max-width: 1024px) {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      @media (min-width: 0px) and (max-width: 649px) {
+      @media (min-width: 0px) and (max-width: 600px) {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       }
     }
   }
 
-  // Link and Button Components
+  // Link and Button Component
   a,
-  .btn {
+  .btn,
+  button {
     // Layout
     position: relative;
     
@@ -299,7 +268,7 @@ html {
     font-weight: var(--fw-n);
     letter-spacing: 0.5px;
     text-decoration: none;
-    color: var(--accent-clr);
+    color: var(--secondary-text-clr);
     
     // Transitions & Animations
     transition: color 0.3s, background 0.3s;
@@ -328,6 +297,49 @@ html {
   // Hover States
   a:hover {
     // Typography
-    color: var(--primary-clr);
+    color: var(--accent-clr);
   }
+
+  button{
+    background: var(--accent-clr);
+  }
+  
+  // Media Queries - Mobile Typography
+  @media (min-width: 0px) and (max-width: 600px) {
+    h1 {
+      // Typography
+      font-size: var(--fs-3);
+    }
+
+    h2 {
+      // Typography
+      font-size: var(--fs-4);
+    }
+
+    h3 {
+      // Typography
+      font-size: var(--fs-5);
+    }
+
+    h4 {
+      // Typography
+      font-size: var(--fs-6);
+    }
+
+    h5 {
+      // Typography
+      font-size: var(--fs-6);
+    }
+  }
+  
 }
+
+html, body{
+    height: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+

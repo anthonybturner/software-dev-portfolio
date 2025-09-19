@@ -1,11 +1,40 @@
 // Modern Hero & Grid Design
+@use './abstracts' as *;
+
 .home {
+
+
+  .hero-section {
+    &:hover {
+      // Background & Visual no hhover on hero section only
+      background: none !important;
+    }
+  }
+
+  // Showcase Section Styles
+  section.showcase-skills {
+    .layout-grid {
+      .col {
+        align-content: center;
+
+      }
+    }
+  }
+
+  section.technical-skills {
+    .layout-grid {
+      .col {
+        align-content: normal !important;
+      }
+    }
+  }
+
   // Nested Components
   section {
     // Layout Properties
     position: relative;
     overflow: hidden;
-    
+
     // Transitions & Animations
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
 
@@ -13,78 +42,20 @@
     &.hero-section {
       // Layout
       position: relative;
-
-      // Pseudo-elements
-      &::before {
-        // Layout
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 1;
-        
-        // Box Model
-        content: '';
-        
-        // Background & Visual
-        background-image: url("/images/projects/marvel-rivals-hero.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-color: rgba(0, 0, 0, 0.3);
-        background-blend-mode: overlay;
-        filter: blur(.5rem);
-      }
-
-      &::after {
-        // Layout
-        position: absolute;
-        top: 10%;
-        left: 5%;
-        right: 5%;
-        bottom: 10%;
-        z-index: 2;
-        
-        // Box Model
-        content: '';
-        margin: 1rem;
-        border-radius: 16px;
-        
-        // Background & Visual
-        background-image: url("/images/projects/marvel-rivals-hero.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        opacity: 0.2;
-      }
-
-      .columns {
-        // Layout
-        position: relative;
-        z-index: 3;
-        
-        // Box Model
-        padding: 1rem;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 16px;
-        
-        // Background & Visual
-        background: rgba(255, 255, 255, 0);
-        
-        // Typography
-        color: #fff;
-      }
+      @include frosted-glass-bg(var(--frosted-glass-clr));
+      padding: 2rem 2rem;
+      margin: 1rem auto;
     }
 
     // Typography Elements
     h1 {
       // Layout
       text-align: center;
-      
+
       // Typography
       color: #ffffffbb;
     }
+
 
     // Layout Components
     .layout-grid {
@@ -93,7 +64,7 @@
       gap: var(--spacer);
 
       // Direct Children
-      & > * {
+      &>* {
         flex: 1;
       }
 
@@ -101,7 +72,6 @@
         // Layout
         display: grid;
         gap: var(--spacer);
-        align-content: center;
       }
 
       // Media Queries
@@ -115,12 +85,12 @@
       // Layout
       display: flex;
       flex-direction: column;
-      
+
       // Box Model
       padding: var(--spacer);
       border-top: 2px solid var(--accent-clr);
       border-radius: var(--br-sm) var(--br-sm) 0 0;
-      
+
       // Background & Visual
       background-color: var(--primary-clr);
 
@@ -141,23 +111,23 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        
+
         // Box Model
         margin-bottom: 0.75rem;
-        
+
         // Typography
         color: var(--accent-clr);
-        
+
         i {
           // Typography
           font-size: 1.1rem;
         }
       }
-      
+
       p {
         // Box Model
         margin-bottom: 1.5rem;
-        
+
         // Typography
         color: var(--text-clr);
         font-size: 0.9rem;
@@ -165,8 +135,26 @@
       }
     }
 
-    .card:hover{
-    background-color: var(--section-hover-clr);
+    .card:hover {
+
+      transition: all 0.6s ease;
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      h3,
+      p,
+      span {
+        color: #ffffff;
+        font-weight: var(--fw-b);
+        text-shadow: 2px 1px 1px #00000066;
+      }
+
+      background-color: var(--section-hover-clr);
     }
 
     // Graph Components
@@ -176,7 +164,7 @@
       margin-top: 0.5rem;
       border-radius: var(--br);
       overflow: hidden;
-      
+
       // Background & Visual
       background: var(--primary-clr);
     }
@@ -185,23 +173,23 @@
       // Box Model
       height: 100%;
       border-radius: var(--br);
-      
+
       // Transitions & Animations
       transition: width 0.6s cubic-bezier(.4, 0, .2, 1);
-      
+
       // BEM Modifiers - Skill Categories
       &.frontend-bar {
         background: linear-gradient(90deg, #61dafb, #21d4fd);
       }
-      
+
       &.backend-bar {
         background: linear-gradient(90deg, #f39c12, #f1c40f);
       }
-      
+
       &.devops-bar {
         background: linear-gradient(90deg, #9b59b6, #8e44ad);
       }
-      
+
       // Default Fallback
       &:not(.frontend-bar):not(.backend-bar):not(.devops-bar) {
         background: var(--accent-clr);
@@ -212,38 +200,38 @@
     .featured-skill {
       // Box Model
       margin-bottom: 1rem;
-      
+
       .skill-labels {
         // Layout
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
+
         // Box Model
         margin-bottom: 0.25rem;
-        
+
         .skill-name {
           // Layout
           display: flex;
           align-items: center;
           gap: 0.5rem;
-          
+
           // Typography
           font-weight: 500;
           color: var(--text-clr);
-          
+
           i {
             // Box Model
             width: 1.2rem;
-            
+
             // Layout
             text-align: center;
-            
+
             // Typography
             color: var(--accent-clr);
           }
         }
-        
+
         .skill-percentage {
           // Typography
           font-weight: 600;
@@ -253,14 +241,13 @@
       }
     }
 
-    // Hover States
     &:hover {
       // Background & Visual
       background: var(--section-hover-clr) !important;
-      // box-shadow: 0 2px 2px 0 var(--accent-clr); // TODO: Review if needed
     }
   }
-   
+
+
   // Experience Section Styles
   .experience-section {
     .wrapper {
@@ -278,17 +265,17 @@
     .experience-card {
       // Layout
       overflow: hidden;
-      
+
       // Box Model
       padding: 0;
       margin-left: 0;
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 16px;
-      
+
       // Background & Visual
       background-color: var(--primary-alt-clr);
       backdrop-filter: blur(15px);
-      
+
       // Transitions & Animations
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -297,7 +284,7 @@
         // Box Model
         border-color: rgba(255, 255, 255, 0.2);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        
+
         // Transforms & Transitions
         transform: translateY(-4px);
       }
@@ -307,7 +294,7 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        
+
         // Box Model
         padding: 2rem 2rem 0 2rem;
 
@@ -323,7 +310,7 @@
           h3 {
             // Box Model
             margin-bottom: 0.5rem;
-            
+
             // Typography
             font-size: 1.5rem;
             font-weight: 700;
@@ -332,7 +319,7 @@
           h4 {
             // Box Model
             margin: 0;
-            
+
             // Typography
             font-size: 1.25rem;
             font-weight: 600;
@@ -357,7 +344,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            
+
             // Typography
             font-size: 0.9rem;
 
@@ -369,10 +356,10 @@
             i {
               // Box Model
               width: 1rem;
-              
+
               // Layout
               text-align: center;
-              
+
               // Typography
               color: var(--accent-blue);
             }
@@ -399,19 +386,19 @@
             // Layout
             display: inline-flex;
             align-items: center;
-            
+
             // Box Model
             padding: 0.4rem 0.8rem;
             border-radius: var(--br);
-            
+
             // Background & Visual
             background: var(--secondary-clr);
-            
+
             // Typography
             color: var(--secondary-text-clr);
             font-size: var(--fs-6);
             font-weight: 600;
-            
+
             // Transitions & Animations
             transition: all 0.2s ease;
 
@@ -420,10 +407,10 @@
               // Background & Visual
               background: rgba(72, 202, 228, 0.2);
               border-color: rgba(72, 202, 228, 0.4);
-              
+
               // Typography
               color: var(--accent-blue);
-              
+
               // Transforms & Transitions
               transform: translateY(-1px);
             }
@@ -442,7 +429,7 @@
       h2 {
         // Box Model
         margin-bottom: 2rem;
-        
+
         // Typography
         font-size: 2rem;
       }

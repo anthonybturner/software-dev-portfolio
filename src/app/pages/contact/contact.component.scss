@@ -18,14 +18,14 @@
     // Layout
     text-align: center;
     align-items: center;
-    
+
     // Box Model
     margin-bottom: 3rem;
 
     h1 {
       // Box Model
       margin-bottom: 1rem;
-      
+
       // Typography
       font-size: 2.5rem;
     }
@@ -34,7 +34,7 @@
       // Box Model
       max-width: 600px;
       margin: 0 auto;
-      
+
       // Typography
       font-size: 1.1rem;
     }
@@ -47,11 +47,11 @@
     gap: 3rem;
 
     // Media Queries
-    @media (min-width: 500px) and (max-width: 1199px) {
+    @media (min-width: 601px) and (max-width: 1078px) {
       grid-template-columns: 1fr 3fr;
     }
 
-    @media (min-width: 0px) and (max-width: 500px) {
+    @media (min-width: 0px) and (max-width: 600px) {
       grid-template-columns: 1fr;
     }
   }
@@ -63,14 +63,14 @@
       display: flex;
       align-items: flex-start;
       gap: 1rem;
-      
+
       // Box Model
       margin-bottom: 2rem;
 
       i {
         // Box Model
         margin-top: var(--spacer);
-        
+
         // Typography
         font-size: var(--fs-3);
         color: var(--accent-clr);
@@ -100,10 +100,10 @@
         padding: var(--spacer);
         border: 2px solid var(--secondary-clr);
         border-radius: var(--br);
-        
+
         // Typography
         font-size: var(--fs-p);
-        
+
         // Transitions & Animations
         transition: border-color 0.3s ease;
 
@@ -123,7 +123,7 @@
       .error-message {
         // Box Model
         margin-top: var(--spacer);
-        
+
         // Typography
         color: var(--error-clr);
         font-size: 0.875rem;
@@ -135,26 +135,25 @@
       padding: var(--spacer) calc(var(--spacer) * 2);
       border: none;
       border-radius: var(--br);
-      
-      // Background & Visual
-      background: var(--accent-clr);
-      
+      color: var(--primary-text-clr);
+
+
       // Typography
-      color: var(--secondary-clr);
       font-size: var(--fs-p);
       font-weight: var(--fw-b);
-      
+
       // Interaction
       cursor: pointer;
-      
+
       // Transitions & Animations
       transition: all 0.3s ease;
 
       // Pseudo-elements & States
       &:hover {
+        color: var(--accent-clr);
         // Background & Visual
-        background: var(--accent-hover-clr);
-        
+        background: #ffffff1c;
+
         // Transforms & Transitions
         transform: translateY(-2px);
       }
@@ -163,8 +162,18 @@
 
   // Hover States
   section:hover {
-    // Background & Visual
     background: rgba(255, 253, 253, .3) !important;
-    // box-shadow: 0 2px 2px 0 var(--accent-clr); // TODO: Review if needed
+
+    h1,
+    h2,
+    h3,
+    p {
+      color: var(--secondary-text-clr);
+    }
+    .contact-form {
+      .submit-btn:hover {
+        background: #ffffff1c !important;
+      }
+    }
   }
 }

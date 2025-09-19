@@ -1,6 +1,32 @@
 @use './abstracts' as *;
 
-section {
+.projects {
+   
+  .section-header {
+    // Layout
+    text-align: center;
+    align-items: center;
+
+    // Box Model
+    margin-bottom: 3rem;
+
+    h1 {
+      // Box Model
+      margin-bottom: 1rem;
+
+      // Typography
+      font-size: 2.5rem;
+    }
+
+    p {
+      // Box Model
+      max-width: 600px;
+      margin: 0 auto;
+
+      // Typography
+      font-size: 1.1rem;
+    }
+  }
   // Grid Layout
   .grid {
     // Layout
@@ -22,5 +48,9 @@ section {
         max-height: 400px;
       }
     }
+  }
+
+  section:hover {
+    background: rgba(255, 253, 253, .3) !important;
   }
 }
