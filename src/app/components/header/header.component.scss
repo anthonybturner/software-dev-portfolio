@@ -55,10 +55,10 @@
     margin-right: var(--spacer);
     
     // Media Queries
-    @media (max-width: 768px) {
+    @media (min-width: 0px) and (max-width: 600px) {
       // Layout
       position: fixed;
-      top: 54px;
+      top: 52px;
       left: 0;
       width: 100%;
       flex-direction: column;
@@ -115,7 +115,7 @@
     cursor: pointer;
 
     // Media Queries
-    @media (max-width: 768px) {
+    @media (min-width: 0px) and (max-width: 600px) {
       display: flex;
     }
 
