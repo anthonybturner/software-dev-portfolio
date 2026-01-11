@@ -1,27 +1,21 @@
-import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { computed, Injectable, signal } from '@angular/core';
+import { Skill } from '../models/skill';
 
-export interface Skill {
-  id: number;
-  name: string;
-  category: string;
-  proficiency: number; // 1-100
-  icon: string;
-}
 
 @Injectable({
   providedIn: 'root'
 })
 export class SkillService {
-  private skills: Skill[] = [
+
+  skills = signal<Skill[]>([
     // Frontend
-    { id: 1, name: 'Angular', category: 'Frontend', proficiency: 90, icon: 'fa-brands fa-angular' },
-    { id: 2, name: 'TypeScript', category: 'Frontend', proficiency: 85, icon: 'fa-brands fa-js' },
+    { id: 1, name: 'Angular', category: 'Frontend', proficiency: 97, icon: 'fa-brands fa-angular' },
+    { id: 2, name: 'TypeScript', category: 'Frontend', proficiency: 95, icon: 'fa-brands fa-js' },
     { id: 3, name: 'JavaScript', category: 'Frontend', proficiency: 95, icon: 'fa-brands fa-js' },
-    { id: 4, name: 'HTML5', category: 'Frontend', proficiency: 95, icon: 'fa-brands fa-html5' },
-    { id: 5, name: 'CSS/CSS3', category: 'Frontend', proficiency: 90, icon: 'fa-brands fa-css3-alt' },
+    { id: 4, name: 'HTML5', category: 'Frontend', proficiency: 100, icon: 'fa-brands fa-html5' },
+    { id: 5, name: 'CSS/CSS3', category: 'Frontend', proficiency: 95, icon: 'fa-brands fa-css3-alt' },
     { id: 6, name: 'SASS/SCSS', category: 'Frontend', proficiency: 90, icon: 'fa-brands fa-sass' },
-    { id: 7, name: 'RxJS', category: 'Frontend', proficiency: 80, icon: 'fa-solid fa-bolt' },
+    { id: 7, name: 'RxJS', category: 'Frontend', proficiency: 96, icon: 'fa-solid fa-bolt' },
     { id: 8, name: 'jQuery/AJAX', category: 'Frontend', proficiency: 85, icon: 'fa-brands fa-js' },
     
     // Backend
@@ -51,22 +45,34 @@ export class SkillService {
     // Professional Skills
     { id: 27, name: 'Ownership', category: 'Professional', proficiency: 100, icon: 'fa-solid fa-user-check' },
     { id: 28, name: 'Communication Skills', category: 'Professional', proficiency: 95, icon: 'fa-solid fa-comments' },
-  ];
+  ]);
 
   constructor() { }
 
-  getSkills(): Observable<Skill[]> {
-      const sortedSkills = [...this.skills].sort((a, b) => b.proficiency - a.proficiency);
-      return of(sortedSkills);
+  getSkillsByCategory(category: string): Skill[] {
+    return this.skills().filter(skill => skill.category === category);
   }
 
-  getSkillsByCategory(category: string): Observable<Skill[]> {
-    const filteredSkills = this.skills.filter(skill => skill.category === category);
-    return of(filteredSkills);
-  }
 
-  getCategories(): Observable<string[]> {
-    const categories = Array.from(new Set(this.skills.map(skill => skill.category)));
-    return of(categories);
-  }
+
+  getFrontEndSkills = computed(()=> {
+    return this.skills().filter(skill => skill.category === 'Frontend').sort((a, b) => b.proficiency - a.proficiency);
+  });
+
+  getBackEndSkills = computed(()=> {
+    return this.skills().filter(skill => skill.category === 'Backend').sort((a, b) => b.proficiency - a.proficiency);
+  });
+
+  getDevOpsSkills = computed(()=> {
+    return this.skills().filter(skill => skill.category === 'DevOps').sort((a, b) => b.proficiency - a.proficiency);
+  });
+
+  getDatabaseSkills = computed(()=> {
+    return this.skills().filter(skill => skill.category === 'Database').sort((a, b) => b.proficiency - a.proficiency);
+  });
+
+  getProfessionalSkills = computed(()=> {
+    return this.skills().filter(skill => skill.category === 'Professional').sort((a, b) => b.proficiency - a.proficiency);
+  });
+
 }

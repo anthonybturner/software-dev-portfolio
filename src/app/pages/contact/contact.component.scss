@@ -162,7 +162,8 @@
 
   // Hover States
   section:hover {
-    background: rgba(255, 253, 253, .3) !important;
+    background-color: rgba(0, 0, 0, 0.5);
+
 
     h1,
     h2,
@@ -170,6 +171,7 @@
     p {
       color: var(--secondary-text-clr);
     }
+
     .contact-form {
       .submit-btn:hover {
         background: #ffffff1c !important;

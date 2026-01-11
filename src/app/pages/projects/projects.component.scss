@@ -1,56 +1,67 @@
-@use './abstracts' as *;
-
 .projects {
-   
-  .section-header {
-    // Layout
-    text-align: center;
-    align-items: center;
+  .projects-section {
+    padding: clamp(2rem, 5vw, 3rem) 0;
+  }
 
-    // Box Model
-    margin-bottom: 3rem;
+  .section-header {
+    text-align: center;
+    margin-bottom: clamp(2rem, 5vw, 3rem);
 
     h1 {
-      // Box Model
+      font-size: clamp(2rem, 5vw, 3rem);
       margin-bottom: 1rem;
-
-      // Typography
-      font-size: 2.5rem;
+      background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     p {
-      // Box Model
+      font-size: clamp(1rem, 2vw, 1.2rem);
       max-width: 600px;
       margin: 0 auto;
-
-      // Typography
-      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.8);
     }
   }
-  // Grid Layout
+
   .grid {
-    // Layout
-    grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: clamp(1.5rem, 3vw, 2rem);
+    margin-top: clamp(2rem, 4vw, 2.5rem);
 
-    // Media Queries
-    @media (min-width: 0px) and (max-width: 649px) {
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
     }
   }
 
-  // Card Components
-  .card {
-    .images {
-      img {
-        // Box Model
-        width: 40% !important;
-        min-height: 400px;
-        max-height: 400px;
-      }
+  .loading-state,
+  .error-state,
+  .empty-state {
+    text-align: center;
+    padding: clamp(2rem, 4vw, 3rem);
+    background-color: rgba(41, 40, 40, 0.514);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 165, 0, 0.2);
+    margin-top: clamp(1.5rem, 3vw, 2rem);
+
+    p {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      margin: 0;
+      color: rgba(255, 255, 255, 0.8);
     }
   }
 
-  section:hover {
-    background: rgba(255, 253, 253, .3) !important;
+  .error-state {
+    border-color: rgba(255, 100, 100, 0.3);
+    background-color: rgba(60, 40, 40, 0.514);
+
+    p {
+      color: rgba(255, 150, 150, 0.9);
+    }
   }
 }

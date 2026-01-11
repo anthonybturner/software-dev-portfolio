@@ -1,0 +1,180 @@
+.technical-skills {
+    background-color: transparent;
+    color: #fff;
+    padding: 2rem 0;
+
+    h2 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 700;
+        margin-bottom: 2rem;
+        letter-spacing: -0.01em;
+    }
+
+    .layout-grid {
+        display: flex;
+        gap: clamp(1rem, 3vw, 2rem);
+
+        &>* {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 600px;
+            padding: clamp(1.25rem, 3vw, 1.75rem);
+            border-top: 3px solid var(--accent-clr);
+            border-radius: var(--br-sm) var(--br-sm) 0 0;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background-color: rgba(41, 40, 40, 0.514);
+
+            h3 {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin-bottom: 0.75rem;
+                color: var(--accent-clr);
+                font-size: clamp(1.1rem, 2vw, 1.3rem);
+                font-weight: 700;
+
+                i {
+                    font-size: 1.1em;
+                }
+            }
+
+            p {
+                margin-bottom: 1.5rem;
+                color: #e8e8e8;
+                font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+                line-height: 1.6;
+                flex-grow: 1;
+            }
+
+            &:hover {
+                transform: translateY(-4px);
+                background-color: rgba(0, 0, 0, 0.5);
+
+                box-shadow: 0 8px 24px rgba(255, 165, 0, 0.2);
+
+                h3 {
+                    color: #fff;
+                    transform: scale(1.05);
+                }
+
+                p {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .technical-skill {
+        margin-bottom: 1.5rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-labels {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+
+            .skill-name {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-weight: 600;
+                color: #fff;
+                font-size: clamp(0.9rem, 1.5vw, 1rem);
+
+                i {
+                    color: var(--accent-clr);
+                    font-size: 1.1em;
+                }
+            }
+
+            .skill-percentage {
+                font-weight: 600;
+                color: var(--accent-clr);
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    .graph-bar {
+        height: 8px;
+        border-radius: var(--br);
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(4px);
+
+        .bar-fill {
+            height: 100%;
+            border-radius: var(--br);
+            transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 0 12px rgba(255, 165, 0, 0.3);
+
+            &.frontend-bar {
+                background: linear-gradient(90deg, #61dafb, #00d4ff);
+                box-shadow: 0 0 12px rgba(97, 218, 251, 0.4);
+            }
+
+            &.backend-bar {
+                background: linear-gradient(90deg, #ffa500, #ffc107);
+                box-shadow: 0 0 12px rgba(255, 165, 0, 0.4);
+            }
+
+            &.devops-bar {
+                background: linear-gradient(90deg, #a855f7, #d946ef);
+                box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
+            }
+
+            &:not(.frontend-bar):not(.backend-bar):not(.devops-bar) {
+                background: linear-gradient(90deg, var(--accent-clr), #ffb84d);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .technical-skills {
+        .layout-grid {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .card {
+            padding: 1.25rem;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .technical-skills {
+        .layout-grid {
+            gap: 1rem;
+        }
+
+        .card {
+            padding: 1rem;
+
+            h3 {
+                margin-bottom: 0.5rem;
+            }
+
+            p {
+                margin-bottom: 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        .technical-skill {
+            margin-bottom: 1rem;
+        }
+    }
+}

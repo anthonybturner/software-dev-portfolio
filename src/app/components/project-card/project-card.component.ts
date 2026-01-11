@@ -1,10 +1,9 @@
-import { Component, Input, AfterViewInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Project } from '../../services/project.service';
 import { CommonModule } from '@angular/common';
-import PhotoSwipeLightbox from 'photoswipe/lightbox';
-import PhotoSwipe from 'photoswipe';
-import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'photoswipe/style.css';
+
+declare var PhotoSwipe: any;
 
 @Component({
   selector: 'app-project-card',
@@ -13,25 +12,23 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
   standalone: true,
   imports: [CommonModule]
 })
-export class ProjectCardComponent implements AfterViewInit, OnDestroy {
+export class ProjectCardComponent implements OnInit {
   @Input() project!: Project;
-  @ViewChild('swiperContainer', { static: false }) swiperContainer!: ElementRef;
 
-  private swiper!: Swiper;
-  private lightbox!: PhotoSwipeLightbox;
-
-  ngAfterViewInit(): void {
-    // PhotoSwipe will be initialized on demand when images are clicked
-    console.log('Component ready, PhotoSwipe will initialize when images are clicked');
+  ngOnInit(): void {
+    // Dynamically load PhotoSwipe if not already loaded
+    if (typeof PhotoSwipe === 'undefined') {
+      this.loadPhotoSwipeScript();
+    }
   }
 
-  ngOnDestroy(): void {
-    if (this.swiper) {
-      this.swiper.destroy(true, true);
-    }
-    if (this.lightbox) {
-      this.lightbox.destroy();
-    }
+  private loadPhotoSwipeScript(): void {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/photoswipe@5.4.1/dist/photoswipe.umd.js';
+    script.onload = () => {
+      console.log('PhotoSwipe loaded');
+    };
+    document.body.appendChild(script);
   }
 
   openPhotoSwipe(event: Event, index: number): void {
@@ -45,56 +42,31 @@ export class ProjectCardComponent implements AfterViewInit, OnDestroy {
       alt: this.project.title
     }));
 
-    // Open PhotoSwipe programmatically
-    const lightbox = new PhotoSwipeLightbox({
-      dataSource: images,
-      pswpModule: PhotoSwipe,
-      padding: { top: 40, bottom: 40, left: 100, right: 100 },
-      bgOpacity: 0.9,
-    });
+    // Dynamically import PhotoSwipe
+    import('photoswipe').then(({ default: PhotoSwipe }) => {
+      import('photoswipe/lightbox').then(({ default: PhotoSwipeLightbox }) => {
+        try {
+          const lightbox = new PhotoSwipeLightbox({
+            gallery: undefined,
+            children: undefined,
+            dataSource: images,
+            pswpModule: PhotoSwipe,
+          });
 
-    lightbox.init();
-    lightbox.loadAndOpen(index);
-  }
-  
-  
-    private initSwiper(): void {
-    // Configure Swiper modules
-    Swiper.use([Navigation, Pagination, Autoplay]);
-
-    this.swiper = new Swiper(this.swiperContainer.nativeElement, {
-      modules: [Navigation, Pagination, Autoplay],
-      slidesPerView: 1,
-      spaceBetween: 10,
-      loop: this.project.images.length > 1,
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        type: 'bullets',
-      },
-      breakpoints: {
-        640: {
-          slidesPerView: 1,
-          spaceBetween: 10,
-        },
-        768: {
-          slidesPerView: Math.min(2, this.project.images.length),
-          spaceBetween: 15,
-        },
-        1024: {
-          slidesPerView: Math.min(2, this.project.images.length),
-          spaceBetween: 20,
-        },
-      },
+          lightbox.init();
+          lightbox.loadAndOpen(index);
+        } catch (error) {
+          console.error('PhotoSwipe error:', error);
+          // Fallback: open image in new tab
+          window.open(this.project.images[index], '_blank');
+        }
+      }).catch(err => {
+        console.error('Failed to load PhotoSwipe Lightbox:', err);
+        window.open(this.project.images[index], '_blank');
+      });
+    }).catch(err => {
+      console.error('Failed to load PhotoSwipe:', err);
+      window.open(this.project.images[index], '_blank');
     });
   }
 }

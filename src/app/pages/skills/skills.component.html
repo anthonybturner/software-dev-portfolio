@@ -1,11 +1,11 @@
-<div class="container skills">
-  <section class="skills-section">
-    <div class="section-header">
-      <h1>Skills</h1>
-      <p>Here are some of the skills I've acquired over the years.</p>
-    </div>
-    <div class="skills-content grid">
-      <app-skill-card *ngFor="let skill of skills" [skill]="skill"></app-skill-card>
-    </div>
-  </section>
-</div>
+<section class="skills-section">
+  <div class="section-header">
+    <h1>Skills</h1>
+    <p>Here are some of the skills I've acquired over the years.</p>
+  </div>
+  <div class="skills-content grid">
+    @for(skill of skills(); track skill.id){
+    <app-skill-card [skill]="skill"></app-skill-card>
+    }
+  </div>
+</section>

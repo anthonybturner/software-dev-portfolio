@@ -24,8 +24,8 @@ export class ProjectService {
       technologies: ['Angular', 'TypeScript', '.NET', 'Vercel', 'RxJS', 'API Integration'],
       images: ['./images/projects/marvel-rivals-main.jpg','./images/projects/marvel-rivals-alt.jpg'],
       thumbnails: ['./images/projects/marvel-rivals-main-thumb.jpg','./images/projects/marvel-rivals-alt-thumb.jpg'],
-      projectUrl: 'https://marvelrivalsstats.vercel.app/',
-      githubUrl: 'https://github.com/anthonybturner/marvel-rivals-stats'
+      projectUrl:'/projects' ,
+      githubUrl: 'https://github.com/anthonybturner/marvelrivalsui'
     },
     {
       id: 1,
@@ -34,7 +34,7 @@ export class ProjectService {
       technologies: ['Android', 'Java', 'REST API', 'Git', 'Database Management'],
       images: ['./images/projects/cinema-posters-main.jpg', './images/projects/cinema-posters-alt.jpg'],
       thumbnails: ['./images/projects/cinema-posters-main-thumb.jpg', './images/projects/cinema-posters-alt-thumb.jpg'],
-      projectUrl: 'https://www.upwork.com/freelancers/~0105c5d5dd83fb868a?p=1858197300578816000',
+      projectUrl:'/projects' ,
       githubUrl: 'https://github.com/anthonybturner/CinemaPostersAnywhere/'
     },
 

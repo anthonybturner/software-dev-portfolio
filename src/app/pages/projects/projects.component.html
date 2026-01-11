@@ -4,8 +4,21 @@
       <h1>Projects</h1>
       <p>Explore some of my recent work below.</p>
     </div>
-    <div class="project-content grid">
-      <app-project-card *ngFor="let project of projects" [project]="project"></app-project-card>
+    
+    <div *ngIf="isLoading()" class="loading-state">
+      <p>Loading projects...</p>
+    </div>
+
+    <div *ngIf="error() && !isLoading()" class="error-state">
+      <p>{{ error() }}</p>
+    </div>
+
+    <div *ngIf="!isLoading() && projects().length > 0" class="project-content grid">
+      <app-project-card *ngFor="let project of projects()" [project]="project"></app-project-card>
+    </div>
+
+    <div *ngIf="!isLoading() && projects().length === 0 && !error()" class="empty-state">
+      <p>No projects to display at the moment.</p>
     </div>
   </section>
 </div>

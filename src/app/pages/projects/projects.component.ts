@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ProjectCardComponent } from "../../components/project-card/project-card.component";
 import { CommonModule } from '@angular/common';
 import { Project, ProjectService } from '../../services/project.service';
@@ -10,20 +10,29 @@ import { Project, ProjectService } from '../../services/project.service';
   standalone: true,
   imports: [ProjectCardComponent, CommonModule]
 })
-export class ProjectsComponent implements OnInit, OnDestroy{
-  
-  projects: Project[] = [];
-  constructor(private projectService: ProjectService) {}
+export class ProjectsComponent {  
+  projects = signal<Project[]>([]);
+  isLoading = signal(false);
+  error = signal<string | null>(null);
 
-  ngOnInit(): void{
-    this.projectService.getProjects().subscribe( projects => {
-      this.projects = projects;
-    })
-
+  constructor(private projectService:ProjectService) {
+    this.loadProjects();
   }
 
-  ngOnDestroy(): void {
-      
-  }
+  private loadProjects(): void {
+    this.isLoading.set(true);
+    this.error.set(null);
 
+    this.projectService.getProjects().subscribe({
+      next: (projects) => {
+        this.projects.set(projects);
+        this.isLoading.set(false);
+      },
+      error: (err) => {
+        console.error('Failed to load projects:', err);
+        this.error.set('Failed to load projects. Please try again later.');
+        this.isLoading.set(false);
+      }
+    });
+  }
 }

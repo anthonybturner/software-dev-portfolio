@@ -1,7 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, computed, OnDestroy, OnInit } from '@angular/core';
 import { SkillCardComponent } from '../../components/skill-card/skill-card.component';
 import { CommonModule } from '@angular/common';
-import { Skill, SkillService } from '../../services/skill.service';
+import { SkillService } from '../../services/skill.service';
 
 @Component({
   selector: 'app-skills',
@@ -12,15 +12,16 @@ import { Skill, SkillService } from '../../services/skill.service';
 })
 export class SkillsComponent implements OnInit, OnDestroy {
 
-  skills: Skill[] = [];
   constructor(private skillsService: SkillService){
-
+    
   }
 
+  skills = computed(()=> {
+    return this.skillsService.skills();
+  });
+
   ngOnInit(): void {
-    this.skillsService.getSkills().subscribe( skills =>{
-      this.skills = skills;
-    });
+   
   }
   ngOnDestroy(): void {
       

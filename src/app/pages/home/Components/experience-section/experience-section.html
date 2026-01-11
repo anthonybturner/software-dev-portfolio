@@ -1,0 +1,35 @@
+<section class="experience-section">
+  <h2>Professional Experience</h2>
+  <div class="wrapper">
+    <div class="experience-cards">
+      @for(experience of experiences(); track experience.id){
+      <div class="experience-card">
+        <div class="card-header">
+          <div class="title-section">
+            <h3>{{experience.company}}</h3>
+            <h4>{{experience.isContract ? "Contract" : "W2"}}</h4>
+          </div>
+          <div class="meta-section">
+            <div class="date-info">
+              <i class="fa-regular fa-calendar"></i>
+              <span>{{experience.startDate}} - {{experience.endDate}}</span>
+            </div>
+            <div class="location-info">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>{{experience.company}} - {{experience.locationType}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-content">
+          <p>{{experience.description}}</p>
+          <div class="tech-tags">
+            @for(tag of experience.techTags; track tag){
+            <span class="tech-tag">{{tag}}</span>
+            }
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

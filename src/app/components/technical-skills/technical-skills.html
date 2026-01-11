@@ -1,0 +1,26 @@
+<section class="technical-skills">
+    <h2>Technical Skills Overview</h2>
+    <div class="layout-grid">
+        <!-- Frontend Skills Column -->
+        @for(category of skillsByCategory(); track category.id){
+            <div class="card">
+                <h3><i [class]="category.icon"></i>{{category.name}}</h3>
+                <p>{{category.description}}</p>
+                @for(skill of category.skills; track skill.id){
+                <div class="technical-skill">
+                    <div class="skill-labels">
+                        <span class="skill-name">
+                            <i [class]="skill.icon"></i>
+                            {{ skill.name }}
+                        </span>
+                        <span class="skill-percentage">{{ skill.proficiency }}%</span>
+                    </div>
+                    <div class="graph-bar">
+                        <div class="bar-fill frontend-bar" [style.width.%]="skill.proficiency"></div>
+                    </div>
+                </div>
+                }
+            </div>
+        }
+    </div>
+</section>

@@ -1,24 +1,20 @@
 <div class="card">
   <h3>{{ project.title }}</h3>
   
-  <!-- Simple PhotoSwipe Gallery -->
+  <!-- PhotoSwipe Gallery -->
   <div class="images" [attr.id]="'project-gallery-' + project.id">
     <a 
       *ngFor="let image of project.images; let i = index"
       [href]="image"
-      [attr.data-pswp-width]="1200"
-      [attr.data-pswp-height]="800"
       class="image-container"
-      target="_blank"
       (click)="openPhotoSwipe($event, i)"
-    >
     >
       <img 
         [src]="project.thumbnails[i] || image" 
         [alt]="project.title + ' - Image ' + (i + 1)"
         class="thumbnail">
       <div class="image-overlay">
-        <i class="fas fa-search-plus"></i>
+        <i class="fas fa-search-plus view-icon"></i>
       </div>
     </a>
   </div>
@@ -35,6 +31,6 @@
         <a [href]="project.githubUrl" target="_blank" class="github">GitHub</a>
       }
     </div>
-  }
+    }
   </div>
 </div>

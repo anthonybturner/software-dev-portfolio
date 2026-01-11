@@ -17,27 +17,27 @@ html {
 
   h1 {
     // Typography
-    font-size: var(--fs-1);
+    font-size: var(--fs-2);
   }
 
   h2 {
     // Typography
-    font-size: var(--fs-2);
+    font-size: var(--fs-3);
   }
 
   h3 {
     // Typography
-    font-size: var(--fs-3);
+    font-size: var(--fs-4);
   }
 
   h4 {
     // Typography
-    font-size: var(--fs-4);
+    font-size: var(--fs-5);
   }
 
   h5 {
     // Typography
-    font-size: var(--fs-5);
+    font-size: var(--fs-6);
   }
 
   h1,
@@ -71,6 +71,7 @@ html {
     
     // Box Model
     width: 100%;
+    height: auto;
     max-width: 100%;
   }
 
@@ -94,11 +95,9 @@ html {
     // Box Model
     padding: var(--spacer);
     margin: var(--spacer);
-    border: 1px solid var(--accent-hl-clr);
     border-radius: var(--br);
     
     // Background & Visual
-    background: var(--primary-clr);
     backdrop-filter: blur(8px);
 
     // Section Header
@@ -258,17 +257,12 @@ html {
   button {
     // Layout
     position: relative;
-    
     // Box Model
-    padding: var(--spacer) var(--spacer-sm) var(--spacer-sm) 0;
     border-radius: 4px;
-    
     // Typography
-    font-size: var(--fs-4);
     font-weight: var(--fw-n);
-    letter-spacing: 0.5px;
     text-decoration: none;
-    color: var(--secondary-text-clr);
+    color: blue;
     
     // Transitions & Animations
     transition: color 0.3s, background 0.3s;
