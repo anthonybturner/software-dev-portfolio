@@ -9,7 +9,7 @@ export class ExperienceService {
       jobTitle: 'Applications Developer',
       company: 'AppTech',
       isContract: true,
-      startDate: 'Apr 2024',
+      startDate: 'Apr 2025',
       endDate: 'Jun 2025',
       location: 'Norwalk, CT',
       locationType: 'Hybrid',
