@@ -13,7 +13,7 @@ export class ExperienceService {
       endDate: 'Jun 2025',
       location: 'Norwalk, CT',
       locationType: 'Hybrid',
-      description: 'Modernized Angular/.NET Framework apps to Angular 19 and .NET 8. Developed scalable APIs with ASP.NET Core, RxJS, and TypeScript; implemented DTO/entity mapping. Integrated CI/CD pipelines in Azure DevOps for automated testing and deployments.',
+      description: 'Modernizing legacy Angular applications to Angular 19 and working with .NET Framework systems. Working with existing APIs using ASP.NET Core, RxJS, and TypeScript; managing and implementing efficient DTO/entity mapping. Contributing to CI/CD pipeline integration in Azure DevOps for automated testing and deployments. Participating in daily standups in an agile environment.',
       techTags: ['Angular 19', '.NET 8', 'ASP.NET Core', 'TypeScript', 'Azure DevOps', 'CI/CD']
     },
     {
@@ -25,7 +25,7 @@ export class ExperienceService {
       endDate: 'Aug 2024',
       location: 'Remote',
       locationType: 'Remote',
-      description: 'Built secure cloud applications for federal Navy projects using Azure, ASP.NET, .NET Core, and Python/Django. Implemented OAuth authentication systems; optimized SQL Server/PostgreSQL queries. Participated in Agile sprints, code reviews, and deployments.',
+      description: 'Migrated, managed, and built secure cloud applications using Python/Django for federal Navy projects. Managed reporting systems with .NET Core and SQL Server, handling data management and report generation. Worked on OAuth authentication systems. Participated in Agile development with code reviews and automated deployments.',
       techTags: ['Azure', '.NET Core', 'Python/Django', 'OAuth', 'SQL Server', 'PostgreSQL']
     },
     {
@@ -37,7 +37,7 @@ export class ExperienceService {
       endDate: 'Aug 2023',
       location: 'Rockhill, NY',
       locationType: 'On-site',
-      description: 'Migrated legacy VB.NET applications to C#/.NET 4, improving maintainability and execution speed. Automated bulk email and Weather API systems, reducing manual processes and errors.',
+      description: 'Worked on legacy system modernization, migrating VB.NET applications to C#/.NET 4, improving maintainability and execution speed by 60%. Created bulk email applications for automating email processes and modernized a Weather API application from legacy VB code, reducing manual processes and operational errors.',
       techTags: ['C#', '.NET Framework', 'VB.NET', 'API Integration', 'Automation']
     },
     {
@@ -49,7 +49,7 @@ export class ExperienceService {
       endDate: 'Nov 2022',
       location: 'Albany, NY',
       locationType: 'On-site',
-      description: 'Built full-stack solutions using C#, VB.NET, ASP.NET, Angular, and JavaScript. Implemented XML/XSD integrations with ASP.NET Web Forms; optimized SQL Server/Oracle databases. Designed API logic to cache third-party data locally, improving performance and reducing redundant calls.',
+      description: 'Developed and maintained enterprise solutions for government and educational sectors using full-stack .NET technologies (C#, ASP.NET MVC, WebForms, legacy ASP), JavaScript, and jQuery. Enhanced user interfaces with Telerik component libraries and implemented robust data processing through XML/XSD integrations and REST API development.',
       techTags: ['ASP.NET', 'Angular', 'C#', 'SQL Server', 'Oracle', 'XML/XSD']
     },
     {
