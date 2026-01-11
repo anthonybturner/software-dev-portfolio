@@ -94,8 +94,8 @@ export class ProjectService {
       title: 'Software Dev Portfolio',
       description: 'My personal portfolio website showcasing SOLID principles in Angular 19 architecture. Built with standalone components, signals, computed properties, and dependency injection. Features responsive design, modern styling with SCSS, and showcases my professional experience and technical skills.',
       technologies: ['Angular 19', 'TypeScript', 'SCSS', 'Signals', 'RxJS', 'SOLID Principles'],
-      images: ['./images/projects/empty-main-thumb.svg'],
-      thumbnails: ['./images/projects/empty-main-thumb.svg'],
+      images: ['./images/projects/software-dev-portfolio.jpg'],
+      thumbnails: ['./images/projects/software-dev-portfolio-thumbs.jpg'],
       projectUrl: 'https://anthonybturner.vercel.app/',
       githubUrl: 'https://github.com/anthonybturner/software-dev-portfolio'
     }
