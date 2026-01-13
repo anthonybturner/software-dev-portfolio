@@ -23,7 +23,7 @@ export class ExperienceService {
       isContract: true,
       startDate: 'Sept 2023',
       endDate: 'Aug 2024',
-      location: 'Remote',
+      location: 'Annapolis, MD',
       locationType: 'Remote',
       description: 'Migrated, managed, and built secure cloud applications using Python/Django for federal Navy projects. Managed reporting systems with .NET Core and SQL Server, handling data management and report generation. Worked on OAuth authentication systems. Participated in Agile development with code reviews and automated deployments.',
       techTags: ['Azure', '.NET Core', 'Python/Django', 'OAuth', 'SQL Server', 'PostgreSQL']
