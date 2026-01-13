@@ -1,5 +1,9 @@
 @use './abstracts' as *;
 
+// ============================================================================
+// FOOTER STYLES
+// ============================================================================
+
 .footer {
   position: relative;
   bottom: 0;
@@ -10,7 +14,6 @@
   background-color: rgba(41, 40, 40, 0.514);
   border-top: 1px solid rgba(255, 165, 0, 0.2);
   backdrop-filter: blur(8px);
-  transition: all 0.3s ease;
   color: #fff;
 
   .container {
@@ -19,135 +22,120 @@
     margin: 0 auto;
   }
 
+  // ============================================================================
+  // CONTENT GRID
+  // ============================================================================
+
   .content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: clamp(2rem, 3vw, 3rem);
-    padding: 0;
+    gap: 2rem;
     margin-bottom: 2rem;
 
     h3 {
+      font-size: var(--fs-h4);
       color: var(--accent-clr);
-      font-size: clamp(1.1rem, 2vw, 1.3rem);
-      font-weight: 700;
       margin-bottom: 1rem;
     }
 
     p {
+      font-size: var(--fs-body);
       color: #e8e8e8;
-      font-size: 0.9rem;
       line-height: 1.6;
-      margin: 0;
     }
+  }
 
-    .brand {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
+  // ============================================================================
+  // BRAND SECTION
+  // ============================================================================
 
-      h3 span {
+  .brand {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      span {
         color: var(--accent-clr);
       }
-
-      p {
-        margin-top: 0.5rem;
-      }
     }
+  }
 
-    .links {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
+  // ============================================================================
+  // LINKS SECTION
+  // ============================================================================
 
-      ul {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        margin: 0;
-        padding: 0;
-        list-style: none;
+  .links {
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
 
-        li {
-          a {
-            color: #e8e8e8;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-
-            &:hover {
-              color: var(--accent-clr);
-              transform: translateX(4px);
-            }
-          }
-        }
-      }
-    }
-
-    .social {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-
-      h3 {
-        margin-bottom: 1rem;
-      }
-
-      .social-links {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
+      li {
+        margin-bottom: 0.75rem;
 
         a {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          width: 40px;
-          height: 40px;
-          color: var(--accent-clr);
-          font-size: 1.1rem;
-          background-color: rgba(255, 165, 0, 0.1);
-          border: 1px solid rgba(255, 165, 0, 0.3);
-          border-radius: 50%;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          color: #e8e8e8;
+          text-decoration: none;
+          font-size: var(--fs-body);
+          transition: all 0.3s ease;
 
           &:hover {
-            background-color: rgba(255, 165, 0, 0.2);
-            border-color: var(--accent-clr);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 16px rgba(255, 165, 0, 0.2);
+            color: var(--accent-clr);
+            transform: translateX(4px);
           }
         }
       }
     }
   }
+
+  // ============================================================================
+  // SOCIAL SECTION
+  // ============================================================================
+
+  .social {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+
+      a {
+        color: #e8e8e8;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+        text-decoration: none;
+
+        &:hover {
+          color: var(--accent-clr);
+          transform: scale(1.2) translateY(-3px);
+        }
+      }
+    }
+  }
+
+  // ============================================================================
+  // BOTTOM SECTION
+  // ============================================================================
 
   .bottom {
     text-align: center;
     padding-top: 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: #b8b8b8;
-    font-size: 0.85rem;
 
     p {
+      font-size: var(--fs-caption);
+      color: rgba(255, 255, 255, 0.7);
       margin: 0;
     }
   }
 }
 
-@media (max-width: 768px) {
-  .footer {
-    padding: clamp(1.5rem, 3vw, 2rem) 0;
-
-    .content {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-
-      h3 {
-        margin-bottom: 0.75rem;
-      }
-    }
-  }
-}
+// ============================================================================
+// RESPONSIVE - MOBILE (0px - 600px)
+// ============================================================================
 
 @media (max-width: 600px) {
   .footer {
@@ -159,40 +147,122 @@
 
     .content {
       grid-template-columns: 1fr;
-      gap: 1.25rem;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
 
-      .links {
-        ul {
-          flex-direction: row;
-          gap: 0;
-          flex-wrap: wrap;
+    .brand,
+    .links,
+    .social {
+      align-items: center;
+      text-align: center;
+    }
 
-          li {
-            margin-right: 1rem;
-
-            a {
-              font-size: 0.85rem;
-            }
-          }
-        }
-      }
-
-      .social {
-        .social-links {
-          gap: 0.75rem;
-
+    .links {
+      ul {
+        li {
+          margin-bottom: 0.5rem;
           a {
-            width: 36px;
-            height: 36px;
-            font-size: 1rem;
+            &:hover {
+              transform: none;
+            }
           }
         }
       }
     }
 
+    .social {
+      .social-links {
+        justify-content: center;
+        gap: 1rem;
+        a {
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
     .bottom {
       padding-top: 1rem;
-      font-size: 0.8rem;
+    }
+  }
+}
+
+// ============================================================================
+// RESPONSIVE - TABLET (601px - 1024px)
+// ============================================================================
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .footer {
+    padding: 2rem 0;
+
+    .container {
+      width: 92%;
+    }
+
+    .content {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .brand {
+      grid-column: 1 / -1;
+    }
+
+    .social .social-links {
+      justify-content: flex-start;
+    }
+
+    .bottom {
+      padding-top: 1.5rem;
+    }
+  }
+}
+
+// ============================================================================
+// RESPONSIVE - DESKTOP (1025px - 1399px)
+// ============================================================================
+
+@media (min-width: 1025px) and (max-width: 1399px) {
+  .footer {
+    padding: 2.5rem 0;
+
+    .container {
+      max-width: 1200px;
+    }
+
+    .content {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .bottom {
+      padding-top: 2rem;
+    }
+  }
+}
+
+// ============================================================================
+// RESPONSIVE - LARGE DESKTOP (1400px+)
+// ============================================================================
+
+@media (min-width: 1400px) {
+  .footer {
+    padding: 3rem 0;
+
+    .container {
+      max-width: 1400px;
+    }
+
+    .content {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .bottom {
+      padding-top: 2rem;
     }
   }
 }

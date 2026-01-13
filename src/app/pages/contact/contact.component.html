@@ -6,69 +6,22 @@
     </div>
 
     <div class="contact-content">
-      <h2>Contact Information</h2>
-      <div class="contact-info">
-        <div class="info-item">
-          <i class="fas fa-envelope"></i>
-          <div>
-            <h3>Email</h3>
-            <p>anthonybturner@icloud.com</p>
+      <div class="contact-left">
+        <h4>{{contactHeader().title}}</h4>
+        <div class="contact-info">
+          @for(item of contactItems(); track item.label){
+          <div class="info-item">
+            <i [class]="item.iconClass"></i>
+            <h3>{{item.label}}</h3>
+            <p>{{item.value}}</p>
           </div>
-        </div>
-
-        <div class="info-item">
-          <i class="fas fa-phone"></i>
-          <div>
-            <h3>Phone</h3>
-            <p>+1 (518) 475-8019</p>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <i class="fas fa-map-marker-alt"></i>
-          <div>
-            <h3>Location</h3>
-            <p>Kingston, NY</p>
-          </div>
+          }
         </div>
       </div>
 
-      <h2>Send a Message</h2>
-      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
-        <div class="form-group">
-          <input type="text" formControlName="name" placeholder="Your Name"
-            [class.error]="submitted && contactForm.get('name')?.errors">
-          <div *ngIf="submitted && contactForm.get('name')?.errors" class="error-message">
-            Name is required
-          </div>
-        </div>
-
-        <div class="form-group">
-          <input type="email" formControlName="email" placeholder="Your Email"
-            [class.error]="submitted && contactForm.get('email')?.errors">
-          <div *ngIf="submitted && contactForm.get('email')?.errors" class="error-message">
-            Valid email is required
-          </div>
-        </div>
-
-        <div class="form-group">
-          <input type="text" formControlName="subject" placeholder="Subject"
-            [class.error]="submitted && contactForm.get('subject')?.errors">
-          <div *ngIf="submitted && contactForm.get('subject')?.errors" class="error-message">
-            Subject is required
-          </div>
-        </div>
-
-        <div class="form-group">
-          <textarea formControlName="message" placeholder="Your Message" rows="5"
-            [class.error]="submitted && contactForm.get('message')?.errors"></textarea>
-          <div *ngIf="submitted && contactForm.get('message')?.errors" class="error-message">
-            Message is required
-          </div>
-        </div>
-
-        <button type="submit" class="submit-btn">Send Message</button>
-      </form>
+      <div class="contact-right">
+        <app-contact-form></app-contact-form>
+      </div>
     </div>
   </section>
 </div>

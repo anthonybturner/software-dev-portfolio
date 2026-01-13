@@ -1,40 +1,40 @@
-@use './abstracts' as *;
+// ============================================================================
+// SKILLS PAGE STYLES
+// ============================================================================
 
 .skills-section {
+  width: 90%;
+  margin: 0 auto;
   color: #fff;
-  padding: 2rem 0;
+  padding: 4rem;
+
+  // ============================================================================
+  // SECTION HEADER
+  // ============================================================================
 
   .section-header {
     text-align: center;
-    align-items: center;
     margin-bottom: 3rem;
-
-    h1 {
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-      color: #e8e8e8;
-      line-height: 1.6;
-    }
   }
+
+  // ============================================================================
+  // SKILLS GRID
+  // ============================================================================
 
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: clamp(4rem, 5vw, 5rem);
+    gap: 3rem;
   }
+
+  // ============================================================================
+  // SKILL CARD
+  // ============================================================================
 
   section {
     background-color: rgba(41, 40, 40, 0.514);
-    padding: clamp(1.25rem, 3vw, 1.75rem);
-    border-radius: 8px;
+    padding: 1.5rem;
+    border-radius: var(--br);
     border: 1px solid rgba(255, 165, 0, 0.2);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -55,11 +55,21 @@
   }
 }
 
+// ============================================================================
+// RESPONSIVE - MOBILE (0px - 600px)
+// ============================================================================
+
 @media (max-width: 600px) {
   .skills-section {
+    width: 95%;
+
     .grid {
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+    }
+
+    section {
+      padding: 1rem;
     }
   }
 }

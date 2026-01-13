@@ -1,14 +1,26 @@
+
+// ============================================================================
+// PROJECTS PAGE STYLES
+// ============================================================================
+
 .projects {
+  width: 90%;
+  margin: 0 auto;
+
+  // ============================================================================
+  // PROJECTS SECTION & HEADER
+  // ============================================================================
+
   .projects-section {
-    padding: clamp(2rem, 5vw, 3rem) 0;
+    padding: 2rem 0 3rem 0;
   }
 
   .section-header {
     text-align: center;
-    margin-bottom: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 3rem;
 
     h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: var(--fs-h1);
       margin-bottom: 1rem;
       background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
       -webkit-background-clip: text;
@@ -17,51 +29,94 @@
     }
 
     p {
-      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-size: var(--fs-body);
       max-width: 600px;
       margin: 0 auto;
       color: rgba(255, 255, 255, 0.8);
     }
   }
 
+  // ============================================================================
+  // PROJECTS GRID
+  // ============================================================================
+
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: clamp(1.5rem, 3vw, 2rem);
-    margin-top: clamp(2rem, 4vw, 2.5rem);
-
-    @media (max-width: 768px) {
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    }
-
-    @media (max-width: 600px) {
-      grid-template-columns: 1fr;
-    }
+    gap: 2rem;
+    margin-top: 2.5rem;
   }
+
+  // ============================================================================
+  // STATE MESSAGES (LOADING, ERROR, EMPTY)
+  // ============================================================================
 
   .loading-state,
   .error-state,
   .empty-state {
     text-align: center;
-    padding: clamp(2rem, 4vw, 3rem);
-    background-color: rgba(41, 40, 40, 0.514);
-    border-radius: 8px;
+    padding: 3rem 2rem;
+    border-radius: var(--br);
     border: 1px solid rgba(255, 165, 0, 0.2);
-    margin-top: clamp(1.5rem, 3vw, 2rem);
+    margin-top: 2rem;
 
     p {
-      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-size: var(--fs-body);
       margin: 0;
       color: rgba(255, 255, 255, 0.8);
     }
   }
 
+  .loading-state,
+  .empty-state {
+    background-color: rgba(41, 40, 40, 0.514);
+  }
+
   .error-state {
-    border-color: rgba(255, 100, 100, 0.3);
     background-color: rgba(60, 40, 40, 0.514);
+    border-color: rgba(255, 100, 100, 0.3);
 
     p {
       color: rgba(255, 150, 150, 0.9);
+    }
+  }
+}
+
+// ============================================================================
+// RESPONSIVE - TABLET (601px - 1024px)
+// ============================================================================
+
+@media (max-width: 1024px) {
+  .projects {
+    .grid {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+  }
+}
+
+// ============================================================================
+// RESPONSIVE - MOBILE (0px - 600px)
+// ============================================================================
+
+@media (max-width: 600px) {
+  .projects {
+    width: 95%;
+
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .loading-state,
+    .error-state,
+    .empty-state {
+      padding: 2rem 1.5rem;
+      margin-top: 1.5rem;
+
+      p {
+        font-size: var(--fs-caption);
+      }
     }
   }
 }

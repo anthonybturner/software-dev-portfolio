@@ -1,39 +1,26 @@
+// ============================================================================
+// HERO SECTION STYLES
+// ============================================================================
 .hero-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3rem 2rem;
-    margin-bottom: 3rem;
+    width: 100%;
     animation: fadeInDown 0.8s ease-out;
 
+    // ============================================================================
+    // HEADING STYLES
+    // ============================================================================
     h1 {
-        color: #fff;
-        font-weight: 700;
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
-        letter-spacing: -0.02em;
-        background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+        box-shadow: 2px 4px 4px rgba(255, 165, 0, 0.2);
+        background: linear-gradient(135deg, #ffa500 0%, #ff6b6b 100%);
         background-clip: text;
+        text-align: center;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-
-        span {
-            display: block;
-            font-size: 0.85em;
-            color: var(--accent-clr);
-            font-weight: 600;
-            margin-top: 0.5rem;
-            letter-spacing: 0.05em;
-        }
     }
 
+    // ============================================================================
+    // PARAGRAPH STYLES
+    // ============================================================================
     p {
-        color: var(--secondary-text-clr);
-        font-size: clamp(0.95rem, 2vw, 1.1rem);
-        line-height: 1.8;
-        letter-spacing: 0.3px;
-        max-width: 90ch;
-
         strong {
             color: #fff;
             font-weight: 600;
@@ -41,42 +28,49 @@
             margin-top: 1.5rem;
             padding-left: 1.5rem;
             border-left: 3px solid var(--accent-clr);
-            position: relative;
-        }
 
-        strong strong {
-            color: var(--accent-clr);
-            font-weight: 700;
-            margin: 0;
-            padding: 0;
-            border: none;
-            display: inline;
-        }
-    }
-
-    @media (max-width: 768px) {
-        padding: 2rem 1.5rem;
-        margin-bottom: 2rem;
-
-        h1 {
-            margin-bottom: 1.25rem;
-        }
-
-        p {
             strong {
-                padding-left: 1rem;
+                color: var(--accent-clr);
+                font-weight: 700;
+                margin: 0;
+                padding: 0;
+                border: none;
+                display: inline;
             }
         }
     }
+
+    .hero-subtitle {
+        font-size: var(--fs-body); // 1.6rem
+        color: var(--accent-clr);
+        margin-bottom: 2rem;
+        font-weight: var(--fw-m);
+    }
 }
 
+// ============================================================================
+// ANIMATIONS
+// ============================================================================
 @keyframes fadeInDown {
     from {
         opacity: 0;
         transform: translateY(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+// ============================================================================
+// RESPONSIVE - TABLET (601px - 1024px)
+// ============================================================================
+@media (max-width: 600) {
+   
+    .hero-section {
+        p strong {
+            padding-left: 1rem;
+        }
     }
 }

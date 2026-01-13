@@ -1,43 +1,184 @@
 @use './abstracts' as *;
 
+// ============================================================================
+// ROOT & GLOBAL STYLES
+// ============================================================================
+
 html {
-  // Typography
-  font-size: var(--fs);
+  font-size: var(--fs-base);
   background: url('/images/projects/marvel-rivals-hero.jpg') top/contain fixed;
-  
-  
-  // Typography Elements
-  p {
-    // Typography
-    font-size: var(--fs-p);
+  overflow-x: hidden;
+}
+
+// ============================================================================
+// BASE ELEMENT STYLES
+// ============================================================================
+
+body {
+  font-size: var(--fs-body);
+  font-family: var(--ff);
+  color: var(--primary-text-clr);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  font-size: var(--fs-body);
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  color: var(--accent-clr);
+  font-size: var(--fs-h3);
+  margin: 1rem;
+}
+
+h4 {
+  font-size: var(--fs-h4);
+  margin: 1rem;
+}
+
+h5 {
+  font-size: var(--fs-h5);
+}
+
+h6 {
+  font-size: var(--fs-h6);
+}
+
+li {
+  margin: 1rem 0;
+  color: var(--primary-text-clr);
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+// ============================================================================
+// LINK & BUTTON STYLES
+// ============================================================================
+
+a,
+.btn,
+button {
+  position: relative;
+  border-radius: 4px;
+  font-weight: var(--fw-n);
+  text-decoration: none;
+  color: blue;
+  transition: color 0.3s, background 0.3s;
+
+  &.active::after {
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--accent-clr);
   }
 
-  // Layout
-  overflow-x: hidden;
+  &:hover {
+    color: var(--accent-clr);
+  }
+}
 
+button {
+  background: var(--accent-clr);
+}
+
+// ============================================================================
+// SECTION STYLES
+// ============================================================================
+
+section {
+  backdrop-filter: blur(8px);
+
+  .wrapper {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+
+    .content {
+      flex: 1;
+      min-width: 0;
+
+      ul.skills-list {
+
+        li {
+          line-height: 1.6;
+        }
+      }
+    }
+
+    img {
+      flex: 0 0 auto;
+      width: 300px;
+      max-width: 300px;
+      height: auto;
+      border: var(--border) solid var(--accent-clr);
+      border-radius: var(--br);
+      object-fit: cover;
+    }
+  }
+
+  .card .images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacer-lg);
+    width: 100%;
+    background: #ffffff00;
+  }
+}
+
+
+// ============================================================================
+// RESPONSIVE - MOBILE (0px - 600px)
+// ============================================================================
+
+@media (min-width: 0px) and (max-width: 600px) {
   h1 {
-    // Typography
-    font-size: var(--fs-2);
+    font-size: var(--fs-h3);
   }
 
   h2 {
-    // Typography
-    font-size: var(--fs-3);
+    font-size: var(--fs-h3);
   }
 
   h3 {
-    // Typography
-    font-size: var(--fs-4);
+    font-size: var(--fs-h4);
   }
 
   h4 {
-    // Typography
-    font-size: var(--fs-5);
+    font-size: var(--fs-h4);
   }
 
   h5 {
-    // Typography
-    font-size: var(--fs-6);
+    font-size: var(--fs-h6);
+  }
+
+  h5 {
+    font-size: var(--fs-h7);
   }
 
   h1,
@@ -46,294 +187,72 @@ html {
   h4,
   h5,
   h6 {
-    // Typography
-    color: var(--primary-text-clr);
+    text-align: center;
+    padding: 1rem;
   }
 
-  li {
-    // Typography
-    color: var(--primary-text-clr);
+  p {
+    font-size: var(--fs-body-lg);
   }
-  
-  // Nested Elements
+
   body {
-  
-    // Typography
-    font-family: var(--ff);
-    color: var(--primary-text-clr);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-size: var(--fs-body-lg);
   }
 
-  img {
-    // Layout
-    display: block;
-    
-    // Box Model
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-  }
+  section .wrapper {
+    flex-direction: column-reverse;
+    gap: 1rem;
 
-
-  // Container Components
-  div.container {
-    // Media Queries
-    @media (min-width: 0) and (max-width: 600px) {
-      // Layout
-      display: flex;
-      flex-direction: column;
-      
-      // Box Model
-      margin: 0 auto;
-      // padding: 0 1rem; // TODO: Review if padding needed
-    }
-  }
-
-  // Section Components
-  section {
-    // Box Model
-    padding: var(--spacer);
-    margin: var(--spacer);
-    border-radius: var(--br);
-    
-    // Background & Visual
-    backdrop-filter: blur(8px);
-
-    // Section Header
-    .section-header {
-      // Box Model
-      padding: var(--spacer);
-      margin-bottom: 1.5rem;
-      border-bottom: 1px solid var(--accent-clr);
-      border-radius: 14px;
-      
-      // Typography
-      color: var(--primary-text-clr);
-    }
-
-    // Wrapper Layout System
-    .wrapper {
-      // Layout
-      display: flex;
-      gap: 2rem;
-      align-items: flex-start;
-
-      .content {
-        // Layout
-        flex: 1;
-        min-width: 0; // Prevents flex item from overflowing
-        
-        ul, p {
-          // Box Model
-          margin: 0;
-          padding: 0;
-        }
-        
-        ul.skills-list {
-          // Typography
-          list-style: none;
-          
-          li {
-            // Box Model
-            margin-bottom: 1rem;
-            
-            // Typography
-            line-height: 1.6;
-          }
-        }
-      }
-
-      img {
-        // Layout
-        flex: 0 0 auto;
-        
-        // Box Model
-        width: 300px;
-        max-width: 300px;
-        height: auto;
-        border: var(--border) solid var(--accent-clr);
-        border-radius: var(--br);
-        
-        // Visual
-        object-fit: cover;
-      }
-
-      // Media Queries - Tablet
-      @media (min-width: 601px) and (max-width: 1024px) {
-        // Layout
-        gap: 1.5rem;
-        
-        img {
-          // Box Model
-          width: 250px;
-          max-width: 250px;
-        }
-      }
-
-      // Media Queries - Mobile
-      @media (min-width: 0px) and (max-width: 600px) {
-        // Layout
-        flex-direction: column-reverse;
-        gap: 1rem;
-
-        img {
-          // Layout
-          flex: none;
-          
-          // Box Model
-          width: 100%;
-          max-width: 100%;
-          height: auto;
-          max-height: 300px;
-          
-          // Visual
-          object-fit: cover;
-        }
-        
-        .content {
-          ul.skills-list li {
-            // Box Model
-            margin-bottom: 0.75rem;
-            
-            // Typography
-            font-size: 0.9rem;
-          }
-        }
-      }
-
-      // Media Queries - Large Desktop
-      @media (min-width: 1400px) {
-        // Layout
-        gap: 3rem;
-        
-        img {
-          // Box Model
-          width: 350px;
-          max-width: 350px;
-        }
-      }
-    }
-
-    // Card Components
-    .card {
-      .images {
-        // Layout
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 2rem;
-      }
-    }
-    
-
-    // Grid Layout System
-    .grid {
-      // Layout
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: var(--spacer-lg);
-      
-      // Box Model
+    img {
+      flex: none;
       width: 100%;
-      
-      // Background & Visual
-      background: #ffffff00;
+      max-width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: cover;
+    }
 
-      // Media Queries
-      @media (min-width: 601px) and (max-width: 1024px) {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      @media (min-width: 0px) and (max-width: 600px) {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      }
+    .content ul.skills-list li {
+      margin-bottom: 0.75rem;
     }
   }
 
-  // Link and Button Component
-  a,
-  .btn,
-  button {
-    // Layout
-    position: relative;
-    // Box Model
-    border-radius: 4px;
-    // Typography
-    font-weight: var(--fw-n);
-    text-decoration: none;
-    color: blue;
-    
-    // Transitions & Animations
-    transition: color 0.3s, background 0.3s;
-
-    // BEM Modifiers
-    &.active {
-      // Pseudo-elements
-      &::after {
-        // Layout
-        position: absolute;
-        bottom: 2px;
-        left: 0;
-        
-        // Box Model
-        content: '';
-        width: 100%;
-        height: 2px;
-        border-radius: 2px;
-        
-        // Background & Visual
-        background: var(--accent-clr);
-      }
-    }
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
-
-  // Hover States
-  a:hover {
-    // Typography
-    color: var(--accent-clr);
-  }
-
-  button{
-    background: var(--accent-clr);
-  }
-  
-  // Media Queries - Mobile Typography
-  @media (min-width: 0px) and (max-width: 600px) {
-    h1 {
-      // Typography
-      font-size: var(--fs-3);
-    }
-
-    h2 {
-      // Typography
-      font-size: var(--fs-4);
-    }
-
-    h3 {
-      // Typography
-      font-size: var(--fs-5);
-    }
-
-    h4 {
-      // Typography
-      font-size: var(--fs-6);
-    }
-
-    h5 {
-      // Typography
-      font-size: var(--fs-6);
-    }
-  }
-  
 }
 
-html, body{
-    height: 100%;
-    min-height: 100vh;
-    min-width: 100vw;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+// ============================================================================
+// RESPONSIVE - TABLET (601px - 1024px)
+// ============================================================================
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  section .wrapper {
+    gap: 1.5rem;
+
+    img {
+      width: 250px;
+      max-width: 250px;
+    }
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
+// ============================================================================
+// RESPONSIVE - LARGE DESKTOP (1400px+)
+// ============================================================================
+
+@media (min-width: 1400px) {
+  section .wrapper {
+    gap: 3rem;
+
+    img {
+      width: 350px;
+      max-width: 350px;
+    }
+  }
+}

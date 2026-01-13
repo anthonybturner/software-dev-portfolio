@@ -1,14 +1,16 @@
+// ============================================================================
+// PROJECT CARD COMPONENT
+// ============================================================================
 
 .card {
   display: flex;
   flex-direction: column;
-  min-height: 700px;
   background-color: rgba(41, 40, 40, 0.514);
   border: 1px solid rgba(255, 165, 0, 0.2);
-  border-radius: 12px;
+  border-radius: var(--br);
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: clamp(1.25rem, 3vw, 1.75rem);
+  padding: 1.5rem;
 
   &:hover {
     transform: translateY(-4px);
@@ -17,12 +19,15 @@
     border-color: rgba(255, 165, 0, 0.4);
   }
 
-  // Images Gallery
+  // ============================================================================
+  // IMAGES GALLERY
+  // ============================================================================
+
   .images {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    margin-bottom: 1.5rem;
 
     .image-container {
       position: relative;
@@ -66,34 +71,23 @@
 
         .view-icon {
           color: var(--accent-clr);
-          font-size: 1.5rem;
         }
       }
     }
   }
 
-  // Project Content
+  // ============================================================================
+  // CONTENT SECTION
+  // ============================================================================
+
   .content {
     flex: 1;
     display: flex;
     flex-direction: column;
+    // ============================================================================
+    // TECHNOLOGIES TAGS
+    // ============================================================================
 
-    h3 {
-      font-size: clamp(1.1rem, 2vw, 1.3rem);
-      margin: 0 0 0.75rem 0;
-      color: #fff;
-      transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    p {
-      font-size: clamp(0.95rem, 1.5vw, 1rem);
-      color: rgba(255, 255, 255, 0.8);
-      margin: 0 0 1rem 0;
-      flex: 1;
-      line-height: 1.6;
-    }
-
-    // Technologies/Tags
     .technologies {
       display: flex;
       flex-wrap: wrap;
@@ -106,8 +100,8 @@
         color: rgba(255, 165, 0, 0.9);
         padding: 0.35rem 0.75rem;
         border-radius: 6px;
-        font-size: 0.85rem;
-        font-weight: 500;
+        font-size: var(--fs-caption);
+        font-weight: var(--fw-m);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
         &:hover {
@@ -117,7 +111,10 @@
       }
     }
 
-    // Action Links
+    // ============================================================================
+    // ACTION LINKS
+    // ============================================================================
+
     .actions {
       display: flex;
       gap: 0.75rem;
@@ -131,8 +128,7 @@
         text-align: center;
         text-decoration: none;
         border-radius: 6px;
-        font-weight: 500;
-        font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+        font-weight: var(--fw-m);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         border: 1px solid transparent;
         cursor: pointer;
@@ -162,22 +158,33 @@
       }
     }
   }
+}
 
-  @media (max-width: 600px) {
+// ============================================================================
+// RESPONSIVE - MOBILE (0px - 600px)
+// ============================================================================
+
+@media (max-width: 600px) {
+  .card {
+    padding: 1rem;
+    min-height: auto;
+
     .images {
-      flex-direction: column;
+      margin-bottom: 1rem;
 
       .image-container {
         min-width: 100%;
       }
     }
 
-    .content .actions {
-      flex-direction: column;
+    .content {
+      .actions {
+        flex-direction: column;
 
-      a {
-        width: 100%;
-        min-width: auto;
+        a {
+          width: 100%;
+          min-width: auto;
+        }
       }
     }
   }

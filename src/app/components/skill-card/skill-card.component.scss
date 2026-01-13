@@ -1,52 +1,65 @@
-@use './abstracts' as *;
+// ============================================================================
+// SKILL CARD COMPONENT
+// ============================================================================
 
 .card {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: clamp(1.25rem, 3vw, 1.75rem);
-  background-color: rgba(41, 40, 40, 0.514);
-  border-radius: 8px;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.336);
+  border-radius: var(--br);
   border: 1px solid rgba(255, 165, 0, 0.2);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+
+  // ===============================================
+  //=============================
+  // ICON
+  // ============================================================================
 
   &__icon {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: clamp(60px, 10vw, 80px);
-    height: clamp(60px, 10vw, 80px);
-    margin: 0 auto clamp(1rem, 2vw, 1.5rem);
-    padding: 0.75rem;
+    padding: 0.55rem;
     border-radius: 12px;
     color: var(--accent-clr);
-    font-size: clamp(1.75rem, 3vw, 2.5rem);
-    background-color: rgba(255, 165, 0, 0.1);
     border: 1px solid rgba(255, 165, 0, 0.3);
     transition: all 0.3s ease;
+    position: absolute;
+    top: 4px;
+    right: 4px;
   }
+
+  // ============================================================================
+  // CATEGORY & TITLE
+  // ============================================================================
 
   &__category {
     margin-bottom: 0.75rem;
-    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
-    color: #e8e8e8;
-    font-weight: 600;
+    font-size: var(--fs-caption);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: var(--fw-m);
   }
 
   &__title {
-    font-size: clamp(1.1rem, 2vw, 1.3rem);
-    font-weight: 700;
     color: #fff;
     margin-bottom: 1rem;
   }
 
+  // ============================================================================
+  // DESCRIPTION
+  // ============================================================================
+
   &__description {
-    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
-    color: #e8e8e8;
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.6;
     margin-bottom: 1.5rem;
     flex-grow: 1;
   }
+
+  // ============================================================================
+  // PROFICIENCY BAR
+  // ============================================================================
 
   &__proficiency {
     &__label {
@@ -54,8 +67,8 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-size: var(--fs-caption);
+      font-weight: var(--fw-m);
       color: #fff;
     }
 
@@ -77,11 +90,15 @@
     }
 
     &__percentage {
-      font-size: 0.85rem;
-      font-weight: 700;
+      font-size: var(--fs-caption);
+      font-weight: var(--fw-b);
       color: var(--accent-clr);
     }
   }
+
+  // ============================================================================
+  // HOVER STATE
+  // ============================================================================
 
   &:hover {
     transform: translateY(-4px);

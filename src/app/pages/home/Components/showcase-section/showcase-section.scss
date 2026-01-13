@@ -1,20 +1,11 @@
 // Showcase Section Styles
 .showcase-skills {
     background-color: transparent;
-
-    color: #fff;
-    padding: 2rem 0;
-
-    h2 {
-        font-size: clamp(1.75rem, 4vw, 2.5rem);
-        font-weight: 700;
-        margin-bottom: 2rem;
-        letter-spacing: -0.01em;
-    }
-
     .layout-grid {
-        display: flex;
-        gap: clamp(1rem, 3vw, 2rem);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+        
 
         &>* {
             flex: 1;
@@ -24,7 +15,6 @@
         .card {
             display: flex;
             flex-direction: column;
-            min-height: 600px;
             padding: clamp(1.25rem, 3vw, 1.75rem);
             border-radius: 8px;
             background-color: rgba(41, 40, 40, 0.514);
@@ -32,33 +22,6 @@
             border: 1px solid rgba(255, 165, 0, 0.2);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
-
-            h3 {
-                font-size: clamp(1.1rem, 2vw, 1.3rem);
-                font-weight: 700;
-                margin-bottom: 0.75rem;
-                color: var(--accent-clr);
-            }
-
-            p {
-                color: #e8e8e8;
-                font-size: clamp(0.85rem, 1.5vw, 0.95rem);
-                line-height: 1.6;
-                margin-bottom: 1rem;
-                flex-grow: 1;
-
-                a {
-                    color: var(--accent-clr);
-                    text-decoration: none;
-                    font-weight: 600;
-                    transition: all 0.3s ease;
-
-                    &:hover {
-                        text-decoration: underline;
-                        color: #fff;
-                    }
-                }
-            }
 
             img {
                 width: 100%;
