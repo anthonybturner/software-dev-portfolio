@@ -40,11 +40,10 @@ export class SkillService {
     { id: 23, name: 'SQL Server', category: 'Database', proficiency: 85, icon: 'fa-solid fa-database' },
     { id: 24, name: 'PostgreSQL', category: 'Database', proficiency: 75, icon: 'fa-solid fa-database' },
     { id: 25, name: 'MySQL', category: 'Database', proficiency: 70, icon: 'fa-solid fa-database' },
-    { id: 26, name: 'MongoDB', category: 'Database', proficiency: 70, icon: 'fa-solid fa-database' },
     
     // Professional Skills
-    { id: 27, name: 'Ownership', category: 'Professional', proficiency: 100, icon: 'fa-solid fa-user-check' },
-    { id: 28, name: 'Communication Skills', category: 'Professional', proficiency: 95, icon: 'fa-solid fa-comments' },
+    { id: 26, name: 'Ownership', category: 'Professional', proficiency: 100, icon: 'fa-solid fa-user-check' },
+    { id: 27, name: 'Communication Skills', category: 'Professional', proficiency: 95, icon: 'fa-solid fa-comments' },
   ]);
 
   constructor() { }
