@@ -84,8 +84,7 @@
     &__progress {
       height: 100%;
       border-radius: 4px;
-      background: linear-gradient(90deg, var(--accent-clr), #ffb84d);
-      transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+      background: linear-gradient(90deg,#61dafb,#00d4ff);
       box-shadow: 0 0 12px rgba(255, 165, 0, 0.3);
     }
 
